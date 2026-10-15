@@ -5,7 +5,7 @@ import { ChevronDown, Maximize2 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { Img } from "@/components/ui/Img";
 import Lightbox from "@/components/Lightbox";
-import { galleryImages } from "@/config/gallery";
+import { galleryImages, galleryReel } from "@/config/gallery";
 import { copy } from "@/config/site";
 import { t } from "@/lib/copy";
 
@@ -43,6 +43,26 @@ export default function Gallery() {
 
         <div className="relative mt-12">
           <div className="columns-2 gap-3 md:columns-3 md:gap-5 [&>*]:mb-3 md:[&>*]:mb-5">
+            {galleryReel && (
+              <Reveal className="break-inside-avoid">
+                <div className="relative overflow-hidden rounded-brand bg-ink">
+                  <video
+                    src={galleryReel.src}
+                    poster={galleryReel.poster}
+                    aria-label={galleryReel.alt}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="block aspect-[9/16] h-auto w-full object-cover"
+                  />
+                  <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-ink/60 px-2.5 py-1 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-ivory backdrop-blur-sm">
+                    {copy.gallery.reelLabel}
+                  </span>
+                </div>
+              </Reveal>
+            )}
             {shown.map((item, i) => (
               <Reveal key={item.src} delay={(i % 3) * 0.06} className="break-inside-avoid">
                 <button

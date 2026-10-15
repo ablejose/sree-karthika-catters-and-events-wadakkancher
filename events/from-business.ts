@@ -1,5 +1,5 @@
-import type { EventConfig, EventVariant, MenuPreset } from "@/config/event-schema";
-import { templateMenu, templateMenuPresets } from "@/config/template";
+import type { EventConfig, EventImage, EventVariant, GalleryEntry, MenuCategory, MenuPreset } from "@/config/event-schema";
+import { templateMenu, templateMenuPresets, templateServices } from "@/config/template";
 
 /**
  * ONE BUSINESS, AS THE SITE GENERATOR WRITES IT.
@@ -51,7 +51,24 @@ export interface BusinessInput {
   reviews?: { name: string; rating: number; quote: string }[];
 
   /** Their own photos, relative to /events/<slug>/ — e.g. "gallery/01.jpg". */
-  gallery: string[];
+  gallery: GalleryEntry[];
+
+  /** Their own media, relative to /events/<slug>/. Anything left out stays template stock. */
+  media?: {
+    heroSlides?: EventImage[];
+    about?: EventImage[];
+    logoMark?: string;
+    ogImage?: string;
+    brandDir?: string;
+    reel?: { src: string; poster: string; alt: string };
+  };
+  /** Their own photo for a shared service card, keyed by card id (config/template.ts). */
+  serviceImages?: Record<string, string>;
+  /** Brand colours (hex). */
+  theme?: { primary: string; accent: string };
+  /** Their own menu for the quote builder; replaces the shared Kerala menu. */
+  menu?: MenuCategory[];
+  menuPresets?: MenuPreset[];
 
   /** Live site origin, no trailing slash. */
   url: string;
@@ -125,17 +142,29 @@ export function fromBusiness(b: BusinessInput): EventConfig {
     },
     web: { url: b.url, instagram: b.instagram || undefined, facebook: b.facebook || undefined },
     reputation: { rating: b.rating ?? 0, reviews: b.reviewCount ?? 0 },
+    theme: b.theme,
     media: {
       base: `/events/${b.slug}`,
-      heroPoster: STOCK.heroSlides[0].src,
-      heroSlides: STOCK.heroSlides,
-      ogImage: STOCK.ogImage,
-      brandDir: STOCK.brandDir,
-      about: STOCK.about,
-      gallery: b.gallery.map((src, i) => ({ src, alt: `${b.name} — event photo ${i + 1}` })),
+      heroPoster: (b.media?.heroSlides ?? STOCK.heroSlides)[0].src,
+      heroSlides: b.media?.heroSlides ?? STOCK.heroSlides,
+      logoMark: b.media?.logoMark,
+      ogImage: b.media?.ogImage ?? STOCK.ogImage,
+      brandDir: b.media?.brandDir ?? STOCK.brandDir,
+      about: b.media?.about ?? STOCK.about,
+      gallery: b.gallery.map((g, i) => {
+        const alt = `${b.name} — event photo ${i + 1}`;
+        return typeof g === "string" ? { src: g, alt } : { ...g, alt: g.alt ?? alt };
+      }),
+      reel: b.media?.reel,
     },
     reviews: (b.reviews ?? []).map((r) => ({ ...r, source: "Google review" })),
     seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
-    overrides: { menu: neutralMenu, menuPresets: neutralPresets },
+    overrides: {
+      menu: b.menu ?? neutralMenu,
+      menuPresets: b.menu ? (b.menuPresets ?? []) : neutralPresets,
+      services: b.serviceImages
+        ? templateServices.map((s) => ({ ...s, bullets: [...s.bullets], image: b.serviceImages?.[s.id] ?? s.image }))
+        : undefined,
+    },
   };
 }

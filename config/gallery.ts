@@ -28,6 +28,10 @@ export const galleryImages: GalleryItem[] = event.media.gallery.map((g, i) =>
   normalize(g, `${event.brand.name} — photo ${i + 1}`)
 );
 
+/** Optional looping clip shown first in "Our work". */
+const reel = event.media.reel;
+export const galleryReel = reel ? { src: asset(reel.src), poster: asset(reel.poster), alt: reel.alt } : null;
+
 /** About-section crossfade pair. */
 export const aboutImages: GalleryItem[] = event.media.about.map((a, i) =>
   normalize(a, `${event.brand.name} — photo ${i + 1}`)

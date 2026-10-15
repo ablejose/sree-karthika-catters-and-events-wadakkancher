@@ -5,9 +5,14 @@ import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowLeft,
   ArrowRight,
+  Beef,
   Check,
   Cookie,
+  CookingPot,
+  Croissant,
+  CupSoda,
   Drumstick,
+  EggFried,
   Flame,
   GlassWater,
   IceCreamBowl,
@@ -15,6 +20,7 @@ import {
   Minus,
   Plus,
   Salad,
+  Soup,
   Sparkles,
   Trash2,
   UtensilsCrossed,
@@ -26,7 +32,7 @@ import Reveal from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { copy, waLink } from "@/config/site";
 import { menu, menuPresets } from "@/config/menu";
-import { t } from "@/lib/copy";
+import { asset, t } from "@/lib/copy";
 import { cn } from "@/lib/utils";
 
 /**
@@ -50,6 +56,15 @@ const COURSE_ICONS: Record<string, LucideIcon> = {
   "veg-mains": Salad,
   desserts: IceCreamBowl,
   live: Flame,
+  soups: Soup,
+  "kerala-feast": CookingPot,
+  grills: Flame,
+  arabian: Beef,
+  "malabar-mains": Wheat,
+  "malabar-snacks": Croissant,
+  dosa: EggFried,
+  thattukada: CupSoda,
+  salads: Salad,
 };
 const iconFor = (id: string) => COURSE_ICONS[id] ?? UtensilsCrossed;
 
@@ -286,7 +301,9 @@ export default function Menu() {
             role="tablist"
             aria-label="Menu courses"
             data-lenis-prevent
-            className="flex snap-x gap-2 overflow-x-auto [scrollbar-width:none] lg:grid lg:grid-cols-8 lg:gap-3 lg:overflow-visible lg:pt-1 [&::-webkit-scrollbar]:hidden"
+            // Desktop grid: one row for up to 8 courses, two balanced rows beyond that (ignored by the phone flex row).
+            style={{ gridTemplateColumns: `repeat(${menu.length > 8 ? Math.ceil(menu.length / 2) : menu.length}, minmax(0, 1fr))` }}
+            className="flex snap-x gap-2 overflow-x-auto [scrollbar-width:none] lg:grid lg:gap-3 lg:overflow-visible lg:pt-1 [&::-webkit-scrollbar]:hidden"
           >
             {menu.map((m, i) => {
               const on = i === catIdx;
@@ -352,11 +369,22 @@ export default function Menu() {
                     transition={{ duration: 0.35, ease: EASE }}
                   >
                     {/* Course header */}
-                    <div className="flex items-start justify-between gap-3 sm:flex-wrap sm:gap-4">
-                      <div className="flex min-w-0 items-start gap-4">
-                        <span className="hidden h-14 w-14 shrink-0 place-items-center rounded-2xl bg-espresso text-saffron sm:grid">
-                          <ActiveIcon size={26} strokeWidth={1.6} />
-                        </span>
+                    {/* "Add all" drops under the title when the title needs the room (long names, photo beside). */}
+                    <div className="flex flex-wrap items-start justify-between gap-3 sm:gap-4">
+                      <div className="flex min-w-0 flex-1 basis-[10rem] items-start gap-3 sm:gap-4">
+                        {active.image ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={asset(active.image)}
+                            alt=""
+                            aria-hidden
+                            className="h-14 w-14 shrink-0 rounded-2xl object-cover shadow-[0_10px_24px_-12px_rgba(36,28,21,0.6)] sm:h-16 sm:w-16"
+                          />
+                        ) : (
+                          <span className="hidden h-14 w-14 shrink-0 place-items-center rounded-2xl bg-espresso text-saffron sm:grid">
+                            <ActiveIcon size={26} strokeWidth={1.6} />
+                          </span>
+                        )}
                         <div className="min-w-0">
                           <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-saffron-2 sm:text-[0.68rem]">
                             {c.courseLabel} {String(catIdx + 1).padStart(2, "0")} {c.of} {String(menu.length).padStart(2, "0")}

@@ -48,6 +48,8 @@ export interface MenuCategory {
   title: string;
   /** Malayalam category title. */
   ml?: string;
+  /** Small square photo shown beside the course title. */
+  image?: MediaPath;
   items: MenuItem[];
 }
 
@@ -193,6 +195,8 @@ export interface EventConfig {
     about: GalleryEntry[];
     /** "Our work" photos — their real events only. */
     gallery: GalleryEntry[];
+    /** A short, muted, looping portrait clip shown first in "Our work". */
+    reel?: { src: MediaPath; poster: MediaPath; alt: string };
   };
 
   /** Real reviews only. Leave empty to hide the Reviews section. */

@@ -264,6 +264,7 @@ export const templateCopy = {
     photoQuote: "Every plate, petal and place setting — styled by hand.",
     showAll: "Show all {count} photos",
     showLess: "Show fewer",
+    reelLabel: "On the night",
   },
 
   process: {
