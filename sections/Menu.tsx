@@ -91,6 +91,7 @@ export default function Menu() {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const [inSection, setInSection] = useState(false);
   const [panelVisible, setPanelVisible] = useState(false);
+  const [panelUp, setPanelUp] = useState(false);
 
   const pickedSet = useMemo(() => new Set(picked), [picked]);
   const active = menu[catIdx] ?? menu[0];
@@ -167,7 +168,14 @@ export default function Menu() {
     );
     io.observe(s);
     io.observe(p);
-    return () => io.disconnect();
+    // Quote panel in the top half of the screen: the sticky course rail steps aside on
+    // phones so it doesn't sit over the panel and its send button.
+    const up = new IntersectionObserver(([e]) => setPanelUp(e.isIntersecting), { rootMargin: "0px 0px -50% 0px" });
+    up.observe(p);
+    return () => {
+      io.disconnect();
+      up.disconnect();
+    };
   }, []);
 
   const pct = ((guests - GUESTS.min) / (GUESTS.max - GUESTS.min)) * 100;
@@ -256,7 +264,12 @@ export default function Menu() {
         )}
 
         {/* COURSE RAIL — sticky on phones so switching course is always one tap away */}
-        <div className="sticky top-[74px] z-20 -mx-6 mt-10 bg-cream/90 px-6 py-3 backdrop-blur-md lg:static lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-0">
+        <div
+          className={cn(
+            "sticky top-[74px] z-20 -mx-6 mt-10 bg-cream/90 px-6 py-3 backdrop-blur-md transition-[opacity,transform] duration-300 lg:static lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-0",
+            panelUp && "max-lg:pointer-events-none max-lg:-translate-y-3 max-lg:opacity-0"
+          )}
+        >
           <div
             ref={railRef}
             role="tablist"
