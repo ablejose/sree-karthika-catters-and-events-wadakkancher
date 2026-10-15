@@ -62,6 +62,7 @@ export default function Header() {
   };
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
@@ -123,7 +124,10 @@ export default function Header() {
           <Menu size={22} />
         </button>
       </div>
+    </header>
 
+      {/* Outside <header>: its backdrop-blur would make it the drawer's containing block,
+          clipping the "fixed inset-0" drawer to the header's height. */}
       <AnimatePresence onExitComplete={runPendingScroll}>
         {open && (
           <motion.div className="fixed inset-0 z-[60] lg:hidden" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -176,6 +180,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
