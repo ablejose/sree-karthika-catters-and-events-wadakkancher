@@ -58,12 +58,16 @@ export default function Testimonials() {
           </a>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
+        {/* Phones/tablets: one swipeable row of cards. Desktop: lead review large + grid. */}
+        <div
+          data-lenis-prevent
+          className="-mx-6 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 [scrollbar-width:none] lg:mx-0 lg:mt-12 lg:grid lg:grid-cols-3 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
+        >
           {/* Lead review, set large */}
-          <Reveal className="lg:col-span-1 lg:row-span-2">
-            <figure className="flex h-full flex-col justify-between rounded-brand border border-saffron/30 bg-gradient-to-b from-ivory/[0.07] to-ivory/[0.02] p-7 md:p-9">
+          <Reveal className="w-[86%] shrink-0 snap-center sm:w-[60%] lg:col-span-1 lg:row-span-2 lg:w-auto">
+            <figure className="flex h-full flex-col justify-between rounded-brand border border-saffron/30 bg-gradient-to-b from-ivory/[0.07] to-ivory/[0.02] p-6 md:p-9">
               <div>
-                <span className="font-display text-7xl leading-none text-saffron/80" aria-hidden>
+                <span className="font-display text-6xl leading-none text-saffron/80 md:text-7xl" aria-hidden>
                   &ldquo;
                 </span>
                 <blockquote className="display -mt-4 italic text-ivory" style={{ fontSize: "clamp(1.15rem, 1.7vw, 1.4rem)", lineHeight: 1.5, fontWeight: 400, color: "#fff" }}>
@@ -74,9 +78,10 @@ export default function Testimonials() {
             </figure>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-2">
-            {rest.map((r, i) => (
-              <Reveal key={r.name} delay={i * 0.06} className="h-full">
+          <div className="contents lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-5">
+            {/* The swipe row shows every review; the desktop grid keeps only an even count. */}
+            {others.map((r, i) => (
+              <Reveal key={r.name} delay={i * 0.06} className={`w-[86%] shrink-0 snap-center sm:w-[60%] lg:h-full lg:w-auto ${i >= rest.length ? "lg:hidden" : ""}`}>
                 <figure className="flex h-full flex-col rounded-brand border border-ivory/10 bg-ivory/[0.04] p-6 transition-colors hover:border-ivory/25">
                   <div className="flex gap-0.5" aria-label={`${r.rating} out of 5 stars`}>
                     {Array.from({ length: r.rating }).map((_, s) => (
@@ -90,6 +95,7 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
+        {others.length > 0 && <p className="mt-3 font-sans text-xs text-ivory/45 lg:hidden">{copy.testimonials.swipeHint}</p>}
       </div>
     </section>
   );

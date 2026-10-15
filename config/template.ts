@@ -287,6 +287,7 @@ export const templateCopy = {
     heading: "What our customers say",
     ratingLink: "Rated {rating} from {reviews} reviews on Google",
     sourceLabel: "Google review",
+    swipeHint: "Swipe for more reviews →",
   },
 
   menu: {
