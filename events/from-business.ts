@@ -1,4 +1,4 @@
-import type { EventConfig, MenuPreset } from "@/config/event-schema";
+import type { EventConfig, EventVariant, MenuPreset } from "@/config/event-schema";
 import { templateMenu, templateMenuPresets } from "@/config/template";
 
 /**
@@ -18,6 +18,11 @@ export interface BusinessInput {
   shortName?: string;
   /** Small line under the name, e.g. "Catering & Events". */
   descriptor?: string;
+  /** What the business leads with — drives section copy. Defaults to "catering". */
+  variant?: EventVariant;
+  /** Their own hero line; without it every site shares the template's. */
+  headline?: string;
+  tagline?: string;
 
   address: string;
   street?: string;
@@ -90,14 +95,14 @@ export function fromBusiness(b: BusinessInput): EventConfig {
 
   return {
     slug: b.slug,
-    variant: "catering",
+    variant: b.variant ?? "catering",
     brand: {
       name: b.shortName || b.name,
       fullName: b.name,
       descriptor,
       kicker: descriptor,
-      tagline: "Weddings & events, catered with care.",
-      headline: "Unforgettable feasts. Flawless celebrations.",
+      tagline: b.tagline || "Weddings & events, catered with care.",
+      headline: b.headline || "Unforgettable feasts. Flawless celebrations.",
     },
     contact: { phone: b.phone, whatsapp: b.whatsapp, email: b.email || undefined },
     location: {
