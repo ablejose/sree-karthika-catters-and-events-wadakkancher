@@ -82,7 +82,9 @@ export default function Process() {
           <p className="body-copy mt-4 max-w-xl">{t(copy.process.body)}</p>
         </Reveal>
 
-        <ol ref={olRef} className="relative mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+        <ol ref={olRef} className="relative mt-10 grid grid-cols-1 gap-7 sm:grid-cols-2 sm:gap-10 lg:mt-14 lg:grid-cols-5 lg:gap-6">
+          {/* Phones: a compact vertical timeline — badge on the left, text beside it. */}
+          <div aria-hidden className="pointer-events-none absolute bottom-6 left-[21px] top-6 w-px bg-sand sm:hidden" />
           <div aria-hidden className="pointer-events-none absolute left-0 right-0 top-8 hidden h-px bg-sand lg:block" />
           <div
             aria-hidden
@@ -98,17 +100,19 @@ export default function Process() {
               data-idx={i}
               className="relative"
             >
-              <div className="flex flex-col items-start">
+              <div className="flex items-start gap-4 sm:flex-col sm:gap-0">
                 <span
-                  className={`relative z-10 grid h-16 w-16 place-items-center rounded-full border font-display text-2xl shadow-[0_14px_30px_-16px_rgba(196,137,46,0.6)] transition-all duration-500 ${
+                  className={`relative z-10 grid h-11 w-11 shrink-0 place-items-center rounded-full border font-display text-lg shadow-[0_14px_30px_-16px_rgba(196,137,46,0.6)] transition-all duration-500 sm:h-16 sm:w-16 sm:text-2xl ${
                     activeSteps[i] ? "border-ink bg-ink text-ivory" : "border-saffron bg-white text-saffron-2"
                   }`}
                   style={{ transitionDelay: isDesktop ? `${i * STEP_DELAY}s` : "0s" }}
                 >
                   {s.n}
                 </span>
-                <h3 className="mt-5 font-display text-xl text-saffron-2">{s.title}</h3>
-                <p className="body-copy mt-2">{t(s.text)}</p>
+                <div className="min-w-0 pt-1.5 sm:pt-0">
+                  <h3 className="font-display text-lg text-saffron-2 sm:mt-5 sm:text-xl">{s.title}</h3>
+                  <p className="body-copy mt-1 sm:mt-2">{t(s.text)}</p>
+                </div>
               </div>
             </li>
           ))}
