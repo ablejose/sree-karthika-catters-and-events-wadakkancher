@@ -272,7 +272,7 @@ export default function Menu() {
                     aria-pressed={on}
                     className={cn(
                       "group flex w-[15.5rem] shrink-0 snap-start items-center justify-between gap-4 rounded-brand border px-4 py-3 text-left transition-all duration-300 sm:w-auto sm:px-5 sm:py-4",
-                      on ? "border-espresso bg-espresso text-ivory shadow-[0_18px_40px_-24px_rgba(36,28,21,0.8)]" : "border-sand bg-white hover:-translate-y-0.5 hover:border-saffron/60"
+                      on ? "border-espresso bg-espresso text-ivory shadow-[0_18px_40px_-24px_rgba(36,28,21,0.8)]" : "border-sand bg-white"
                     )}
                   >
                     <span>
@@ -281,7 +281,7 @@ export default function Menu() {
                         {p.note} · {p.items.length} dishes
                       </span>
                     </span>
-                    {on ? <Check size={18} className="text-saffron" /> : <Sparkles size={18} className="text-saffron-2/60 transition-colors group-hover:text-saffron-2" />}
+                    {on ? <Check size={18} className="text-saffron" /> : <Sparkles size={18} className="text-saffron-2/60" />}
                   </button>
                 );
               })}
@@ -324,13 +324,13 @@ export default function Menu() {
                     "lg:w-auto lg:flex-col lg:gap-2 lg:rounded-2xl lg:px-2 lg:pb-3 lg:pt-3.5 lg:text-center",
                     on
                       ? "border-espresso bg-espresso text-ivory shadow-[0_18px_36px_-20px_rgba(36,28,21,0.9)] lg:-translate-y-1"
-                      : "border-sand bg-white text-espresso hover:-translate-y-0.5 hover:border-saffron/60"
+                      : "border-sand bg-white text-espresso"
                   )}
                 >
                   <span
                     className={cn(
                       "grid h-8 w-8 place-items-center rounded-full transition-colors lg:h-11 lg:w-11",
-                      on ? "bg-saffron text-espresso" : n > 0 ? "bg-[var(--saffron-soft)] text-saffron-2" : "bg-cream text-saffron-2 group-hover:bg-[var(--saffron-soft)]"
+                      on ? "bg-saffron text-espresso" : n > 0 ? "bg-[var(--saffron-soft)] text-saffron-2" : "bg-cream text-saffron-2"
                     )}
                   >
                     <Icon size={20} strokeWidth={1.7} className="h-4 w-4 lg:h-5 lg:w-5" />
@@ -423,7 +423,7 @@ export default function Menu() {
                               aria-label={`${on ? c.remove : c.add} ${item.name}`}
                               className={cn(
                                 "group -mx-2 flex w-[calc(100%+1rem)] items-start gap-3 rounded-xl px-2 py-4 text-left transition-colors",
-                                on ? "bg-[rgba(196,137,46,0.08)]" : "hover:bg-cream"
+                                on && "bg-[rgba(196,137,46,0.08)]"
                               )}
                             >
                               <VegMark veg={item.veg} />
@@ -440,7 +440,7 @@ export default function Menu() {
                                   "mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full border transition-colors duration-300",
                                   on
                                     ? "border-saffron bg-saffron text-espresso shadow-[0_8px_20px_-8px_rgba(196,137,46,0.8)]"
-                                    : "border-sand bg-white text-espresso group-hover:border-saffron group-hover:bg-[var(--saffron-soft)]"
+                                    : "border-sand bg-white text-espresso"
                                 )}
                               >
                                 {on ? <Check size={16} strokeWidth={2.4} /> : <Plus size={16} strokeWidth={2} />}
@@ -469,7 +469,7 @@ export default function Menu() {
                     <button
                       type="button"
                       onClick={scrollToPanel}
-                      className="inline-flex items-center gap-2 rounded-full bg-saffron px-5 py-3 font-sans text-sm font-semibold text-espresso transition-all hover:-translate-y-0.5 hover:brightness-110 lg:hidden"
+                      className="inline-flex items-center gap-2 rounded-full bg-saffron px-5 py-3 font-sans text-sm font-semibold text-espresso transition-[filter] hover:brightness-110 lg:hidden"
                     >
                       {c.done} <ArrowRight size={16} />
                     </button>
@@ -477,13 +477,13 @@ export default function Menu() {
                     <button
                       type="button"
                       onClick={() => goTo(catIdx + 1)}
-                      className="group inline-flex items-center gap-3 rounded-full bg-espresso py-2.5 pl-5 pr-2.5 font-sans text-sm font-medium text-ivory transition-all hover:-translate-y-0.5"
+                      className="group inline-flex items-center gap-3 rounded-full bg-espresso py-2.5 pl-5 pr-2.5 font-sans text-sm font-medium text-ivory"
                     >
                       <span className="text-left leading-tight">
                         <span className="block text-[0.62rem] uppercase tracking-[0.18em] text-ivory/55">{c.next}</span>
                         {menu[catIdx + 1].title}
                       </span>
-                      <span className="grid h-8 w-8 place-items-center rounded-full bg-saffron text-espresso transition-transform group-hover:translate-x-0.5">
+                      <span className="grid h-8 w-8 place-items-center rounded-full bg-saffron text-espresso">
                         <ArrowRight size={15} />
                       </span>
                     </button>
@@ -717,7 +717,7 @@ export default function Menu() {
                 <button
                   type="button"
                   onClick={send}
-                  className="quote-cta group relative flex w-full items-center justify-between gap-3 overflow-hidden rounded-full bg-saffron py-2.5 pl-6 pr-2.5 text-left text-espresso transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-14px_rgba(196,137,46,0.75)]"
+                  className="quote-cta group relative flex w-full items-center justify-between gap-3 overflow-hidden rounded-full bg-saffron py-2.5 pl-6 pr-2.5 text-left text-espresso transition-shadow duration-300 hover:shadow-[0_18px_40px_-14px_rgba(196,137,46,0.75)]"
                 >
                   <span className="relative z-10 min-w-0 leading-tight">
                     <span className="block font-sans text-[0.95rem] font-bold">{c.submit}</span>
@@ -725,7 +725,7 @@ export default function Menu() {
                       {picked.length > 0 ? `${picked.length} ${picked.length === 1 ? "dish" : "dishes"}` : "Menu to suggest"} · {guests} {c.guestsUnit} · {occasion}
                     </span>
                   </span>
-                  <span className="relative z-10 grid h-11 w-11 shrink-0 place-items-center rounded-full bg-espresso text-[#25D366] transition-transform duration-300 group-hover:scale-105">
+                  <span className="relative z-10 grid h-11 w-11 shrink-0 place-items-center rounded-full bg-espresso text-[#25D366] transition-transform duration-300">
                     <WhatsAppIcon size={20} />
                   </span>
                 </button>
