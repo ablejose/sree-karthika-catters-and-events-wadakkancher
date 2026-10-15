@@ -82,6 +82,7 @@ export default function Menu() {
   const [date, setDate] = useState("");
   const [name, setName] = useState("");
   const [notes, setNotes] = useState("");
+  const [moreOpen, setMoreOpen] = useState(false);
   const [preset, setPreset] = useState<string | null>(null);
   const [toast, setToast] = useState<{ id: number; text: string } | null>(null);
 
@@ -229,13 +230,23 @@ export default function Menu() {
               </li>
             ))}
           </ol>
+          <p className="mt-4 font-sans text-xs text-muted">
+            {c.skipHint}{" "}
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="font-semibold text-saffron-2 underline decoration-saffron/40 underline-offset-4 hover:decoration-saffron">
+              {c.skipCta}
+            </a>
+          </p>
         </Reveal>
 
         {/* Presets */}
         {menuPresets.length > 0 && (
           <Reveal className="mt-10" delay={0.05}>
             <p className="text-center font-sans text-[0.7rem] font-medium uppercase tracking-[0.24em] text-muted">{c.presetsLabel}</p>
-            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {/* Phones: one swipeable row instead of three stacked cards. */}
+            <div
+              data-lenis-prevent
+              className="-mx-6 mt-4 flex snap-x gap-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden"
+            >
               {menuPresets.map((p) => {
                 const on = preset === p.title;
                 return (
@@ -245,7 +256,7 @@ export default function Menu() {
                     onClick={() => applyPreset(p.title, p.items)}
                     aria-pressed={on}
                     className={cn(
-                      "group flex items-center justify-between gap-4 rounded-brand border px-5 py-4 text-left transition-all duration-300",
+                      "group flex w-[15.5rem] shrink-0 snap-start items-center justify-between gap-4 rounded-brand border px-4 py-3 text-left transition-all duration-300 sm:w-auto sm:px-5 sm:py-4",
                       on ? "border-espresso bg-espresso text-ivory shadow-[0_18px_40px_-24px_rgba(36,28,21,0.8)]" : "border-sand bg-white hover:-translate-y-0.5 hover:border-saffron/60"
                     )}
                   >
@@ -266,7 +277,7 @@ export default function Menu() {
         {/* COURSE RAIL — sticky on phones so switching course is always one tap away */}
         <div
           className={cn(
-            "sticky top-[74px] z-20 -mx-6 mt-10 bg-cream/90 px-6 py-3 backdrop-blur-md transition-[opacity,transform] duration-300 lg:static lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-0",
+            "sticky top-[74px] z-20 -mx-6 mt-8 bg-cream/90 px-6 py-2.5 backdrop-blur-md lg:mt-10 transition-[opacity,transform] duration-300 lg:static lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-0",
             panelUp && "max-lg:pointer-events-none max-lg:-translate-y-3 max-lg:opacity-0"
           )}
         >
@@ -291,7 +302,9 @@ export default function Menu() {
                   aria-controls="menu-panel"
                   onClick={() => goTo(i)}
                   className={cn(
-                    "group relative flex w-[6.6rem] shrink-0 snap-start flex-col items-center gap-2 rounded-2xl border px-2 pb-3 pt-3.5 text-center transition-all duration-300 lg:w-auto",
+                    // Phones: a slim pill (icon, name, count) so the sticky rail stays short. Desktop: the full tile.
+                    "group relative flex shrink-0 snap-start items-center gap-2 rounded-full border py-1.5 pl-1.5 pr-3.5 text-left transition-all duration-300",
+                    "lg:w-auto lg:flex-col lg:gap-2 lg:rounded-2xl lg:px-2 lg:pb-3 lg:pt-3.5 lg:text-center",
                     on
                       ? "border-espresso bg-espresso text-ivory shadow-[0_18px_36px_-20px_rgba(36,28,21,0.9)] lg:-translate-y-1"
                       : "border-sand bg-white text-espresso hover:-translate-y-0.5 hover:border-saffron/60"
@@ -299,18 +312,21 @@ export default function Menu() {
                 >
                   <span
                     className={cn(
-                      "grid h-11 w-11 place-items-center rounded-full transition-colors",
+                      "grid h-8 w-8 place-items-center rounded-full transition-colors lg:h-11 lg:w-11",
                       on ? "bg-saffron text-espresso" : n > 0 ? "bg-[var(--saffron-soft)] text-saffron-2" : "bg-cream text-saffron-2 group-hover:bg-[var(--saffron-soft)]"
                     )}
                   >
-                    <Icon size={20} strokeWidth={1.7} />
+                    <Icon size={20} strokeWidth={1.7} className="h-4 w-4 lg:h-5 lg:w-5" />
                   </span>
-                  <span className="font-sans text-[0.72rem] font-semibold leading-tight">{m.title}</span>
-                  <span className={cn("font-sans text-[0.62rem]", on ? "text-ivory/60" : "text-muted")}>
+                  <span className="whitespace-nowrap font-sans text-[0.78rem] font-semibold leading-tight lg:whitespace-normal lg:text-[0.72rem]">{m.title}</span>
+                  {n > 0 && (
+                    <span className="grid h-5 min-w-5 place-items-center rounded-full bg-saffron px-1.5 font-sans text-[0.62rem] font-bold text-espresso lg:hidden">{n}</span>
+                  )}
+                  <span className={cn("hidden font-sans text-[0.62rem] lg:block", on ? "text-ivory/60" : "text-muted")}>
                     {n > 0 ? `${n}/${m.items.length} ${c.picked}` : `${m.items.length} dishes`}
                   </span>
                   {n > 0 && (
-                    <span className="absolute right-2 top-2 grid h-5 w-5 place-items-center rounded-full bg-saffron text-espresso">
+                    <span className="absolute right-2 top-2 hidden h-5 w-5 place-items-center rounded-full bg-saffron text-espresso lg:grid">
                       <Check size={11} strokeWidth={3} />
                     </span>
                   )}
@@ -336,24 +352,24 @@ export default function Menu() {
                     transition={{ duration: 0.35, ease: EASE }}
                   >
                     {/* Course header */}
-                    <div className="flex flex-wrap items-start justify-between gap-4">
-                      <div className="flex items-start gap-4">
-                        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-espresso text-saffron">
+                    <div className="flex items-start justify-between gap-3 sm:flex-wrap sm:gap-4">
+                      <div className="flex min-w-0 items-start gap-4">
+                        <span className="hidden h-14 w-14 shrink-0 place-items-center rounded-2xl bg-espresso text-saffron sm:grid">
                           <ActiveIcon size={26} strokeWidth={1.6} />
                         </span>
-                        <div>
-                          <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-saffron-2">
+                        <div className="min-w-0">
+                          <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-saffron-2 sm:text-[0.68rem]">
                             {c.courseLabel} {String(catIdx + 1).padStart(2, "0")} {c.of} {String(menu.length).padStart(2, "0")}
                           </p>
-                          <h3 className="mt-1 font-display text-[2rem] italic leading-none text-espresso md:text-[2.5rem]">{active.title}</h3>
-                          {active.ml && <p className="mt-2 font-sans text-sm text-saffron-2">{active.ml}</p>}
+                          <h3 className="mt-1 font-display text-[1.6rem] italic leading-none text-espresso sm:text-[2rem] md:text-[2.5rem]">{active.title}</h3>
+                          {active.ml && <p className="mt-1.5 font-sans text-[0.8rem] text-saffron-2 sm:mt-2 sm:text-sm">{active.ml}</p>}
                         </div>
                       </div>
                       <button
                         type="button"
                         onClick={toggleAll}
                         className={cn(
-                          "inline-flex items-center gap-1.5 rounded-full border px-4 py-2 font-sans text-xs font-semibold transition-colors",
+                          "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3.5 py-2 font-sans text-xs font-semibold transition-colors sm:px-4",
                           allIn ? "border-espresso/20 text-muted hover:border-espresso/40" : "border-saffron bg-[var(--saffron-soft)] text-saffron-2 hover:bg-saffron hover:text-espresso"
                         )}
                       >
@@ -567,7 +583,7 @@ export default function Menu() {
                       type="button"
                       aria-label="Fewer guests"
                       onClick={() => nudge(-GUESTS.step)}
-                      className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ivory/20 text-ivory/80 hover:border-saffron hover:text-saffron"
+                      className="grid h-10 w-10 shrink-0 lg:h-8 lg:w-8 place-items-center rounded-full border border-ivory/20 text-ivory/80 hover:border-saffron hover:text-saffron"
                     >
                       <Minus size={14} />
                     </button>
@@ -587,13 +603,13 @@ export default function Menu() {
                       type="button"
                       aria-label="More guests"
                       onClick={() => nudge(GUESTS.step)}
-                      className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ivory/20 text-ivory/80 hover:border-saffron hover:text-saffron"
+                      className="grid h-10 w-10 shrink-0 lg:h-8 lg:w-8 place-items-center rounded-full border border-ivory/20 text-ivory/80 hover:border-saffron hover:text-saffron"
                     >
                       <Plus size={14} />
                     </button>
                   </div>
                   {/* Tick labels sit at their real position on the track (thumb is 22px wide). */}
-                  <div className="relative mx-11 mt-2 h-4 font-sans text-[0.65rem] text-ivory/40">
+                  <div className="relative mx-[3.25rem] mt-2 h-4 lg:mx-11 font-sans text-[0.65rem] text-ivory/40">
                     {GUEST_TICKS.map((v) => {
                       const at = (v - GUESTS.min) / (GUESTS.max - GUESTS.min);
                       return (
@@ -629,6 +645,17 @@ export default function Menu() {
                     ))}
                   </div>
 
+                  {/* Phones: date + notes stay folded behind one tap, so sending feels one step away. */}
+                  {!moreOpen && (
+                    <button
+                      type="button"
+                      onClick={() => setMoreOpen(true)}
+                      className="mt-6 inline-flex items-center gap-1.5 font-sans text-xs font-semibold text-saffron transition-colors hover:text-ivory lg:hidden"
+                    >
+                      <Plus size={13} /> {c.moreDetails} <span className="font-normal text-ivory/35">({c.dateOptional})</span>
+                    </button>
+                  )}
+                  <div className={cn(!moreOpen && "max-lg:hidden")}>
                   {/* Date */}
                   <label htmlFor="menu-date" className="mt-6 block font-sans text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-ivory/55">
                     {c.dateLabel} <span className="normal-case tracking-normal text-ivory/35">({c.dateOptional})</span>
@@ -653,6 +680,7 @@ export default function Menu() {
                     placeholder={c.notesPlaceholder}
                     className="mt-2 w-full resize-none rounded-xl border border-ivory/15 bg-ivory/5 px-4 py-2.5 font-sans text-sm text-ivory outline-none placeholder:text-ivory/30 focus:border-saffron"
                   />
+                  </div>
                 </div>
               </div>
 
