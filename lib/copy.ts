@@ -14,6 +14,12 @@ const tokens: Record<string, string> = {
   district: event.location.district,
   region: event.location.region,
   area: event.location.area ?? event.location.city,
+  // "Kotheri, Mattannur" when there is a distinct area, else "Mattannur, Kannur" — never the town twice.
+  place:
+    event.location.area && event.location.area !== event.location.city
+      ? `${event.location.area}, ${event.location.city}`
+      : `${event.location.city}, ${event.location.district}`,
+  serving: event.location.serviceNote ?? `Serving ${event.location.city} & ${event.location.district}`,
   address: event.location.address,
   phone: event.contact.phone,
   hours: event.location.hours,

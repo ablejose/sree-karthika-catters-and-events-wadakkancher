@@ -278,8 +278,8 @@ export const templateCopy = {
     headingLead: "Feasts and functions, handled with",
     headingAccent: "care.",
     body:
-      "{fullName} is based in {area}, {city}. From weddings and receptions to house functions and inaugurations, we handle the whole day — fresh food and buffets, live counters, floral and stage décor, and on-ground coordination. Cooked fresh, served hot, and managed so you can enjoy the occasion.",
-    points: ["{hours}", "Delivery available", "Serving {city} & {district}"],
+      "{fullName} is based in {place}. From weddings and receptions to house functions and inaugurations, we handle the whole day — fresh food and buffets, live counters, floral and stage décor, and on-ground coordination. Cooked fresh, served hot, and managed so you can enjoy the occasion.",
+    points: ["{hours}", "Delivery available", "{serving}"],
     reviewsLink: "Read our {reviews} reviews on Google",
   },
 

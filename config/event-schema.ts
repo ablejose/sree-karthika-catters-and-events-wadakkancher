@@ -126,6 +126,8 @@ export interface EventConfig {
     country: string;
     /** Towns served, used in footer + schema.org areaServed. */
     serviceAreas: string[];
+    /** One line shown instead of the service-area list, e.g. "Service across Kerala". */
+    serviceNote?: string;
     /** Map pin. Optional for generated sites where Places has no match. */
     geo?: { lat: number; lng: number };
     /** Share link to the Google Business Profile / Maps pin. */

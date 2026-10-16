@@ -44,6 +44,7 @@ export const site = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || event.contact.whatsapp,
   address: event.location.address,
   serviceAreas: event.location.serviceAreas,
+  serviceNote: event.location.serviceNote,
   rating: event.reputation.rating,
   reviews: event.reputation.reviews,
   hours: event.location.hours,

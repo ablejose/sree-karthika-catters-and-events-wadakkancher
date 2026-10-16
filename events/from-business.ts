@@ -64,6 +64,10 @@ export interface BusinessInput {
   };
   /** Their own photo for a shared service card, keyed by card id (config/template.ts). */
   serviceImages?: Record<string, string>;
+  /** Towns for schema.org areaServed; defaults to city, area and district. */
+  serviceAreas?: string[];
+  /** One line shown in the footer instead of the service-area list, e.g. "Service across Kerala". */
+  serviceNote?: string;
   /** Brand colours (hex). */
   theme?: { primary: string; accent: string };
   /** Their own menu for the quote builder; replaces the shared Kerala menu. */
@@ -131,7 +135,8 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       street: b.street || b.area || b.city,
       postalCode: b.postalCode || "",
       country: "IN",
-      serviceAreas: uniq([b.city, b.area, district]),
+      serviceAreas: b.serviceAreas ?? uniq([b.city, b.area, district]),
+      serviceNote: b.serviceNote,
       geo: b.geo,
       mapsLink: b.mapsLink,
       mapEmbed,

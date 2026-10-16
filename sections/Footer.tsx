@@ -102,10 +102,18 @@ export default function Footer() {
           </div>
 
           <div className="font-sans text-sm text-ivory/70">
-            <p className="eyebrow" style={{ color: "var(--saffron)" }}>
-              {copy.footer.areasLabel}
-            </p>
-            <p className="mt-3">{site.serviceAreas.join(" · ")}</p>
+            {site.serviceNote ? (
+              <p className="eyebrow" style={{ color: "var(--saffron)" }}>
+                {site.serviceNote}
+              </p>
+            ) : (
+              <>
+                <p className="eyebrow" style={{ color: "var(--saffron)" }}>
+                  {copy.footer.areasLabel}
+                </p>
+                <p className="mt-3">{site.serviceAreas.join(" · ")}</p>
+              </>
+            )}
           </div>
 
           <div className="md:justify-self-end">
