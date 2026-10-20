@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Madeena Catering">
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="#241C15"/>
+  <rect x="28" y="28" width="456" height="456" rx="90" fill="none" stroke="#C4892E" stroke-width="6" opacity="0.9"/>
+  <polyline points="153.6,350.7 153.6,161.3 256,286.7 358.4,161.3 358.4,350.7"
+    fill="none" stroke="#C4892E" stroke-width="56" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

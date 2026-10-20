@@ -1,0 +1,28 @@
+{
+  "slug": "sree-karthika-catters-and-events-wadakkancher",
+  "name": "Sree Karthika Catters and Events",
+  "shortName": "Sree Karthika Catters",
+  "descriptor": "Event Management",
+  "address": "School, Varavoor - Pilakkad Rd, Waddakanjeri, Chittanda, Varavoor, Keralam 680585",
+  "area": "Varavoor",
+  "city": "Wadakkanchery",
+  "district": "Thrissur",
+  "region": "Kerala",
+  "postalCode": "680585",
+  "geo": {
+    "lat": 10.726199399999999,
+    "lng": 76.2160691
+  },
+  "mapsLink": "https://maps.google.com/?cid=9682984791298099058",
+  "phone": "+91 98468 35217",
+  "whatsapp": "919846835217",
+  "rating": 0,
+  "reviewCount": 0,
+  "reviews": [],
+  "gallery": [
+    "gallery/01.webp",
+    "gallery/02.webp",
+    "gallery/03.webp"
+  ],
+  "url": "https://sree-karthika-catters-and-events-wa.vercel.app"
+}
