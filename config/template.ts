@@ -460,10 +460,10 @@ export const variantCopy: Record<
       heading: "Sadhya, served the way it should be",
     },
     gallery: {
-      eyebrow: "Weddings & sadhya",
-      heading: "The stage, the moments, the feast",
-      body: "Traditional Hindu weddings with the nilavilakku lit and the nirapara set, and the sadhya served on banana leaf after — the way Kerala celebrates.",
-      photoQuote: "From the garland to the last payasam — the whole day, done the traditional way.",
+      eyebrow: "Stage & décor",
+      heading: "Wedding stages, dressed the traditional way",
+      body: "Flower walls, brass pillars, the lit nilavilakku and the deity at the centre — the stage set and ready before the muhurtham.",
+      photoQuote: "Every lamp lit, every garland in place — before the first guest arrives.",
     },
     process: {
       eyebrow: "How we work",
