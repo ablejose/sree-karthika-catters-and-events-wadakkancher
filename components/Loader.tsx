@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { logoMark, site } from "@/config/site";
+import { event, logoMark, site } from "@/config/site";
 
 /**
- * Intro on black: a gold ring draws itself around the brand mark — nothing
+ * Intro on black (or white, with `loaderTone: "light"`): a gold ring draws itself around the brand mark — nothing
  * else — then a gold seam opens across the middle and the two halves part like
  * curtains to reveal the page. Locks scroll while visible; honours
  * prefers-reduced-motion.
@@ -44,6 +44,7 @@ export default function Loader() {
   if (phase === "done") return null;
 
   const revealing = phase === "reveal";
+  const light = event.loaderTone === "light";
 
   return (
     <div className={`fixed inset-0 z-[300] ${revealing ? "pointer-events-none" : ""}`}>
@@ -51,7 +52,7 @@ export default function Loader() {
       {(["top", "bottom"] as const).map((side) => (
         <motion.div
           key={side}
-          className={`absolute inset-x-0 ${side === "top" ? "top-0" : "bottom-0"} h-1/2 bg-black`}
+          className={`absolute inset-x-0 ${side === "top" ? "top-0" : "bottom-0"} h-1/2 ${light ? "bg-white" : "bg-black"}`}
           initial={false}
           animate={revealing ? { y: side === "top" ? "-100%" : "100%" } : { y: "0%" }}
           transition={{ duration: reduce ? 0.3 : 1.05, delay: reduce ? 0 : 0.42, ease: CURTAIN }}
@@ -72,7 +73,7 @@ export default function Loader() {
       <motion.div
         aria-hidden
         className="absolute inset-0"
-        style={{ background: "radial-gradient(34% 30% at 50% 50%, rgba(201,163,91,0.12) 0%, rgba(201,163,91,0) 70%)" }}
+        style={{ background: `radial-gradient(34% 30% at 50% 50%, rgba(201,163,91,${light ? 0.1 : 0.12}) 0%, rgba(201,163,91,0) 70%)` }}
         animate={{ opacity: revealing ? 0 : 1 }}
         transition={{ duration: 0.4 }}
       />

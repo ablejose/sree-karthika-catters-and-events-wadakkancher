@@ -204,6 +204,9 @@ export interface EventConfig {
   /** Real reviews only. Leave empty to hide the Reviews section. */
   reviews: EventReview[];
 
+  /** Loading screen background: "dark" (default, black) or "light" (white). */
+  loaderTone?: "dark" | "light";
+
   /** Credits for openly licensed photos (CC BY / BY-SA), shown small in the footer. */
   photoCredits?: { text: string; href: string }[];
 

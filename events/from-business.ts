@@ -81,6 +81,8 @@ export interface BusinessInput {
   process?: { n: string; title: string; text: string }[];
   /** Their own About paragraph ({tokens} work). */
   aboutBody?: string;
+  /** Loading screen background; "light" for a white loader. */
+  loaderTone?: "dark" | "light";
   /** Credits for openly licensed photos (CC BY / BY-SA), listed in the footer. */
   photoCredits?: { text: string; href: string }[];
 
@@ -176,6 +178,7 @@ export function fromBusiness(b: BusinessInput): EventConfig {
     reviews: (b.reviews ?? []).map((r) => ({ ...r, source: "Google review" })),
     seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
     photoCredits: b.photoCredits,
+    loaderTone: b.loaderTone,
     overrides: {
       menu: b.menu ?? neutralMenu,
       menuPresets: b.menu ? (b.menuPresets ?? []) : neutralPresets,
