@@ -1,8 +1,8 @@
 {
   "slug": "sree-karthika-catters-and-events-wadakkancher",
   "name": "Sree Karthika Catters and Events",
-  "shortName": "Sree Karthika Catters",
-  "descriptor": "Event Management",
+  "shortName": "Sree Karthika",
+  "descriptor": "Sadhya & Traditional Events",
   "address": "School, Varavoor - Pilakkad Rd, Waddakanjeri, Chittanda, Varavoor, Keralam 680585",
   "area": "Varavoor",
   "city": "Wadakkanchery",
@@ -20,9 +20,533 @@
   "reviewCount": 0,
   "reviews": [],
   "gallery": [
-    "gallery/01.webp",
-    "gallery/02.webp",
-    "gallery/03.webp"
+    {
+      "src": "gallery/01.webp",
+      "alt": "Kerala sadhya on banana leaf with rice, parippu and curries"
+    },
+    {
+      "src": "gallery/02.webp",
+      "alt": "A full sadhya leaf with upperi, pickles, curries and rice"
+    },
+    {
+      "src": "gallery/03.webp",
+      "alt": "A complete sadhya laid out on a fresh banana leaf"
+    },
+    {
+      "src": "gallery/04.webp",
+      "alt": "Brass uruli filled with flowers on a bed of petals"
+    },
+    {
+      "src": "gallery/05.webp",
+      "alt": "A lit nilavilakku, the traditional brass lamp"
+    },
+    {
+      "src": "gallery/06.webp",
+      "alt": "Pookalam with nirapara and brass vessels"
+    },
+    {
+      "src": "gallery/07.webp",
+      "alt": "Payasam in a glass bowl beside rice and banana leaf"
+    },
+    {
+      "src": "gallery/08.webp",
+      "alt": "Sadhya curries ready to serve in steel vessels"
+    },
+    {
+      "src": "gallery/09.webp",
+      "alt": "Brass lamps lit before a flower garland"
+    },
+    {
+      "src": "gallery/10.webp",
+      "alt": "Sadhya served in rows on banana leaves"
+    }
   ],
-  "url": "https://sree-karthika-catters-and-events-wa.vercel.app"
+  "url": "https://sree-karthika-catters-and-events-wa.vercel.app",
+  "variant": "sadya",
+  "headline": "Pure vegetarian sadhya, served on banana leaf.",
+  "tagline": "Kerala sadhya and traditional events, done the old way.",
+  "taglineMl": "തനിനാടൻ സദ്യ, വാഴയിലയിൽ",
+  "media": {
+    "about": [
+      {
+        "src": "about/lamp.webp",
+        "alt": "A brass nilavilakku beside nirapara, the paddy-filled measure"
+      },
+      {
+        "src": "about/leaf.webp",
+        "alt": "A sadhya served on banana leaf"
+      }
+    ]
+  },
+  "services": [
+    {
+      "id": "sadhya",
+      "title": "Traditional Sadhya",
+      "image": "services/sadhya.webp",
+      "blurb": "The full banana-leaf sadhya — upperi to payasam, cooked fresh on the day and served in rows by our own team.",
+      "bullets": [
+        "Every dish in its place on the leaf",
+        "Two or three payasams",
+        "Served in rows by our crew"
+      ]
+    },
+    {
+      "id": "mini-sadhya",
+      "title": "Mini Sadhya",
+      "image": "services/mini-sadhya.webp",
+      "blurb": "A lighter sadhya for smaller gatherings, office Onam and house functions — the essentials, done properly.",
+      "bullets": [
+        "Around a dozen dishes",
+        "One payasam",
+        "Small and mid-size gatherings"
+      ]
+    },
+    {
+      "id": "stage",
+      "title": "Traditional Stage & Décor",
+      "image": "services/stage.webp",
+      "blurb": "A Kerala-style setting for the function — lit nilavilakku, flower-filled uruli, nirapara and fresh flowers.",
+      "bullets": [
+        "Nilavilakku & nirapara",
+        "Uruli & flower décor",
+        "Traditional stage setting"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "n": "01",
+      "title": "Tell us the day",
+      "text": "Your date, venue, guest count and whether it is a full or a mini sadhya."
+    },
+    {
+      "n": "02",
+      "title": "Fix the menu",
+      "text": "Choose the curries and payasams; we suggest the right spread for the occasion."
+    },
+    {
+      "n": "03",
+      "title": "Set the stage",
+      "text": "Nilavilakku, uruli, nirapara and flowers, arranged before the guests arrive."
+    },
+    {
+      "n": "04",
+      "title": "Cook fresh",
+      "text": "Everything is cooked fresh on the day — pure vegetarian, start to finish."
+    },
+    {
+      "n": "05",
+      "title": "Serve in rows",
+      "text": "Our crew serves on banana leaf, row by row, and keeps the payasam coming."
+    }
+  ],
+  "aboutBody": "{fullName} is based in {place}. We cook pure-vegetarian Kerala sadhya — from a simple Mini Sadhya to the full banana-leaf feast with two or three payasams — for weddings, choroonu, housewarmings, Onam and temple functions. Alongside the food we set the traditional stage: lit nilavilakku, flower-filled uruli and nirapara, so the whole day feels like home.",
+  "menu": [
+    {
+      "id": "leaf",
+      "title": "On the Leaf",
+      "ml": "ഇലയിൽ ആദ്യം",
+      "image": "menu/leaf-starters.webp",
+      "items": [
+        {
+          "id": "upperi",
+          "name": "Upperi",
+          "ml": "ഉപ്പേരി",
+          "note": "Nendran banana chips fried in coconut oil",
+          "veg": true
+        },
+        {
+          "id": "sharkara-varatti",
+          "name": "Sharkara Varatti",
+          "ml": "ശർക്കര വരട്ടി",
+          "note": "Banana pieces coated in jaggery and dry ginger",
+          "veg": true
+        },
+        {
+          "id": "pappadam",
+          "name": "Pappadam",
+          "ml": "പപ്പടം",
+          "note": "Crisp, served with the rice",
+          "veg": true
+        },
+        {
+          "id": "pazham",
+          "name": "Banana",
+          "ml": "പഴം",
+          "note": "Small ripe banana, the classic leaf corner",
+          "veg": true
+        },
+        {
+          "id": "naranga-achar",
+          "name": "Lemon Pickle",
+          "ml": "നാരങ്ങ അച്ചാർ",
+          "veg": true
+        },
+        {
+          "id": "manga-achar",
+          "name": "Mango Pickle",
+          "ml": "മാങ്ങ അച്ചാർ",
+          "note": "Tender cut mango",
+          "veg": true
+        },
+        {
+          "id": "inji-puli",
+          "name": "Inji Puli",
+          "ml": "ഇഞ്ചിപ്പുളി",
+          "note": "Ginger, tamarind and jaggery relish",
+          "veg": true
+        }
+      ]
+    },
+    {
+      "id": "curries",
+      "title": "Curries",
+      "ml": "കറികൾ",
+      "image": "menu/curries.webp",
+      "items": [
+        {
+          "id": "avial",
+          "name": "Avial",
+          "ml": "അവിയൽ",
+          "note": "Mixed vegetables in coconut and curd",
+          "veg": true
+        },
+        {
+          "id": "thoran",
+          "name": "Thoran",
+          "ml": "തോരൻ",
+          "note": "Cabbage or beans with grated coconut",
+          "veg": true
+        },
+        {
+          "id": "olan",
+          "name": "Olan",
+          "ml": "ഓലൻ",
+          "note": "Ash gourd and red cowpeas in coconut milk",
+          "veg": true
+        },
+        {
+          "id": "kaalan",
+          "name": "Kaalan",
+          "ml": "കാളൻ",
+          "note": "Yam and raw banana in thick curd",
+          "veg": true
+        },
+        {
+          "id": "erissery",
+          "name": "Erissery",
+          "ml": "എരിശ്ശേരി",
+          "note": "Pumpkin and red beans with roasted coconut",
+          "veg": true
+        },
+        {
+          "id": "koottu-curry",
+          "name": "Koottu Curry",
+          "ml": "കൂട്ടുകറി",
+          "note": "Black chickpeas, yam and raw banana",
+          "veg": true
+        },
+        {
+          "id": "pachadi",
+          "name": "Pachadi",
+          "ml": "പച്ചടി",
+          "note": "Pineapple or beetroot in sweet curd and mustard",
+          "veg": true
+        },
+        {
+          "id": "kichadi",
+          "name": "Kichadi",
+          "ml": "കിച്ചടി",
+          "note": "Cucumber or okra in spiced curd",
+          "veg": true
+        },
+        {
+          "id": "mezhukkupuratti",
+          "name": "Mezhukkupuratti",
+          "ml": "മെഴുക്കുപുരട്ടി",
+          "note": "Beans or raw banana, stir-fried",
+          "veg": true
+        }
+      ]
+    },
+    {
+      "id": "rice",
+      "title": "Rice & Gravies",
+      "ml": "ചോറും ഒഴിച്ചുകറികളും",
+      "image": "menu/rice.webp",
+      "items": [
+        {
+          "id": "matta-rice",
+          "name": "Kerala Matta Rice",
+          "ml": "കുത്തരി ചോറ്",
+          "note": "Red parboiled rice, served hot",
+          "veg": true
+        },
+        {
+          "id": "parippu-ghee",
+          "name": "Parippu with Ghee",
+          "ml": "പരിപ്പും നെയ്യും",
+          "note": "The first pour on the rice",
+          "veg": true
+        },
+        {
+          "id": "sambar",
+          "name": "Sambar",
+          "ml": "സാമ്പാർ",
+          "note": "Lentils and vegetables with roasted spices",
+          "veg": true
+        },
+        {
+          "id": "pulissery",
+          "name": "Pulissery",
+          "ml": "പുളിശ്ശേരി",
+          "note": "Curd and coconut gravy",
+          "veg": true
+        },
+        {
+          "id": "rasam",
+          "name": "Rasam",
+          "ml": "രസം",
+          "note": "Peppery tamarind broth",
+          "veg": true
+        }
+      ]
+    },
+    {
+      "id": "payasam",
+      "title": "Payasam",
+      "ml": "പായസം",
+      "image": "menu/payasam.webp",
+      "items": [
+        {
+          "id": "palada",
+          "name": "Palada Pradhaman",
+          "ml": "പാലട പ്രഥമൻ",
+          "note": "Rice ada in slow-cooked sweet milk",
+          "veg": true
+        },
+        {
+          "id": "ada-pradhaman",
+          "name": "Ada Pradhaman",
+          "ml": "അട പ്രഥമൻ",
+          "note": "Rice ada in jaggery and coconut milk",
+          "veg": true
+        },
+        {
+          "id": "parippu-pradhaman",
+          "name": "Parippu Pradhaman",
+          "ml": "പരിപ്പ് പ്രഥമൻ",
+          "note": "Moong dal, jaggery and coconut milk",
+          "veg": true
+        },
+        {
+          "id": "pazham-pradhaman",
+          "name": "Pazham Pradhaman",
+          "ml": "പഴം പ്രഥമൻ",
+          "note": "Nendran banana, jaggery and coconut milk",
+          "veg": true
+        },
+        {
+          "id": "pal-payasam",
+          "name": "Pal Payasam",
+          "ml": "പാൽപ്പായസം",
+          "note": "Rice cooked slowly in milk",
+          "veg": true
+        },
+        {
+          "id": "semiya-payasam",
+          "name": "Semiya Payasam",
+          "ml": "സേമിയ പായസം",
+          "note": "Vermicelli in sweet milk",
+          "veg": true
+        },
+        {
+          "id": "gothambu-payasam",
+          "name": "Gothambu Payasam",
+          "ml": "ഗോതമ്പ് പായസം",
+          "note": "Broken wheat, jaggery and coconut milk",
+          "veg": true
+        }
+      ]
+    },
+    {
+      "id": "finish",
+      "title": "To Finish",
+      "ml": "അവസാനം",
+      "items": [
+        {
+          "id": "boli",
+          "name": "Boli",
+          "ml": "ബോളി",
+          "note": "Sweet golden flatbread, best with pal payasam",
+          "veg": true
+        },
+        {
+          "id": "sambharam",
+          "name": "Sambharam",
+          "ml": "സംഭാരം",
+          "note": "Spiced buttermilk with ginger and curry leaves",
+          "veg": true
+        },
+        {
+          "id": "moru",
+          "name": "Moru",
+          "ml": "മോര്",
+          "note": "Plain buttermilk to close the meal",
+          "veg": true
+        }
+      ]
+    }
+  ],
+  "menuPresets": [
+    {
+      "title": "Mini Sadhya",
+      "note": "The essentials, one payasam",
+      "items": [
+        "matta-rice",
+        "parippu-ghee",
+        "sambar",
+        "avial",
+        "thoran",
+        "pachadi",
+        "naranga-achar",
+        "upperi",
+        "pappadam",
+        "pazham",
+        "palada",
+        "sambharam"
+      ]
+    },
+    {
+      "title": "Traditional Sadhya",
+      "note": "Full leaf with two payasams",
+      "items": [
+        "matta-rice",
+        "parippu-ghee",
+        "sambar",
+        "avial",
+        "thoran",
+        "pachadi",
+        "naranga-achar",
+        "upperi",
+        "pappadam",
+        "pazham",
+        "palada",
+        "sambharam",
+        "sharkara-varatti",
+        "inji-puli",
+        "manga-achar",
+        "olan",
+        "kaalan",
+        "erissery",
+        "kichadi",
+        "pulissery",
+        "rasam",
+        "ada-pradhaman"
+      ]
+    },
+    {
+      "title": "Grand Wedding Sadhya",
+      "note": "Every curry, three payasams and boli",
+      "items": [
+        "matta-rice",
+        "parippu-ghee",
+        "sambar",
+        "avial",
+        "thoran",
+        "pachadi",
+        "naranga-achar",
+        "upperi",
+        "pappadam",
+        "pazham",
+        "palada",
+        "sambharam",
+        "sharkara-varatti",
+        "inji-puli",
+        "manga-achar",
+        "olan",
+        "kaalan",
+        "erissery",
+        "kichadi",
+        "pulissery",
+        "rasam",
+        "ada-pradhaman",
+        "koottu-curry",
+        "mezhukkupuratti",
+        "parippu-pradhaman",
+        "boli",
+        "pal-payasam"
+      ]
+    }
+  ],
+  "photoCredits": [
+    {
+      "text": "Vis M (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_2024.jpg"
+    },
+    {
+      "text": "Sreerajsadanand (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Sadya_-_An_art.jpeg"
+    },
+    {
+      "text": "Athulvis (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_(82105).jpg"
+    },
+    {
+      "text": "Karthik Murugan (CC BY-SA 3.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Decorated_Uruli.JPG"
+    },
+    {
+      "text": "Vinayaraj (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Nilavilakku_at_Muthappan_temple,_Puralimala_(5).jpg"
+    },
+    {
+      "text": "Edgeofthewood (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Onam_Pookalam_with_Nirapara.jpg"
+    },
+    {
+      "text": "Ross thres (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Paal_payasam.JPG"
+    },
+    {
+      "text": "Nizil Shah (CC BY-SA 3.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_at_WCI_2026_(17064).jpg"
+    },
+    {
+      "text": "Yugaljoshi (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Onam_Celebration.jpg"
+    },
+    {
+      "text": "Ranjithsiji (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Sadya-Aluva-Kerala-IMG_20210320_204532.jpg"
+    },
+    {
+      "text": "BHAVAPRIYA J U (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Kerala_sadya._jpg.jpg"
+    },
+    {
+      "text": "Aroonkalandy (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Vishu_kani,_Calicut.jpg"
+    },
+    {
+      "text": "Vaikoovery (CC BY 3.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Nirapara_and_Nilavilakku.jpg"
+    },
+    {
+      "text": "Ganesh Mohan T (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Kerala_Sadya_01.jpg"
+    },
+    {
+      "text": "കാക്കര (CC BY-SA 3.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Sarkkara_Urutti_-_%E0%B4%B6%E0%B5%BC%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B4%B0_%E0%B4%89%E0%B4%B0%E0%B5%81%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B4%BF.JPG"
+    },
+    {
+      "text": "Samphotography (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Aviyal,Kerala_cuisine.jpg"
+    },
+    {
+      "text": "stu spivack (CC BY-SA 2.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Kheer.jpg"
+    }
+  ]
 }
