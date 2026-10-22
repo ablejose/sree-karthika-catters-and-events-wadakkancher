@@ -460,10 +460,10 @@ export const variantCopy: Record<
       heading: "Sadhya, served the way it should be",
     },
     gallery: {
-      eyebrow: "The feast",
-      heading: "Banana leaf, laid in order",
-      body: "Every curry in its place on the leaf, rice served hot, and payasam to close — the sadhya as Kerala knows it.",
-      photoQuote: "Upperi to payasam — every dish in its place on the leaf.",
+      eyebrow: "Weddings & sadhya",
+      heading: "The stage, the moments, the feast",
+      body: "Traditional Hindu weddings with the nilavilakku lit and the nirapara set, and the sadhya served on banana leaf after — the way Kerala celebrates.",
+      photoQuote: "From the garland to the last payasam — the whole day, done the traditional way.",
     },
     process: {
       eyebrow: "How we work",
