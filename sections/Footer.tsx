@@ -1,7 +1,7 @@
 import { Phone, MapPin, Clock, Instagram, Facebook, Mail, Navigation } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
-import { copy, logoMark, site, telLink, waLink } from "@/config/site";
+import { copy, event, logoMark, site, telLink, waLink } from "@/config/site";
 import { t } from "@/lib/copy";
 
 const tel = (p: string) => `tel:${p.replace(/[^\d+]/g, "")}`;
@@ -152,6 +152,19 @@ export default function Footer() {
           </p>
           <p>{copy.footer.note}</p>
         </div>
+        {event.photoCredits && event.photoCredits.length > 0 && (
+          <p className="mt-3 text-center font-sans text-[0.65rem] leading-relaxed text-ivory/35 md:text-left">
+            Photos:{" "}
+            {event.photoCredits.map((c, i) => (
+              <span key={c.href}>
+                {i > 0 && " · "}
+                <a href={c.href} target="_blank" rel="noopener noreferrer" className="underline decoration-ivory/20 underline-offset-2 hover:text-ivory/70">
+                  {c.text}
+                </a>
+              </span>
+            ))}
+          </p>
+        )}
       </div>
     </footer>
   );

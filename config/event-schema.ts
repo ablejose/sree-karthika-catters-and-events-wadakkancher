@@ -74,7 +74,7 @@ export interface EventReview {
  *   events   -> services, decor and stages first.
  *   wedding  -> planning process and venues first.
  */
-export type EventVariant = "catering" | "events" | "wedding";
+export type EventVariant = "catering" | "events" | "wedding" | "sadya";
 
 export interface EventConfig {
   /** URL-safe id. Must match the folder name under public/events/<slug>/. */
@@ -203,6 +203,9 @@ export interface EventConfig {
 
   /** Real reviews only. Leave empty to hide the Reviews section. */
   reviews: EventReview[];
+
+  /** Credits for openly licensed photos (CC BY / BY-SA), shown small in the footer. */
+  photoCredits?: { text: string; href: string }[];
 
   seo?: {
     /** Extra keywords on top of the generated ones. */

@@ -22,6 +22,7 @@ export const copy = {
   gallery: { ...templateCopy.gallery, ...vc.gallery },
   process: { ...templateCopy.process, ...vc.process },
   about: { ...templateCopy.about, ...vc.about },
+  menu: { ...templateCopy.menu, ...vc.menu },
 };
 
 export const site = {

@@ -23,6 +23,8 @@ export interface BusinessInput {
   /** Their own hero line; without it every site shares the template's. */
   headline?: string;
   tagline?: string;
+  /** Optional Malayalam line under the headline. */
+  taglineMl?: string;
 
   address: string;
   street?: string;
@@ -73,6 +75,14 @@ export interface BusinessInput {
   /** Their own menu for the quote builder; replaces the shared Kerala menu. */
   menu?: MenuCategory[];
   menuPresets?: MenuPreset[];
+  /** Their own "what we do" cards (title, blurb, bullets, photo); replaces the shared three. */
+  services?: { id: string; title: string; blurb: string; bullets: string[]; image?: string }[];
+  /** Their own "how we work" steps. */
+  process?: { n: string; title: string; text: string }[];
+  /** Their own About paragraph ({tokens} work). */
+  aboutBody?: string;
+  /** Credits for openly licensed photos (CC BY / BY-SA), listed in the footer. */
+  photoCredits?: { text: string; href: string }[];
 
   /** Live site origin, no trailing slash. */
   url: string;
@@ -124,6 +134,7 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       kicker: descriptor,
       tagline: b.tagline || "Weddings & events, catered with care.",
       headline: b.headline || "Unforgettable feasts. Flawless celebrations.",
+      taglineMl: b.taglineMl,
     },
     contact: { phone: b.phone, whatsapp: b.whatsapp, email: b.email || undefined },
     location: {
@@ -164,12 +175,17 @@ export function fromBusiness(b: BusinessInput): EventConfig {
     },
     reviews: (b.reviews ?? []).map((r) => ({ ...r, source: "Google review" })),
     seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
+    photoCredits: b.photoCredits,
     overrides: {
       menu: b.menu ?? neutralMenu,
       menuPresets: b.menu ? (b.menuPresets ?? []) : neutralPresets,
-      services: b.serviceImages
-        ? templateServices.map((s) => ({ ...s, bullets: [...s.bullets], image: b.serviceImages?.[s.id] ?? s.image }))
-        : undefined,
+      services:
+        b.services ??
+        (b.serviceImages
+          ? templateServices.map((s) => ({ ...s, bullets: [...s.bullets], image: b.serviceImages?.[s.id] ?? s.image }))
+          : undefined),
+      process: b.process,
+      aboutBody: b.aboutBody,
     },
   };
 }

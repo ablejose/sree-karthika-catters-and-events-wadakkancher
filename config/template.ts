@@ -413,6 +413,7 @@ export const variantCopy: Record<
     gallery?: Partial<Widen<(typeof templateCopy)["gallery"]>>;
     process?: Partial<Widen<(typeof templateCopy)["process"]>>;
     about?: Partial<Widen<(typeof templateCopy)["about"]>>;
+    menu?: Partial<Widen<(typeof templateCopy)["menu"]>>;
   }
 > = {
   /** Catering — menu/services and food gallery lead. This is the original copy, so no overrides. */
@@ -446,6 +447,40 @@ export const variantCopy: Record<
     about: {
       headingLead: "Weddings and venues, planned with",
       headingAccent: "care.",
+    },
+  },
+
+  /** Sadya — pure-vegetarian sadya on banana leaf, with a traditional (nilavilakku, uruli) stage. */
+  sadya: {
+    hero: {
+      body: "Traditional vegetarian sadya on banana leaf across {district} — with the lamp, the flowers and the stage set the Kerala way.",
+    },
+    services: {
+      eyebrow: "What we do",
+      heading: "Sadya, served the way it should be",
+    },
+    gallery: {
+      eyebrow: "The feast",
+      heading: "Banana leaf, laid in order",
+      body: "Every curry in its place on the leaf, rice served hot, and payasam to close — the sadya as Kerala knows it.",
+      photoQuote: "Upperi to payasam — every dish in its place on the leaf.",
+    },
+    process: {
+      eyebrow: "How we work",
+      heading: "From the first call to the last payasam.",
+      body: "One team plans the menu, cooks on the day, serves in rows and sets the traditional stage — so the whole function feels like home.",
+    },
+    about: {
+      headingLead: "Pure vegetarian sadya, served with",
+      headingAccent: "tradition.",
+    },
+    menu: {
+      eyebrow: "The sadhya",
+      heading: "Build your sadhya, dish by dish.",
+      body: "Start from a Mini Sadhya or a full banana-leaf sadhya, add your payasams, set the guest count — and get a quote for your day.",
+      presetsLabel: "Start from a sadhya",
+      eventTypes: ["Wedding", "Engagement", "Choroonu", "Housewarming", "Onam & festivals", "Temple function", "Birthday", "Office Onam"],
+      notesPlaceholder: "Less spice, extra payasam, a separate kids' row, a time for serving…",
     },
   },
 };

@@ -24,6 +24,7 @@ const MIDDLE_ORDER: Record<string, readonly ["services" | "gallery" | "process" 
   catering: ["services", "gallery", "process", "about"],
   events: ["services", "gallery", "process", "about"],
   wedding: ["process", "about", "services", "gallery"],
+  sadya: ["services", "gallery", "process", "about"],
 };
 
 const SECTION_BY_KEY = {
