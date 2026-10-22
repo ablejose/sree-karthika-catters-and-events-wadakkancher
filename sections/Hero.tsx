@@ -5,6 +5,7 @@ import { Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { copy, heroSlides, logoMark, site, waLink } from "@/config/site";
+import { cn } from "@/lib/utils";
 import { t } from "@/lib/copy";
 
 /** A new slide every 2s. Each one slides in from the right, so the show always moves forward. */
@@ -152,11 +153,24 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="display mt-7 max-w-2xl italic" style={{ fontSize: "clamp(1.25rem, 2.6vw, 1.9rem)", color: "rgba(255,255,255,0.95)" }}>
-          {site.headline}
-        </p>
+        {site.headline && (
+          <p className="display mt-7 max-w-2xl italic" style={{ fontSize: "clamp(1.25rem, 2.6vw, 1.9rem)", color: "rgba(255,255,255,0.95)" }}>
+            {site.headline}
+          </p>
+        )}
 
-        {site.taglineMl && <p className="mt-2 max-w-xl font-sans text-sm font-light text-ivory/80">{site.taglineMl}</p>}
+        {site.taglineMl && (
+          <p
+            lang="ml"
+            className={cn("ml-display max-w-2xl text-ivory", site.headline ? "mt-3" : "mt-7")}
+            style={{
+              fontSize: site.headline ? "clamp(1.05rem, 2vw, 1.35rem)" : "clamp(1.45rem, 3.4vw, 2.35rem)",
+              textShadow: "0 2px 24px rgba(0,0,0,0.45)",
+            }}
+          >
+            {site.taglineMl}
+          </p>
+        )}
 
         {site.reviews > 0 && (
           <a

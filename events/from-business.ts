@@ -20,7 +20,7 @@ export interface BusinessInput {
   descriptor?: string;
   /** What the business leads with — drives section copy. Defaults to "catering". */
   variant?: EventVariant;
-  /** Their own hero line; without it every site shares the template's. */
+  /** Their own hero line; without it every site shares the template's. "" hides it. */
   headline?: string;
   tagline?: string;
   /** Optional Malayalam line under the headline. */
@@ -135,7 +135,7 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       descriptor,
       kicker: descriptor,
       tagline: b.tagline || "Weddings & events, catered with care.",
-      headline: b.headline || "Unforgettable feasts. Flawless celebrations.",
+      headline: b.headline ?? "Unforgettable feasts. Flawless celebrations.",
       taglineMl: b.taglineMl,
     },
     contact: { phone: b.phone, whatsapp: b.whatsapp, email: b.email || undefined },
