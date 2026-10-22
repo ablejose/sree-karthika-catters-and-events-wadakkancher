@@ -51,7 +51,8 @@ export default function Lightbox({
           role="dialog"
           aria-modal="true"
           aria-label={item.alt}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/92 p-4"
+          data-lenis-prevent
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -83,7 +84,8 @@ export default function Lightbox({
               if (info.offset.x > 80) go(-1);
             }}
           >
-            <Img src={item.src} alt={item.alt} fallbackSeed={item.src} className="max-h-[80vh] w-auto object-contain" />
+            {/* Eager: a lazy image inside a just-opened overlay can sit unloaded at 0x0, leaving only its alt text. */}
+            <Img src={item.src} alt={item.alt} fallbackSeed={item.src} priority className="h-auto max-h-[78vh] w-auto max-w-full object-contain" />
             <figcaption className="bg-ink px-4 py-3 font-sans text-sm text-ivory/80">{item.alt}</figcaption>
           </motion.figure>
           <button
