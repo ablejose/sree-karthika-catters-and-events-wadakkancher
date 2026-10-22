@@ -127,290 +127,250 @@
   "menu": [
     {
       "id": "leaf",
-      "title": "On the Leaf",
-      "ml": "ഇലയിൽ ആദ്യം",
+      "title": "ഇലയിൽ ആദ്യം",
       "image": "menu/leaf-starters.webp",
       "items": [
         {
           "id": "upperi",
-          "name": "Upperi",
-          "ml": "ഉപ്പേരി",
-          "note": "Thick-cut nendran chips, fried in coconut oil",
+          "name": "ഉപ്പേരി",
+          "note": "വെളിച്ചെണ്ണയിൽ വറുത്ത, കട്ടിയുള്ള നേന്ത്രക്കായ ഉപ്പേരി",
           "veg": true
         },
         {
           "id": "kaya-varuthathu",
-          "name": "Kaya Varuthathu",
-          "ml": "കായ വറുത്തത്",
-          "note": "Thin salted banana chips",
+          "name": "കായ വറുത്തത്",
+          "note": "ഉപ്പിട്ട, നേർത്ത കായ വറുത്തത്",
           "veg": true
         },
         {
           "id": "sharkara-varatti",
-          "name": "Sharkara Varatti",
-          "ml": "ശർക്കര വരട്ടി",
-          "note": "Banana pieces coated in jaggery and dry ginger",
+          "name": "ശർക്കര വരട്ടി",
+          "note": "ശർക്കരയും ചുക്കും പുരട്ടിയ കായ കഷണങ്ങൾ",
           "veg": true
         },
         {
           "id": "pappadam",
-          "name": "Pappadam",
-          "ml": "പപ്പടം",
-          "note": "Crisp, served with the rice",
+          "name": "പപ്പടം",
+          "note": "ചോറിനൊപ്പം, നല്ല മൊരിഞ്ഞത്",
           "veg": true
         },
         {
           "id": "pazham",
-          "name": "Banana",
-          "ml": "പഴം",
-          "note": "Small ripe banana, the classic leaf corner",
+          "name": "പഴം",
+          "note": "ഇലയുടെ മൂലയിലെ ചെറുപഴം",
           "veg": true
         },
         {
           "id": "uppu",
-          "name": "Salt",
-          "ml": "ഉപ്പ്",
-          "note": "A pinch at the leaf's tip, the first thing served",
+          "name": "ഉപ്പ്",
+          "note": "ഇലയുടെ തുമ്പത്ത് ആദ്യം വിളമ്പുന്നത്",
           "veg": true
         },
         {
           "id": "naranga-achar",
-          "name": "Lemon Pickle",
-          "ml": "നാരങ്ങ അച്ചാർ",
-          "veg": true
+          "name": "നാരങ്ങ അച്ചാർ",
+          "veg": true,
+          "note": "എരിവും പുളിയുമുള്ള നാരങ്ങ"
         },
         {
           "id": "manga-achar",
-          "name": "Mango Pickle",
-          "ml": "മാങ്ങ അച്ചാർ",
-          "note": "Tender cut mango",
+          "name": "മാങ്ങ അച്ചാർ",
+          "note": "ഇളം മാങ്ങ അരിഞ്ഞത്",
           "veg": true
         },
         {
           "id": "inji-puli",
-          "name": "Inji Puli",
-          "ml": "ഇഞ്ചിപ്പുളി",
-          "note": "Ginger, tamarind and jaggery relish",
+          "name": "ഇഞ്ചിപ്പുളി",
+          "note": "ഇഞ്ചിയും പുളിയും ശർക്കരയും ചേർന്നത്",
           "veg": true
         }
       ]
     },
     {
       "id": "curries",
-      "title": "Curries",
-      "ml": "കറികൾ",
+      "title": "കറികൾ",
       "image": "menu/curries.webp",
       "items": [
         {
           "id": "avial",
-          "name": "Avial",
-          "ml": "അവിയൽ",
-          "note": "Mixed vegetables in coconut and curd",
+          "name": "അവിയൽ",
+          "note": "തേങ്ങയും തൈരും ചേർന്ന പച്ചക്കറിക്കൂട്ട്",
           "veg": true
         },
         {
           "id": "thoran",
-          "name": "Thoran",
-          "ml": "തോരൻ",
-          "note": "Cabbage or beans with grated coconut",
+          "name": "തോരൻ",
+          "note": "തേങ്ങ ചിരകിയിട്ട കാബേജ് അല്ലെങ്കിൽ ബീൻസ്",
           "veg": true
         },
         {
           "id": "olan",
-          "name": "Olan",
-          "ml": "ഓലൻ",
-          "note": "Ash gourd and red cowpeas in coconut milk",
+          "name": "ഓലൻ",
+          "note": "തേങ്ങാപ്പാലിൽ കുമ്പളങ്ങയും വൻപയറും",
           "veg": true
         },
         {
           "id": "kaalan",
-          "name": "Kaalan",
-          "ml": "കാളൻ",
-          "note": "Yam and raw banana in thick curd",
+          "name": "കാളൻ",
+          "note": "കട്ടത്തൈരിൽ ചേനയും പച്ചക്കായയും",
           "veg": true
         },
         {
           "id": "erissery",
-          "name": "Erissery",
-          "ml": "എരിശ്ശേരി",
-          "note": "Pumpkin and red beans with roasted coconut",
+          "name": "എരിശ്ശേരി",
+          "note": "മത്തങ്ങയും വൻപയറും, വറുത്ത തേങ്ങയോടെ",
           "veg": true
         },
         {
           "id": "koottu-curry",
-          "name": "Koottu Curry",
-          "ml": "കൂട്ടുകറി",
-          "note": "Black chickpeas, yam and raw banana",
+          "name": "കൂട്ടുകറി",
+          "note": "കടലയും ചേനയും പച്ചക്കായയും, വറുത്തരച്ച്",
           "veg": true
         },
         {
           "id": "pachadi",
-          "name": "Pachadi",
-          "ml": "പച്ചടി",
-          "note": "Pineapple or beetroot in sweet curd and mustard",
+          "name": "പച്ചടി",
+          "note": "മധുരത്തൈരിൽ പൈനാപ്പിൾ അല്ലെങ്കിൽ ബീറ്റ്റൂട്ട്",
           "veg": true
         },
         {
           "id": "kichadi",
-          "name": "Kichadi",
-          "ml": "കിച്ചടി",
-          "note": "Cucumber or okra in spiced curd",
+          "name": "കിച്ചടി",
+          "note": "എരിവുള്ള തൈരിൽ വെള്ളരിക്ക അല്ലെങ്കിൽ വെണ്ടയ്ക്ക",
           "veg": true
         },
         {
           "id": "theeyal",
-          "name": "Ulli Theeyal",
-          "ml": "ഉള്ളി തീയൽ",
-          "note": "Shallots in roasted coconut and tamarind gravy",
+          "name": "ഉള്ളി തീയൽ",
+          "note": "വറുത്തരച്ച തേങ്ങയും പുളിയും ചേർന്ന ചെറിയുള്ളിക്കറി",
           "veg": true
         },
         {
           "id": "mezhukkupuratti",
-          "name": "Mezhukkupuratti",
-          "ml": "മെഴുക്കുപുരട്ടി",
-          "note": "Beans or raw banana, stir-fried",
+          "name": "മെഴുക്കുപുരട്ടി",
+          "note": "ബീൻസ് അല്ലെങ്കിൽ പച്ചക്കായ ഉലർത്തിയത്",
           "veg": true
         }
       ]
     },
     {
       "id": "rice",
-      "title": "Rice & Gravies",
-      "ml": "ചോറും ഒഴിച്ചുകറികളും",
+      "title": "ചോറും ഒഴിച്ചുകറികളും",
       "image": "menu/rice.webp",
       "items": [
         {
           "id": "matta-rice",
-          "name": "Kerala Matta Rice",
-          "ml": "കുത്തരി ചോറ്",
-          "note": "Red parboiled rice, served hot",
+          "name": "കുത്തരി ചോറ്",
+          "note": "ചൂടോടെ വിളമ്പുന്ന മട്ട അരി",
           "veg": true
         },
         {
           "id": "parippu-ghee",
-          "name": "Parippu with Ghee",
-          "ml": "പരിപ്പും നെയ്യും",
-          "note": "The first pour on the rice",
+          "name": "പരിപ്പും നെയ്യും",
+          "note": "ചോറിൽ ആദ്യം ഒഴിക്കുന്നത്",
           "veg": true
         },
         {
           "id": "sambar",
-          "name": "Sambar",
-          "ml": "സാമ്പാർ",
-          "note": "Lentils and vegetables with roasted spices",
+          "name": "സാമ്പാർ",
+          "note": "പരിപ്പും പച്ചക്കറികളും വറുത്ത മസാലയും",
           "veg": true
         },
         {
           "id": "pulissery",
-          "name": "Pulissery",
-          "ml": "പുളിശ്ശേരി",
-          "note": "Curd and coconut gravy",
+          "name": "പുളിശ്ശേരി",
+          "note": "തൈരും തേങ്ങയും ചേർന്ന കറി",
           "veg": true
         },
         {
           "id": "mambazha-pulissery",
-          "name": "Mambazha Pulissery",
-          "ml": "മാമ്പഴ പുളിശ്ശേരി",
-          "note": "Ripe mango in curd and coconut",
+          "name": "മാമ്പഴ പുളിശ്ശേരി",
+          "note": "പഴുത്ത മാങ്ങ, തൈരിലും തേങ്ങയിലും",
           "veg": true
         },
         {
           "id": "rasam",
-          "name": "Rasam",
-          "ml": "രസം",
-          "note": "Peppery tamarind broth",
+          "name": "രസം",
+          "note": "കുരുമുളകിന്റെ എരിവുള്ള പുളിരസം",
           "veg": true
         }
       ]
     },
     {
       "id": "payasam",
-      "title": "Payasam",
-      "ml": "പായസം",
+      "title": "പായസം",
       "image": "menu/payasam.webp",
       "items": [
         {
           "id": "palada",
-          "name": "Palada Pradhaman",
-          "ml": "പാലട പ്രഥമൻ",
-          "note": "Rice ada in slow-cooked sweet milk",
+          "name": "പാലട പ്രഥമൻ",
+          "note": "പാലിൽ കുറുക്കിയ അരിയട",
           "veg": true
         },
         {
           "id": "ada-pradhaman",
-          "name": "Ada Pradhaman",
-          "ml": "അട പ്രഥമൻ",
-          "note": "Rice ada in jaggery and coconut milk",
+          "name": "അട പ്രഥമൻ",
+          "note": "ശർക്കരയിലും തേങ്ങാപ്പാലിലും അരിയട",
           "veg": true
         },
         {
           "id": "parippu-pradhaman",
-          "name": "Parippu Pradhaman",
-          "ml": "പരിപ്പ് പ്രഥമൻ",
-          "note": "Moong dal, jaggery and coconut milk",
+          "name": "പരിപ്പ് പ്രഥമൻ",
+          "note": "ചെറുപയർ പരിപ്പും ശർക്കരയും തേങ്ങാപ്പാലും",
           "veg": true
         },
         {
           "id": "pazham-pradhaman",
-          "name": "Pazham Pradhaman",
-          "ml": "പഴം പ്രഥമൻ",
-          "note": "Nendran banana, jaggery and coconut milk",
+          "name": "പഴം പ്രഥമൻ",
+          "note": "നേന്ത്രപ്പഴവും ശർക്കരയും തേങ്ങാപ്പാലും",
           "veg": true
         },
         {
           "id": "chakka-pradhaman",
-          "name": "Chakka Pradhaman",
-          "ml": "ചക്ക പ്രഥമൻ",
-          "note": "Jackfruit, jaggery and coconut milk — in season",
+          "name": "ചക്ക പ്രഥമൻ",
+          "note": "ചക്കയും ശർക്കരയും തേങ്ങാപ്പാലും — കാലത്തിനനുസരിച്ച്",
           "veg": true
         },
         {
           "id": "pal-payasam",
-          "name": "Pal Payasam",
-          "ml": "പാൽപ്പായസം",
-          "note": "Rice cooked slowly in milk",
+          "name": "പാൽപ്പായസം",
+          "note": "പാലിൽ പതുക്കെ വേവിച്ച അരി",
           "veg": true
         },
         {
           "id": "semiya-payasam",
-          "name": "Semiya Payasam",
-          "ml": "സേമിയ പായസം",
-          "note": "Vermicelli in sweet milk",
+          "name": "സേമിയ പായസം",
+          "note": "മധുരപ്പാലിൽ സേമിയ",
           "veg": true
         },
         {
           "id": "gothambu-payasam",
-          "name": "Gothambu Payasam",
-          "ml": "ഗോതമ്പ് പായസം",
-          "note": "Broken wheat, jaggery and coconut milk",
+          "name": "ഗോതമ്പ് പായസം",
+          "note": "നുറുക്ക് ഗോതമ്പും ശർക്കരയും തേങ്ങാപ്പാലും",
           "veg": true
         }
       ]
     },
     {
       "id": "finish",
-      "title": "To Finish",
-      "ml": "അവസാനം",
+      "title": "അവസാനം",
       "items": [
         {
           "id": "boli",
-          "name": "Boli",
-          "ml": "ബോളി",
-          "note": "Sweet golden flatbread, best with pal payasam",
+          "name": "ബോളി",
+          "note": "പാൽപ്പായസത്തോടൊപ്പം, മധുരമുള്ള ബോളി",
           "veg": true
         },
         {
           "id": "sambharam",
-          "name": "Sambharam",
-          "ml": "സംഭാരം",
-          "note": "Spiced buttermilk with ginger and curry leaves",
+          "name": "സംഭാരം",
+          "note": "ഇഞ്ചിയും കറിവേപ്പിലയും ചേർത്ത മോര്",
           "veg": true
         },
         {
           "id": "moru",
-          "name": "Moru",
-          "ml": "മോര്",
-          "note": "Plain buttermilk to close the meal",
+          "name": "മോര്",
+          "note": "സദ്യ അവസാനിപ്പിക്കാൻ നല്ല മോര്",
           "veg": true
         }
       ]
@@ -418,8 +378,8 @@
   ],
   "menuPresets": [
     {
-      "title": "Mini Sadhya",
-      "note": "The essentials, one payasam",
+      "title": "മിനി സദ്യ",
+      "note": "അത്യാവശ്യ വിഭവങ്ങൾ, ഒരു പായസം",
       "items": [
         "uppu",
         "matta-rice",
@@ -437,8 +397,8 @@
       ]
     },
     {
-      "title": "Traditional Sadhya",
-      "note": "Full leaf with two payasams",
+      "title": "പരമ്പരാഗത സദ്യ",
+      "note": "രണ്ട് പായസത്തോടെ സമ്പൂർണ്ണ ഇല",
       "items": [
         "uppu",
         "kaya-varuthathu",
@@ -467,8 +427,8 @@
       ]
     },
     {
-      "title": "Grand Wedding Sadhya",
-      "note": "Every curry, three payasams and boli",
+      "title": "കല്യാണ സദ്യ",
+      "note": "എല്ലാ കറികളും, മൂന്ന് പായസവും ബോളിയും",
       "items": [
         "uppu",
         "kaya-varuthathu",
