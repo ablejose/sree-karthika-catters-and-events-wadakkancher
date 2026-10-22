@@ -21,60 +21,24 @@
   "reviews": [],
   "gallery": [
     {
-      "src": "gallery/p01.webp",
-      "alt": "A rich Kerala sadhya on banana leaf with flowers and payasam"
+      "src": "gallery/s1.webp",
+      "alt": "Wedding stage with a lotus backdrop, the deity at the centre and brass lamps"
     },
     {
-      "src": "gallery/p02.webp",
-      "alt": "Bride and groom seated at the sacred fire on a decorated stage"
+      "src": "gallery/s2.webp",
+      "alt": "Traditional wedding stage dressed in marigold and jasmine with golden pillars"
     },
     {
-      "src": "gallery/p03.webp",
-      "alt": "A traditional Hindu wedding stage dressed in marigold and jasmine"
+      "src": "gallery/s3.webp",
+      "alt": "A grand wedding stage in gold and orange under chandeliers"
     },
     {
-      "src": "gallery/p04.webp",
-      "alt": "A lit nilavilakku with jasmine garlands"
+      "src": "gallery/s4.webp",
+      "alt": "Wedding stage with a floral arch and flower panels"
     },
     {
-      "src": "gallery/p05.webp",
-      "alt": "A Kerala couple seated with the nirapara and lit lamp"
-    },
-    {
-      "src": "gallery/p06.webp",
-      "alt": "Hands joined over the brass uruli during the wedding rites"
-    },
-    {
-      "src": "gallery/p07.webp",
-      "alt": "A pookalam of marigold, jasmine and chrysanthemum"
-    },
-    {
-      "src": "gallery/p08.webp",
-      "alt": "Sacred water poured over joined hands during kanyadanam"
-    },
-    {
-      "src": "gallery/p09.webp",
-      "alt": "Payasam on banana leaf with pazham pori"
-    },
-    {
-      "src": "gallery/p10.webp",
-      "alt": "A wedding mandapam with golden pillars and flower garlands"
-    },
-    {
-      "src": "gallery/p11.webp",
-      "alt": "The coconut held in joined hands, a wedding rite"
-    },
-    {
-      "src": "gallery/p12.webp",
-      "alt": "A wedding mandap with hanging flower strands"
-    },
-    {
-      "src": "gallery/p13.webp",
-      "alt": "A festive table set with lit lamps on banana leaf"
-    },
-    {
-      "src": "gallery/04.webp",
-      "alt": "Brass uruli filled with flowers on a bed of petals"
+      "src": "gallery/s5.webp",
+      "alt": "Wedding stage with lit floral arches and gold seating"
     }
   ],
   "url": "https://sree-karthika-catters-and-events-wa.vercel.app",
@@ -113,7 +77,7 @@
       "id": "bulk-catering",
       "title": "Bulk & Function Catering",
       "image": "services/bulk-catering.webp",
-      "blurb": "Sadhya and vegetarian meals in volume for weddings, temples, offices and family functions — cooked fresh and served by our trained crew.",
+      "blurb": "Sambar, curries and payasam cooked fresh in big vessels for weddings, temples, offices and family functions — served on leaf by our trained crew.",
       "bullets": [
         "Large guest counts",
         "Served on leaf, row after row",
@@ -122,9 +86,9 @@
     },
     {
       "id": "stage",
-      "title": "Hindu Wedding Stage & Décor",
+      "title": "Wedding Stage & Décor",
       "image": "services/stage.webp",
-      "blurb": "A traditional wedding stage — flower pillars and garlands, lit nilavilakku and nirapara — set up and dressed before the muhurtham.",
+      "blurb": "A traditional wedding stage — flower walls, brass pillars, lit nilavilakku and nirapara, with the deity at the centre — set up before the muhurtham.",
       "bullets": [
         "Mandapam & flower décor",
         "Nilavilakku & nirapara",
@@ -541,10 +505,6 @@
     }
   ],
   "photoCredits": [
-    {
-      "text": "Karthik Murugan (CC BY-SA 3.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Decorated_Uruli.JPG"
-    },
     {
       "text": "Pexels photographers",
       "href": "https://www.pexels.com/license/"
