@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces, Manrope, Noto_Sans_Malayalam, Noto_Serif_Malayalam } from "next/font/google";
 import "./globals.css";
 import { brandAssets, copy, icon, site } from "@/config/site";
 import { event } from "@/event.config";
@@ -15,6 +15,10 @@ import Loader from "@/components/Loader";
  */
 const fraunces = Fraunces({ subsets: ["latin"], display: "swap", variable: "--font-fraunces" });
 const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-manrope" });
+// Malayalam: Fraunces/Manrope have no Malayalam glyphs, so without these the browser falls back to a thin system font.
+// Loaded by unicode-range, so pages without Malayalam text never download them.
+const mlSans = Noto_Sans_Malayalam({ subsets: ["malayalam"], weight: ["500", "600", "700"], display: "swap", variable: "--font-ml-sans" });
+const mlSerif = Noto_Serif_Malayalam({ subsets: ["malayalam"], weight: ["600", "700"], display: "swap", variable: "--font-ml-serif" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -93,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     : undefined;
 
   return (
-    <html lang={seo.lang} className={`${fraunces.variable} ${manrope.variable}`}>
+    <html lang={seo.lang} className={`${fraunces.variable} ${manrope.variable} ${mlSans.variable} ${mlSerif.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>

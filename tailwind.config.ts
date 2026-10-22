@@ -25,8 +25,8 @@ const config: Config = {
         maroon: "#7A2E2A",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        display: ["var(--font-fraunces)", "var(--font-ml-serif)", "Georgia", "serif"],
+        sans: ["var(--font-manrope)", "var(--font-ml-sans)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         brand: "14px",
