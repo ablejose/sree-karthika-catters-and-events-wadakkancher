@@ -1,7 +1,7 @@
 {
   "slug": "sree-karthika-catters-and-events-wadakkancher",
-  "name": "Sree Karthika Catters and Events",
-  "shortName": "Sree Karthika",
+  "name": "Sreekarthika Caterers and Events",
+  "shortName": "Sreekarthika",
   "descriptor": "Sadhya & Traditional Events",
   "address": "School, Varavoor - Pilakkad Rd, Waddakanjeri, Chittanda, Varavoor, Keralam 680585",
   "area": "Varavoor",
@@ -25,20 +25,16 @@
       "alt": "Kerala sadhya on banana leaf with rice, parippu and curries"
     },
     {
-      "src": "wedding/stage-1.webp",
-      "alt": "Kerala Hindu wedding stage with nilavilakku, nirapara and marigold garlands"
-    },
-    {
-      "src": "wedding/moment-1.webp",
-      "alt": "The bride receives her garland on the wedding stage, family around her"
+      "src": "wedding/couple-1.webp",
+      "alt": "A Kerala bride and groom in kasavu and mundu, with jasmine garlands"
     },
     {
       "src": "gallery/02.webp",
       "alt": "A full sadhya leaf with upperi, pickles, curries and rice"
     },
     {
-      "src": "wedding/stage-2.webp",
-      "alt": "Traditional Hindu wedding stage with flower pillars and a gold backdrop"
+      "src": "wedding/couple-2.webp",
+      "alt": "The couple with family elders on the wedding day"
     },
     {
       "src": "wedding/moment-2.webp",
@@ -57,12 +53,16 @@
       "alt": "A lit nilavilakku, the traditional brass lamp"
     },
     {
-      "src": "gallery/03.webp",
-      "alt": "A complete sadhya laid out on a fresh banana leaf"
+      "src": "gallery/11.webp",
+      "alt": "A complete sadhya on banana leaf with payasam and buttermilk"
     },
     {
       "src": "gallery/06.webp",
       "alt": "Pookalam with nirapara and brass vessels"
+    },
+    {
+      "src": "gallery/12.webp",
+      "alt": "Serving sadhya onto banana leaves, row by row"
     },
     {
       "src": "gallery/07.webp",
@@ -75,10 +75,6 @@
     {
       "src": "gallery/09.webp",
       "alt": "Brass lamps lit before a flower garland"
-    },
-    {
-      "src": "gallery/10.webp",
-      "alt": "Sadhya served in rows on banana leaves"
     }
   ],
   "url": "https://sree-karthika-catters-and-events-wa.vercel.app",
@@ -89,21 +85,24 @@
   "media": {
     "about": [
       {
-        "src": "about/lamp.webp",
-        "alt": "A brass nilavilakku beside nirapara, the paddy-filled measure"
+        "src": "about/stage.webp",
+        "alt": "A Kerala wedding hall with the stage dressed at the end of the aisle"
       },
       {
         "src": "about/leaf.webp",
-        "alt": "A sadhya served on banana leaf"
+        "alt": "A full sadhya on banana leaf, with payasam in a glass"
       }
-    ]
+    ],
+    "logoMark": "brand/logo-mark.webp",
+    "brandDir": "brand",
+    "ogImage": "brand/og-image.jpg"
   },
   "services": [
     {
       "id": "sadhya",
       "title": "Traditional Sadhya",
       "image": "services/sadhya.webp",
-      "blurb": "The full banana-leaf sadhya — upperi to payasam, cooked fresh on the day and served in rows by our own team.",
+      "blurb": "The full banana-leaf sadhya — upperi to payasam, every dish in its place, cooked fresh on the day and served in rows by our own team.",
       "bullets": [
         "Every dish in its place on the leaf",
         "Two or three payasams",
@@ -111,25 +110,25 @@
       ]
     },
     {
-      "id": "mini-sadhya",
-      "title": "Mini Sadhya",
-      "image": "services/mini-sadhya.webp",
-      "blurb": "A lighter sadhya for smaller gatherings, office Onam and house functions — the essentials, done properly.",
+      "id": "bulk-catering",
+      "title": "Bulk & Function Catering",
+      "image": "services/bulk-catering.webp",
+      "blurb": "Sadhya and vegetarian meals in volume for weddings, temples, offices and family functions — cooked fresh and served by our trained crew.",
       "bullets": [
-        "Around a dozen dishes",
-        "One payasam",
-        "Small and mid-size gatherings"
+        "Large guest counts",
+        "Served on leaf, row after row",
+        "Temples, offices & functions"
       ]
     },
     {
       "id": "stage",
-      "title": "Traditional Stage & Décor",
+      "title": "Hindu Wedding Stage & Décor",
       "image": "services/stage.webp",
-      "blurb": "A Kerala-style setting for the function — lit nilavilakku, flower-filled uruli, nirapara and fresh flowers.",
+      "blurb": "A traditional wedding stage — flower pillars and garlands, lit nilavilakku and nirapara — set up and dressed before the muhurtham.",
       "bullets": [
+        "Mandapam & flower décor",
         "Nilavilakku & nirapara",
-        "Uruli & flower décor",
-        "Traditional stage setting"
+        "Ready before the muhurtham"
       ]
     }
   ],
@@ -172,7 +171,14 @@
           "id": "upperi",
           "name": "Upperi",
           "ml": "ഉപ്പേരി",
-          "note": "Nendran banana chips fried in coconut oil",
+          "note": "Thick-cut nendran chips, fried in coconut oil",
+          "veg": true
+        },
+        {
+          "id": "kaya-varuthathu",
+          "name": "Kaya Varuthathu",
+          "ml": "കായ വറുത്തത്",
+          "note": "Thin salted banana chips",
           "veg": true
         },
         {
@@ -194,6 +200,13 @@
           "name": "Banana",
           "ml": "പഴം",
           "note": "Small ripe banana, the classic leaf corner",
+          "veg": true
+        },
+        {
+          "id": "uppu",
+          "name": "Salt",
+          "ml": "ഉപ്പ്",
+          "note": "A pinch at the leaf's tip, the first thing served",
           "veg": true
         },
         {
@@ -281,6 +294,13 @@
           "veg": true
         },
         {
+          "id": "theeyal",
+          "name": "Ulli Theeyal",
+          "ml": "ഉള്ളി തീയൽ",
+          "note": "Shallots in roasted coconut and tamarind gravy",
+          "veg": true
+        },
+        {
           "id": "mezhukkupuratti",
           "name": "Mezhukkupuratti",
           "ml": "മെഴുക്കുപുരട്ടി",
@@ -324,6 +344,13 @@
           "veg": true
         },
         {
+          "id": "mambazha-pulissery",
+          "name": "Mambazha Pulissery",
+          "ml": "മാമ്പഴ പുളിശ്ശേരി",
+          "note": "Ripe mango in curd and coconut",
+          "veg": true
+        },
+        {
           "id": "rasam",
           "name": "Rasam",
           "ml": "രസം",
@@ -364,6 +391,13 @@
           "name": "Pazham Pradhaman",
           "ml": "പഴം പ്രഥമൻ",
           "note": "Nendran banana, jaggery and coconut milk",
+          "veg": true
+        },
+        {
+          "id": "chakka-pradhaman",
+          "name": "Chakka Pradhaman",
+          "ml": "ചക്ക പ്രഥമൻ",
+          "note": "Jackfruit, jaggery and coconut milk — in season",
           "veg": true
         },
         {
@@ -423,6 +457,7 @@
       "title": "Mini Sadhya",
       "note": "The essentials, one payasam",
       "items": [
+        "uppu",
         "matta-rice",
         "parippu-ghee",
         "sambar",
@@ -441,6 +476,8 @@
       "title": "Traditional Sadhya",
       "note": "Full leaf with two payasams",
       "items": [
+        "uppu",
+        "kaya-varuthathu",
         "matta-rice",
         "parippu-ghee",
         "sambar",
@@ -469,6 +506,10 @@
       "title": "Grand Wedding Sadhya",
       "note": "Every curry, three payasams and boli",
       "items": [
+        "uppu",
+        "kaya-varuthathu",
+        "theeyal",
+        "mambazha-pulissery",
         "matta-rice",
         "parippu-ghee",
         "sambar",
@@ -505,16 +546,20 @@
       "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_2024.jpg"
     },
     {
+      "text": "Gnoeee (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Bride_and_groom_talking_and_walking_together.jpg"
+    },
+    {
       "text": "Sreerajsadanand (CC BY-SA 4.0)",
       "href": "https://commons.wikimedia.org/wiki/File:Sadya_-_An_art.jpeg"
     },
     {
-      "text": "Athulvis (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_(82105).jpg"
-    },
-    {
       "text": "Karthik Murugan (CC BY-SA 3.0)",
       "href": "https://commons.wikimedia.org/wiki/File:Decorated_Uruli.JPG"
+    },
+    {
+      "text": "iMahesh (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Indian_Wedding_Ritual_-_Jaimala_or_Varmala_(02).jpg"
     },
     {
       "text": "Vinayaraj (CC BY-SA 4.0)",
@@ -523,6 +568,10 @@
     {
       "text": "Edgeofthewood (CC BY-SA 4.0)",
       "href": "https://commons.wikimedia.org/wiki/File:Onam_Pookalam_with_Nirapara.jpg"
+    },
+    {
+      "text": "Gangulybiswarup (CC BY 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Waitress_Serving_Food_At_Onam_Sadhya_-_Grand_Traditional_Vegetarian_Feast_Served_On_A_Banana_Leaf_-_WikiConference_India_2026_-_Kochi_2026-09-04_03433.jpg"
     },
     {
       "text": "Ross thres (CC BY-SA 4.0)",
@@ -537,24 +586,20 @@
       "href": "https://commons.wikimedia.org/wiki/File:Onam_Celebration.jpg"
     },
     {
-      "text": "Ranjithsiji (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Sadya-Aluva-Kerala-IMG_20210320_204532.jpg"
+      "text": "Netha Hussain (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Stage_setting_for_a_Muslim_wedding_ceremony_01.jpg"
     },
     {
-      "text": "BHAVAPRIYA J U (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Kerala_sadya._jpg.jpg"
+      "text": "Anila Sudish (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Onam_Special_Kerala_Sadya....JPG"
     },
     {
-      "text": "Aroonkalandy (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Vishu_kani,_Calicut.jpg"
+      "text": "Athulvis (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_(82105).jpg"
     },
     {
-      "text": "Vaikoovery (CC BY 3.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Nirapara_and_Nilavilakku.jpg"
-    },
-    {
-      "text": "Ganesh Mohan T (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Kerala_Sadya_01.jpg"
+      "text": "Kasyap (CC BY-SA 4.0)",
+      "href": "https://commons.wikimedia.org/wiki/File:Wedding_Stage.jpg"
     },
     {
       "text": "കാക്കര (CC BY-SA 3.0)",
@@ -567,26 +612,7 @@
     {
       "text": "stu spivack (CC BY-SA 2.0)",
       "href": "https://commons.wikimedia.org/wiki/File:Kheer.jpg"
-    },
-    {
-      "text": "Shagil Kannur (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Kerala_marriage_custom_2.jpg"
-    },
-    {
-      "text": "Adbh266 (CC BY-SA 3.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Kalyana_Mandapam.jpg"
-    },
-    {
-      "text": "Gnoeee (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Hindu_traditional_marriage_at_Kannur,_Kerala.jpg"
-    },
-    {
-      "text": "iMahesh (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Indian_Wedding_Ritual_-_Jaimala_or_Varmala_(02).jpg"
-    },
-    {
-      "text": "Kasyap (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Wedding_Stage.jpg"
     }
-  ]
+  ],
+  "loaderTone": "light"
 }
