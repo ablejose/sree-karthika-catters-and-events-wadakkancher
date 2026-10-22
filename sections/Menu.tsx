@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowLeft,
@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
-import { copy, waLink } from "@/config/site";
+import { copy, variant, waLink } from "@/config/site";
 import { menu, menuPresets } from "@/config/menu";
 import { asset, t } from "@/lib/copy";
 import { cn } from "@/lib/utils";
@@ -75,6 +75,38 @@ const COURSE_ICONS: Record<string, LucideIcon> = {
 const iconFor = (id: string) => COURSE_ICONS[id] ?? UtensilsCrossed;
 
 const c = copy.menu;
+
+/** Sadya sites dress the menu lightly as a banana leaf. */
+const LEAF = variant === "sadya";
+const LEAF_GREEN = "#2F6B3A";
+
+function BananaLeaf({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  const clip = `leaf-${useId().replace(/:/g, "")}`;
+  const veins = Array.from({ length: 15 }, (_, i) => {
+    const x = 40 + i * 36;
+    const y = 148 - (x / 600) * 108; // along the midrib
+    return { x, y };
+  });
+  return (
+    <svg viewBox="0 0 600 220" className={className} style={style} aria-hidden>
+      <defs>
+        <clipPath id={clip}>
+          <path d="M6 152 C 120 34, 390 4, 594 40 C 430 132, 210 206, 6 152 Z" />
+        </clipPath>
+      </defs>
+      <path d="M6 152 C 120 34, 390 4, 594 40 C 430 132, 210 206, 6 152 Z" fill={LEAF_GREEN} />
+      <g clipPath={`url(#${clip})`} stroke="#FFFFFF" strokeOpacity="0.35" strokeWidth="2" fill="none">
+        <path d="M6 152 C 200 104, 400 64, 594 40" strokeWidth="4" />
+        {veins.map((v, i) => (
+          <g key={i}>
+            <path d={`M${v.x} ${v.y} L ${v.x + 30} ${v.y - 70}`} />
+            <path d={`M${v.x} ${v.y} L ${v.x - 18} ${v.y + 70}`} />
+          </g>
+        ))}
+      </g>
+    </svg>
+  );
+}
 
 function formatDate(iso: string) {
   if (!iso) return "";
@@ -230,6 +262,12 @@ export default function Menu() {
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -right-40 top-10 h-[34rem] w-[34rem] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,137,46,0.12) 0%, rgba(196,137,46,0) 70%)" }} />
         <div className="absolute -left-40 bottom-20 h-[30rem] w-[30rem] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,137,46,0.08) 0%, rgba(196,137,46,0) 70%)" }} />
+        {LEAF && (
+          <>
+            <BananaLeaf className="absolute -left-24 top-16 w-[30rem] -rotate-[18deg] md:-left-16 md:w-[40rem]" style={{ opacity: 0.07 }} />
+            <BananaLeaf className="absolute -right-28 bottom-24 w-[28rem] rotate-[160deg] md:w-[38rem]" style={{ opacity: 0.06 }} />
+          </>
+        )}
       </div>
 
       <div className="relative mx-auto max-w-shell px-6">
@@ -287,7 +325,7 @@ export default function Menu() {
                         {p.note} · {p.items.length} dishes
                       </span>
                     </span>
-                    {on ? <Check size={18} className="text-saffron" /> : <Sparkles size={18} className="text-saffron-2/60" />}
+                    {on ? <Check size={18} className="text-saffron" /> : LEAF ? <Leaf size={18} style={{ color: LEAF_GREEN, opacity: 0.7 }} /> : <Sparkles size={18} className="text-saffron-2/60" />}
                   </button>
                 );
               })}
@@ -362,8 +400,30 @@ export default function Menu() {
         <div className="mt-6 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:gap-10">
           {/* MENU CARD — one course in focus */}
           <div ref={cardRef} className="scroll-mt-48 lg:scroll-mt-24">
-            <div className="relative rounded-[24px] border border-sand bg-white p-2 shadow-[0_40px_80px_-50px_rgba(36,28,21,0.5)]">
-              <div className="rounded-[18px] border border-saffron/25 px-5 pb-5 pt-6 md:px-9 md:pb-7 md:pt-8">
+            <div
+              className={cn(
+                "relative rounded-[24px] border bg-white p-2 shadow-[0_40px_80px_-50px_rgba(36,28,21,0.5)]",
+                LEAF ? "border-[#CFE0C3]" : "border-sand"
+              )}
+            >
+              {LEAF && (
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-10 top-0 h-[3px] rounded-full"
+                  style={{ background: `linear-gradient(90deg, transparent, ${LEAF_GREEN}, #6FA85A, ${LEAF_GREEN}, transparent)` }}
+                />
+              )}
+              <div
+                className={cn("rounded-[18px] border px-5 pb-5 pt-6 md:px-9 md:pb-7 md:pt-8", LEAF ? "border-[#2F6B3A]/20" : "border-saffron/25")}
+                style={
+                  LEAF
+                    ? {
+                        backgroundColor: "#F8FBF4",
+                        backgroundImage: "repeating-linear-gradient(112deg, rgba(47,107,58,0.035) 0 1px, transparent 1px 26px)",
+                      }
+                    : undefined
+                }
+              >
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={active.id}
@@ -396,7 +456,7 @@ export default function Menu() {
                             {c.courseLabel} {String(catIdx + 1).padStart(2, "0")} {c.of} {String(menu.length).padStart(2, "0")}
                           </p>
                           <h3 className="mt-1 font-display text-[1.6rem] italic leading-none text-espresso sm:text-[2rem] md:text-[2.5rem]">{active.title}</h3>
-                          {active.ml && <p className="mt-1.5 font-sans text-[0.8rem] text-saffron-2 sm:mt-2 sm:text-sm">{active.ml}</p>}
+                          {active.ml && <p lang="ml" className="ml mt-1.5 text-[0.88rem] text-saffron-2 sm:mt-2 sm:text-[0.98rem]">{active.ml}</p>}
                         </div>
                       </div>
                       <button
@@ -414,14 +474,14 @@ export default function Menu() {
 
                     {/* Progress for this course */}
                     <div className="mt-5 h-1 overflow-hidden rounded-full bg-sand/70">
-                      <motion.div className="h-full rounded-full bg-saffron" animate={{ width: `${(activeCount / active.items.length) * 100}%` }} transition={{ duration: 0.4, ease: EASE }} />
+                      <motion.div className="h-full rounded-full bg-saffron" style={LEAF ? { background: LEAF_GREEN } : undefined} animate={{ width: `${(activeCount / active.items.length) * 100}%` }} transition={{ duration: 0.4, ease: EASE }} />
                     </div>
 
                     <ul className="mt-3 grid grid-cols-1 md:grid-cols-2 md:gap-x-10 lg:grid-cols-1 xl:grid-cols-2">
                       {active.items.map((item) => {
                         const on = pickedSet.has(item.id);
                         return (
-                          <li key={item.id} className="border-b border-dashed border-sand/90">
+                          <li key={item.id} className={cn("border-b border-dashed", LEAF ? "border-[#2F6B3A]/15" : "border-sand/90")}>
                             <button
                               type="button"
                               onClick={() => toggle(item.id, item.name)}
@@ -429,13 +489,13 @@ export default function Menu() {
                               aria-label={`${on ? c.remove : c.add} ${item.name}`}
                               className={cn(
                                 "group -mx-2 flex w-[calc(100%+1rem)] items-start gap-3 rounded-xl px-2 py-4 text-left transition-colors",
-                                on && "bg-[rgba(196,137,46,0.08)]"
+                                on && (LEAF ? "bg-[rgba(47,107,58,0.08)]" : "bg-[rgba(196,137,46,0.08)]")
                               )}
                             >
                               <VegMark veg={item.veg} />
                               <span className="min-w-0 flex-1">
-                                <span className={cn("block font-display text-[1.14rem] leading-snug transition-colors", on ? "text-saffron-2" : "text-espresso")}>{item.name}</span>
-                                {item.ml && <span className="mt-0.5 block font-sans text-[0.8rem] text-saffron-2/90">{item.ml}</span>}
+                                <span className={cn("block font-display text-[1.14rem] leading-snug transition-colors", on ? (LEAF ? "text-[#2F6B3A]" : "text-saffron-2") : "text-espresso")}>{item.name}</span>
+                                {item.ml && <span lang="ml" className="ml mt-0.5 block text-[0.86rem] text-saffron-2">{item.ml}</span>}
                                 {item.note && <span className="mt-0.5 block font-sans text-[0.8rem] leading-relaxed text-muted">{item.note}</span>}
                               </span>
                               <motion.span

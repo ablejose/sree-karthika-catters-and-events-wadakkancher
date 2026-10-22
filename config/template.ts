@@ -479,6 +479,8 @@ export const variantCopy: Record<
       heading: "Build your sadhya, dish by dish.",
       body: "Start from a Mini Sadhya or a full banana-leaf sadhya, add your payasams, set the guest count — and get a quote for your day.",
       presetsLabel: "Start from a sadhya",
+      listTitle: "Your sadhya leaf",
+      listEmpty: "Your leaf is empty — tap + beside any dish to serve it.",
       eventTypes: ["Wedding", "Engagement", "Choroonu", "Housewarming", "Onam & festivals", "Temple function", "Birthday", "Office Onam"],
       notesPlaceholder: "Less spice, extra payasam, a separate kids' row, a time for serving…",
     },
