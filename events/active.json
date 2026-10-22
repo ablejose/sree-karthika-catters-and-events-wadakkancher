@@ -21,60 +21,60 @@
   "reviews": [],
   "gallery": [
     {
-      "src": "gallery/01.webp",
-      "alt": "Kerala sadhya on banana leaf with rice, parippu and curries"
+      "src": "gallery/p01.webp",
+      "alt": "A rich Kerala sadhya on banana leaf with flowers and payasam"
     },
     {
-      "src": "wedding/couple-1.webp",
-      "alt": "A Kerala bride and groom in kasavu and mundu, with jasmine garlands"
+      "src": "gallery/p02.webp",
+      "alt": "Bride and groom seated at the sacred fire on a decorated stage"
     },
     {
-      "src": "gallery/02.webp",
-      "alt": "A full sadhya leaf with upperi, pickles, curries and rice"
+      "src": "gallery/p03.webp",
+      "alt": "A traditional Hindu wedding stage dressed in marigold and jasmine"
     },
     {
-      "src": "wedding/couple-2.webp",
-      "alt": "The couple with family elders on the wedding day"
+      "src": "gallery/p04.webp",
+      "alt": "A lit nilavilakku with jasmine garlands"
     },
     {
-      "src": "wedding/moment-2.webp",
-      "alt": "The couple beside the lit nilavilakku and nirapara"
+      "src": "gallery/p05.webp",
+      "alt": "A Kerala couple seated with the nirapara and lit lamp"
+    },
+    {
+      "src": "gallery/p06.webp",
+      "alt": "Hands joined over the brass uruli during the wedding rites"
+    },
+    {
+      "src": "gallery/p07.webp",
+      "alt": "A pookalam of marigold, jasmine and chrysanthemum"
+    },
+    {
+      "src": "gallery/p08.webp",
+      "alt": "Sacred water poured over joined hands during kanyadanam"
+    },
+    {
+      "src": "gallery/p09.webp",
+      "alt": "Payasam on banana leaf with pazham pori"
+    },
+    {
+      "src": "gallery/p10.webp",
+      "alt": "A wedding mandapam with golden pillars and flower garlands"
+    },
+    {
+      "src": "gallery/p11.webp",
+      "alt": "The coconut held in joined hands, a wedding rite"
+    },
+    {
+      "src": "gallery/p12.webp",
+      "alt": "A wedding mandap with hanging flower strands"
+    },
+    {
+      "src": "gallery/p13.webp",
+      "alt": "A festive table set with lit lamps on banana leaf"
     },
     {
       "src": "gallery/04.webp",
       "alt": "Brass uruli filled with flowers on a bed of petals"
-    },
-    {
-      "src": "wedding/moment-3.webp",
-      "alt": "Garland exchange between the bride and groom"
-    },
-    {
-      "src": "gallery/05.webp",
-      "alt": "A lit nilavilakku, the traditional brass lamp"
-    },
-    {
-      "src": "gallery/11.webp",
-      "alt": "A complete sadhya on banana leaf with payasam and buttermilk"
-    },
-    {
-      "src": "gallery/06.webp",
-      "alt": "Pookalam with nirapara and brass vessels"
-    },
-    {
-      "src": "gallery/12.webp",
-      "alt": "Serving sadhya onto banana leaves, row by row"
-    },
-    {
-      "src": "gallery/07.webp",
-      "alt": "Payasam in a glass bowl beside rice and banana leaf"
-    },
-    {
-      "src": "gallery/08.webp",
-      "alt": "Sadhya curries ready to serve in steel vessels"
-    },
-    {
-      "src": "gallery/09.webp",
-      "alt": "Brass lamps lit before a flower garland"
     }
   ],
   "url": "https://sree-karthika-catters-and-events-wa.vercel.app",
@@ -86,11 +86,11 @@
     "about": [
       {
         "src": "about/stage.webp",
-        "alt": "A Kerala wedding hall with the stage dressed at the end of the aisle"
+        "alt": "Bride and groom seated on a richly decorated wedding stage"
       },
       {
         "src": "about/leaf.webp",
-        "alt": "A full sadhya on banana leaf, with payasam in a glass"
+        "alt": "A full Kerala sadhya on banana leaf"
       }
     ],
     "logoMark": "brand/logo-mark.webp",
@@ -542,76 +542,12 @@
   ],
   "photoCredits": [
     {
-      "text": "Vis M (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_2024.jpg"
-    },
-    {
-      "text": "Gnoeee (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Bride_and_groom_talking_and_walking_together.jpg"
-    },
-    {
-      "text": "Sreerajsadanand (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Sadya_-_An_art.jpeg"
-    },
-    {
       "text": "Karthik Murugan (CC BY-SA 3.0)",
       "href": "https://commons.wikimedia.org/wiki/File:Decorated_Uruli.JPG"
     },
     {
-      "text": "iMahesh (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Indian_Wedding_Ritual_-_Jaimala_or_Varmala_(02).jpg"
-    },
-    {
-      "text": "Vinayaraj (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Nilavilakku_at_Muthappan_temple,_Puralimala_(5).jpg"
-    },
-    {
-      "text": "Edgeofthewood (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Onam_Pookalam_with_Nirapara.jpg"
-    },
-    {
-      "text": "Gangulybiswarup (CC BY 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Waitress_Serving_Food_At_Onam_Sadhya_-_Grand_Traditional_Vegetarian_Feast_Served_On_A_Banana_Leaf_-_WikiConference_India_2026_-_Kochi_2026-09-04_03433.jpg"
-    },
-    {
-      "text": "Ross thres (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Paal_payasam.JPG"
-    },
-    {
-      "text": "Nizil Shah (CC BY-SA 3.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_at_WCI_2026_(17064).jpg"
-    },
-    {
-      "text": "Yugaljoshi (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Onam_Celebration.jpg"
-    },
-    {
-      "text": "Netha Hussain (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Stage_setting_for_a_Muslim_wedding_ceremony_01.jpg"
-    },
-    {
-      "text": "Anila Sudish (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Onam_Special_Kerala_Sadya....JPG"
-    },
-    {
-      "text": "Athulvis (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Onam_Sadya_(82105).jpg"
-    },
-    {
-      "text": "Kasyap (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Wedding_Stage.jpg"
-    },
-    {
-      "text": "കാക്കര (CC BY-SA 3.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Sarkkara_Urutti_-_%E0%B4%B6%E0%B5%BC%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B4%B0_%E0%B4%89%E0%B4%B0%E0%B5%81%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B4%BF.JPG"
-    },
-    {
-      "text": "Samphotography (CC BY-SA 4.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Aviyal,Kerala_cuisine.jpg"
-    },
-    {
-      "text": "stu spivack (CC BY-SA 2.0)",
-      "href": "https://commons.wikimedia.org/wiki/File:Kheer.jpg"
+      "text": "Pexels photographers",
+      "href": "https://www.pexels.com/license/"
     }
   ],
   "loaderTone": "light"
