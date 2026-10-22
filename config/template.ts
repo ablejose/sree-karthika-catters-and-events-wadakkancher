@@ -450,19 +450,19 @@ export const variantCopy: Record<
     },
   },
 
-  /** Sadya — pure-vegetarian sadya on banana leaf, with a traditional (nilavilakku, uruli) stage. */
+  /** Sadya — pure-vegetarian sadhya on banana leaf, with a traditional (nilavilakku, uruli) stage. */
   sadya: {
     hero: {
-      body: "Traditional vegetarian sadya on banana leaf across {district} — with the lamp, the flowers and the stage set the Kerala way.",
+      body: "Traditional vegetarian sadhya on banana leaf across {district} — with the lamp, the flowers and the stage set the Kerala way.",
     },
     services: {
       eyebrow: "What we do",
-      heading: "Sadya, served the way it should be",
+      heading: "Sadhya, served the way it should be",
     },
     gallery: {
       eyebrow: "The feast",
       heading: "Banana leaf, laid in order",
-      body: "Every curry in its place on the leaf, rice served hot, and payasam to close — the sadya as Kerala knows it.",
+      body: "Every curry in its place on the leaf, rice served hot, and payasam to close — the sadhya as Kerala knows it.",
       photoQuote: "Upperi to payasam — every dish in its place on the leaf.",
     },
     process: {
@@ -471,7 +471,7 @@ export const variantCopy: Record<
       body: "One team plans the menu, cooks on the day, serves in rows and sets the traditional stage — so the whole function feels like home.",
     },
     about: {
-      headingLead: "Pure vegetarian sadya, served with",
+      headingLead: "Pure vegetarian sadhya, served with",
       headingAccent: "tradition.",
     },
     menu: {

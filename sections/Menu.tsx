@@ -56,6 +56,12 @@ const COURSE_ICONS: Record<string, LucideIcon> = {
   "veg-mains": Salad,
   desserts: IceCreamBowl,
   live: Flame,
+  // Sadya courses
+  leaf: Leaf,
+  curries: Salad,
+  rice: Wheat,
+  payasam: IceCreamBowl,
+  finish: GlassWater,
   soups: Soup,
   "kerala-feast": CookingPot,
   grills: Flame,
