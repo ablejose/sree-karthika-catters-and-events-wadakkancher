@@ -162,7 +162,7 @@ export default function Hero() {
         {site.taglineMl && (
           <p
             lang="ml"
-            className={cn("ml-display max-w-2xl text-ivory", site.headline ? "mt-3" : "mt-7")}
+            className={cn("ml-display max-w-2xl italic text-ivory [font-synthesis:weight_style]", site.headline ? "mt-3" : "mt-7")}
             style={{
               fontSize: site.headline ? "clamp(1.05rem, 2vw, 1.35rem)" : "clamp(1.45rem, 3.4vw, 2.35rem)",
               textShadow: "0 2px 24px rgba(0,0,0,0.45)",
