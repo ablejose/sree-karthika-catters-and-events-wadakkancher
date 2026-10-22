@@ -236,17 +236,17 @@ export default function Menu() {
   const nudge = (d: number) => setGuests((g) => Math.min(GUESTS.max, Math.max(GUESTS.min, g + d)));
 
   const send = () => {
-    const lines = [t(copy.cta.waQuoteIntro), ""];
+    const lines = [t(c.waIntro || copy.cta.waQuoteIntro), ""];
     if (name.trim()) lines.push(`${c.waName}: ${name.trim()}`);
     lines.push(`${c.waEvent}: ${occasion}`);
     lines.push(`${c.waGuests}: ${guests}`);
     if (date) lines.push(`${c.waDate}: ${formatDate(date)}`);
     lines.push("");
     if (grouped.length) {
-      lines.push(`${c.waMenu} (${picked.length} ${picked.length === 1 ? "dish" : "dishes"}):`);
+      lines.push(`${c.waMenu} (${picked.length} ${picked.length === 1 ? c.dish : c.dishes}):`);
       grouped.forEach((g) => lines.push(`• ${g.title}: ${g.items.map((i) => i.name).join(", ")}`));
     } else {
-      lines.push(`${c.waMenu}: please suggest one.`);
+      lines.push(`${c.waMenu}: ${c.suggestPlease}`);
     }
     if (notes.trim()) lines.push("", `${c.waNotes}: ${notes.trim()}`);
     lines.push("", c.waOutro);
@@ -257,7 +257,7 @@ export default function Menu() {
   const step = picked.length === 0 ? 0 : 1;
 
   return (
-    <section ref={sectionRef} id="menu" data-hide-fab aria-labelledby="menu-heading" className="relative bg-cream py-16 md:py-24">
+    <section ref={sectionRef} id="menu" lang={LEAF ? "ml" : undefined} data-hide-fab aria-labelledby="menu-heading" className="relative bg-cream py-16 md:py-24">
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(196,137,46,0.45), transparent)" }} />
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -right-40 top-10 h-[34rem] w-[34rem] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,137,46,0.12) 0%, rgba(196,137,46,0) 70%)" }} />
@@ -322,7 +322,7 @@ export default function Menu() {
                     <span>
                       <span className={cn("block font-display text-lg", on ? "text-ivory" : "text-espresso")}>{p.title}</span>
                       <span className={cn("mt-0.5 block font-sans text-xs", on ? "text-ivory/70" : "text-muted")}>
-                        {p.note} · {p.items.length} dishes
+                        {p.note} · {p.items.length} {c.dishes}
                       </span>
                     </span>
                     {on ? <Check size={18} className="text-saffron" /> : LEAF ? <Leaf size={18} style={{ color: LEAF_GREEN, opacity: 0.7 }} /> : <Sparkles size={18} className="text-saffron-2/60" />}
@@ -343,7 +343,7 @@ export default function Menu() {
           <div
             ref={railRef}
             role="tablist"
-            aria-label="Menu courses"
+            aria-label={c.coursesLabel}
             data-lenis-prevent
             // Desktop grid: one row for up to 8 courses, two balanced rows beyond that (ignored by the phone flex row).
             style={{ gridTemplateColumns: `repeat(${menu.length > 8 ? Math.ceil(menu.length / 2) : menu.length}, minmax(0, 1fr))` }}
@@ -384,7 +384,7 @@ export default function Menu() {
                     <span className="grid h-5 min-w-5 place-items-center rounded-full bg-saffron px-1.5 font-sans text-[0.62rem] font-bold text-espresso lg:hidden">{n}</span>
                   )}
                   <span className={cn("hidden font-sans text-[0.62rem] lg:block", on ? "text-ivory/60" : "text-muted")}>
-                    {n > 0 ? `${n}/${m.items.length} ${c.picked}` : `${m.items.length} dishes`}
+                    {n > 0 ? `${n}/${m.items.length} ${c.picked}` : `${m.items.length} ${c.dishes}`}
                   </span>
                   {n > 0 && (
                     <span className="absolute right-2 top-2 hidden h-5 w-5 place-items-center rounded-full bg-saffron text-espresso lg:grid">
@@ -455,7 +455,7 @@ export default function Menu() {
                           <p className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-saffron-2 sm:text-[0.68rem]">
                             {c.courseLabel} {String(catIdx + 1).padStart(2, "0")} {c.of} {String(menu.length).padStart(2, "0")}
                           </p>
-                          <h3 className="mt-1 font-display text-[1.6rem] italic leading-none text-espresso sm:text-[2rem] md:text-[2.5rem]">{active.title}</h3>
+                          <h3 className={cn("mt-1 font-display text-[1.6rem] leading-none text-espresso sm:text-[2rem] md:text-[2.5rem]", LEAF ? "leading-tight" : "italic")}>{active.title}</h3>
                           {active.ml && <p lang="ml" className="ml mt-1.5 text-[0.88rem] text-saffron-2 sm:mt-2 sm:text-[0.98rem]">{active.ml}</p>}
                         </div>
                       </div>
@@ -675,7 +675,7 @@ export default function Menu() {
                   <div className="mt-4 flex items-center gap-3">
                     <button
                       type="button"
-                      aria-label="Fewer guests"
+                      aria-label={c.fewerGuests}
                       onClick={() => nudge(-GUESTS.step)}
                       className="grid h-10 w-10 shrink-0 lg:h-8 lg:w-8 place-items-center rounded-full border border-ivory/20 text-ivory/80 hover:border-saffron hover:text-saffron"
                     >
@@ -695,7 +695,7 @@ export default function Menu() {
                     />
                     <button
                       type="button"
-                      aria-label="More guests"
+                      aria-label={c.moreGuests}
                       onClick={() => nudge(GUESTS.step)}
                       className="grid h-10 w-10 shrink-0 lg:h-8 lg:w-8 place-items-center rounded-full border border-ivory/20 text-ivory/80 hover:border-saffron hover:text-saffron"
                     >
@@ -788,7 +788,7 @@ export default function Menu() {
                   <span className="relative z-10 min-w-0 leading-tight">
                     <span className="block font-sans text-[0.95rem] font-bold">{c.submit}</span>
                     <span className="block truncate font-sans text-[0.7rem] font-medium text-espresso/75">
-                      {picked.length > 0 ? `${picked.length} ${picked.length === 1 ? "dish" : "dishes"}` : "Menu to suggest"} · {guests} {c.guestsUnit} · {occasion}
+                      {picked.length > 0 ? `${picked.length} ${picked.length === 1 ? c.dish : c.dishes}` : c.suggestMenu} · {guests} {c.guestsUnit} · {occasion}
                     </span>
                   </span>
                   <span className="relative z-10 grid h-11 w-11 shrink-0 place-items-center rounded-full bg-espresso text-[#25D366] transition-transform duration-300">
@@ -841,7 +841,7 @@ export default function Menu() {
                 </>
               ) : (
                 <>
-                  <strong className="font-semibold text-saffron">{picked.length}</strong> dishes · {guests} {c.guestsUnit}
+                  <strong className="font-semibold text-saffron">{picked.length}</strong> {c.dishes} · {guests} {c.guestsUnit}
                 </>
               )}
             </span>

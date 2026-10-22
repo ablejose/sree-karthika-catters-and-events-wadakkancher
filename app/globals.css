@@ -44,6 +44,12 @@ body {
   line-height: 1.4;
 }
 
+/* Letter-spacing pulls Malayalam conjuncts apart, so Malayalam sections set none. */
+[lang="ml"],
+[lang="ml"] * {
+  letter-spacing: normal !important;
+}
+
 /* Lenis */
 html.lenis,
 html.lenis body {
