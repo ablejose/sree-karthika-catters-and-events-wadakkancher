@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowLeft,
@@ -34,6 +34,7 @@ import { copy, variant, waLink } from "@/config/site";
 import { menu, menuPresets } from "@/config/menu";
 import { asset, t } from "@/lib/copy";
 import { cn } from "@/lib/utils";
+import { BananaLeaf, LEAF_GREEN } from "@/components/BananaLeaf";
 
 /**
  * THE MENU — a quote builder. Visitors walk the menu course by course (or start
@@ -78,35 +79,7 @@ const c = copy.menu;
 
 /** Sadya sites dress the menu lightly as a banana leaf. */
 const LEAF = variant === "sadya";
-const LEAF_GREEN = "#2F6B3A";
 
-function BananaLeaf({ className, style }: { className?: string; style?: React.CSSProperties }) {
-  const clip = `leaf-${useId().replace(/:/g, "")}`;
-  const veins = Array.from({ length: 15 }, (_, i) => {
-    const x = 40 + i * 36;
-    const y = 148 - (x / 600) * 108; // along the midrib
-    return { x, y };
-  });
-  return (
-    <svg viewBox="0 0 600 220" className={className} style={style} aria-hidden>
-      <defs>
-        <clipPath id={clip}>
-          <path d="M6 152 C 120 34, 390 4, 594 40 C 430 132, 210 206, 6 152 Z" />
-        </clipPath>
-      </defs>
-      <path d="M6 152 C 120 34, 390 4, 594 40 C 430 132, 210 206, 6 152 Z" fill={LEAF_GREEN} />
-      <g clipPath={`url(#${clip})`} stroke="#FFFFFF" strokeOpacity="0.35" strokeWidth="2" fill="none">
-        <path d="M6 152 C 200 104, 400 64, 594 40" strokeWidth="4" />
-        {veins.map((v, i) => (
-          <g key={i}>
-            <path d={`M${v.x} ${v.y} L ${v.x + 30} ${v.y - 70}`} />
-            <path d={`M${v.x} ${v.y} L ${v.x - 18} ${v.y + 70}`} />
-          </g>
-        ))}
-      </g>
-    </svg>
-  );
-}
 
 function formatDate(iso: string) {
   if (!iso) return "";
@@ -257,15 +230,24 @@ export default function Menu() {
   const step = picked.length === 0 ? 0 : 1;
 
   return (
-    <section ref={sectionRef} id="menu" lang={LEAF ? "ml" : undefined} data-hide-fab aria-labelledby="menu-heading" className="relative bg-cream py-16 md:py-24">
+    <section
+      ref={sectionRef}
+      id="menu"
+      lang={LEAF ? "ml" : undefined}
+      data-leaf={LEAF || undefined}
+      data-hide-fab
+      aria-labelledby="menu-heading"
+      className={cn("relative py-16 md:py-24", LEAF ? "bg-[linear-gradient(180deg,#FFF5DF_0%,#EEF7E6_50%,#FFF5DF_100%)]" : "bg-cream")}
+    >
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(196,137,46,0.45), transparent)" }} />
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -right-40 top-10 h-[34rem] w-[34rem] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,137,46,0.12) 0%, rgba(196,137,46,0) 70%)" }} />
         <div className="absolute -left-40 bottom-20 h-[30rem] w-[30rem] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,137,46,0.08) 0%, rgba(196,137,46,0) 70%)" }} />
         {LEAF && (
           <>
-            <BananaLeaf className="absolute -left-24 top-16 w-[30rem] -rotate-[18deg] md:-left-16 md:w-[40rem]" style={{ opacity: 0.07 }} />
-            <BananaLeaf className="absolute -right-28 bottom-24 w-[28rem] rotate-[160deg] md:w-[38rem]" style={{ opacity: 0.06 }} />
+            <BananaLeaf className="absolute -left-24 top-16 w-[30rem] -rotate-[18deg] md:-left-16 md:w-[40rem]" style={{ opacity: 0.12 }} />
+            <BananaLeaf className="absolute -right-28 top-[42%] w-[26rem] rotate-[200deg] md:w-[34rem]" style={{ opacity: 0.09 }} />
+            <BananaLeaf className="absolute -left-32 bottom-10 w-[28rem] rotate-[150deg] md:w-[36rem]" style={{ opacity: 0.1 }} />
           </>
         )}
       </div>

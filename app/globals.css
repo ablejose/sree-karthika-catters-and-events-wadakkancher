@@ -50,6 +50,21 @@ body {
   letter-spacing: normal !important;
 }
 
+/* Sadya menu: the dark accents turn deep banana-leaf green. */
+#menu[data-leaf] .bg-espresso {
+  background-color: #1f5a2e !important;
+}
+#menu[data-leaf] .border-espresso {
+  border-color: #1f5a2e !important;
+}
+#menu[data-leaf] .bg-\[\#1c150f\] {
+  background-color: #17461f !important;
+}
+#menu[data-leaf] [role="tab"][aria-selected="false"] {
+  border-color: rgba(47, 107, 58, 0.3);
+  background-color: #fbfdf8;
+}
+
 /* Lenis */
 html.lenis,
 html.lenis body {
