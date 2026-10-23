@@ -38,6 +38,9 @@ export const tAll = (list: readonly string[]): string[] => list.map(t);
  * Resolves a media path from the event config. Relative paths hang off
  * media.base, so a whole event's assets move by changing one line.
  */
+/** "ml" for text written in Malayalam script, so it gets the Malayalam face and no letter-spacing. */
+export const langOf = (s?: string) => (s && /[ഀ-ൿ]/.test(s) ? "ml" : undefined);
+
 export const asset = (path: string): string => {
   if (!path) return path;
   if (/^(https?:)?\/\//.test(path) || path.startsWith("/")) return path;

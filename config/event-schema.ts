@@ -67,7 +67,7 @@ export interface Story {
   body: string[];
   /** Pull quote, Malayalam. */
   quoteMl?: string;
-  video: { src: MediaPath; poster: MediaPath; alt: string; shape: "portrait" | "landscape" };
+  video?: { src: MediaPath; poster: MediaPath; alt: string; shape: "portrait" | "landscape" };
   /** An extra still beside the clip (split layouts). */
   photo?: { src: MediaPath; alt: string };
   /** Words that scroll under a wide clip (dish names). */

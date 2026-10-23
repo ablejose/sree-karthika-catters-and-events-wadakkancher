@@ -4,6 +4,7 @@ import { BananaLeaf } from "@/components/BananaLeaf";
 import { Img } from "@/components/ui/Img";
 import { stories } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { langOf } from "@/lib/copy";
 
 /**
  * THE FOOD STORY — chapters told right after the hero, each with its own short
@@ -29,7 +30,11 @@ function Text({ s, n, center = false }: { s: S; n: number; center?: boolean }) {
           {s.kicker}
         </span>
       </p>
-      <h2 className="display mt-4" style={{ fontSize: "clamp(2rem, 4vw, 3.3rem)" }}>
+      <h2
+        lang={langOf(s.title)}
+        className={cn("mt-4 text-espresso", langOf(s.title) ? "ml-display" : "display")}
+        style={{ fontSize: langOf(s.title) ? "clamp(1.75rem, 3.4vw, 2.75rem)" : "clamp(2rem, 4vw, 3.3rem)" }}
+      >
         {s.title}
       </h2>
       {s.titleMl && (
@@ -54,6 +59,19 @@ function Text({ s, n, center = false }: { s: S; n: number; center?: boolean }) {
 }
 
 function SplitMedia({ s }: { s: S }) {
+  if (!s.video && s.photo) {
+    return (
+      <Reveal delay={0.06} className="relative mx-auto w-full max-w-[26rem]">
+        <BananaLeaf className="pointer-events-none absolute -left-24 top-1/3 w-[26rem] -rotate-[28deg]" style={{ opacity: 0.08 }} />
+        <figure className="relative overflow-hidden rounded-[30px] shadow-[0_40px_80px_-40px_rgba(36,28,21,0.6)]">
+          <div className="aspect-[4/5]">
+            <Img src={s.photo.src} alt={s.photo.alt} />
+          </div>
+        </figure>
+      </Reveal>
+    );
+  }
+  if (!s.video) return null;
   if (s.photo) {
     return (
       <Reveal delay={0.06} className="grid grid-cols-[1fr_0.92fr] items-end gap-3 md:gap-4">
@@ -86,6 +104,7 @@ export default function Stories() {
             <section key={s.id} id={`story-${s.id}`} className={cn("relative overflow-hidden py-16 md:py-24", tone)}>
               <div className="mx-auto max-w-shell px-6">
                 <Text s={s} n={n} center />
+                {s.video && (
                 <Reveal delay={0.06} className="mt-10 md:mt-14">
                   <StoryVideo
                     src={s.video.src}
@@ -94,6 +113,7 @@ export default function Stories() {
                     className="aspect-[4/3] w-full rounded-[28px] shadow-[0_50px_100px_-50px_rgba(36,28,21,0.6)] sm:aspect-video"
                   />
                 </Reveal>
+                )}
               </div>
               {s.chips && s.chips.length > 0 && (
                 <div lang="ml" className="mt-8 overflow-hidden md:mt-10" aria-hidden>
@@ -113,11 +133,11 @@ export default function Stories() {
         return (
           <section key={s.id} id={`story-${s.id}`} className={cn("relative overflow-hidden py-16 md:py-24", tone)}>
             <div className="mx-auto grid max-w-shell grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
-              <div className={cn(reverse && "lg:order-2")}>
-                <SplitMedia s={s} />
-              </div>
-              <div className={cn(reverse && "lg:order-1")}>
+              <div className={cn(!reverse && "lg:order-2")}>
                 <Text s={s} n={n} />
+              </div>
+              <div className={cn(!reverse && "lg:order-1")}>
+                <SplitMedia s={s} />
               </div>
             </div>
           </section>
