@@ -7,7 +7,7 @@ import { Img } from "@/components/ui/Img";
 import Lightbox from "@/components/Lightbox";
 import { galleryImages, galleryReel } from "@/config/gallery";
 import { copy } from "@/config/site";
-import { t } from "@/lib/copy";
+import { langOf, t } from "@/lib/copy";
 
 /** Photos shown before "Show all" — enough to fill three masonry columns. */
 const INITIAL = 9;
@@ -28,8 +28,8 @@ export default function Gallery() {
       <div className="mx-auto max-w-shell px-6">
         <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <Reveal>
-            <p className="eyebrow">{copy.gallery.eyebrow}</p>
-            <h2 id="gallery-heading" className="display mt-4" style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)" }}>
+            <p lang={langOf(copy.gallery.eyebrow)} className="eyebrow">{copy.gallery.eyebrow}</p>
+            <h2 id="gallery-heading" lang={langOf(copy.gallery.heading)} className="display mt-4" style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)" }}>
               {copy.gallery.heading}
             </h2>
             <p className="body-copy mt-4 max-w-xl">{t(copy.gallery.body)}</p>

@@ -5,6 +5,8 @@ import Reveal from "@/components/Reveal";
 import { Img } from "@/components/ui/Img";
 import { services } from "@/config/services";
 import { copy } from "@/config/site";
+import { langOf } from "@/lib/copy";
+import { cn } from "@/lib/utils";
 
 /**
  * WHAT WE DO — template-level offer (config/template.ts). Event configs only
@@ -22,15 +24,14 @@ export default function Services() {
     <section id="services" aria-labelledby="services-heading" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-shell px-6">
         <Reveal>
-          <p className="eyebrow">{copy.services.eyebrow}</p>
-          <h2 id="services-heading" className="display mt-4" style={{ fontSize: "clamp(1.9rem, 3.4vw, 3rem)" }}>
+          <p lang={langOf(copy.services.eyebrow)} className="eyebrow">{copy.services.eyebrow}</p>
+          <h2 id="services-heading" lang={langOf(copy.services.heading)} className="display mt-4" style={{ fontSize: "clamp(1.9rem, 3.4vw, 3rem)" }}>
             {copy.services.heading}
           </h2>
         </Reveal>
 
-        <div className={`mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 ${services.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
+        <div className={cn("mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2", services.length === 4 ? "lg:grid-cols-4" : services.length === 2 ? "lg:gap-8" : "lg:grid-cols-3")}>
           {services.map((s, i) => {
-            const num = String(i + 1).padStart(2, "0");
             const open = openId === s.id;
             return (
               <Reveal key={s.id} delay={i * 0.1} className="h-full">
@@ -44,7 +45,7 @@ export default function Services() {
                       toggle(s.id);
                     }
                   }}
-                  className="group relative block aspect-[4/3] h-full cursor-pointer overflow-hidden rounded-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-saffron sm:aspect-[3/4]"
+                  className={cn("group relative block aspect-[4/3] h-full cursor-pointer overflow-hidden rounded-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-saffron", services.length === 2 ? "sm:aspect-[4/5] lg:aspect-[5/4]" : "sm:aspect-[3/4]")}
                 >
                   <Img
                     src={s.image}
@@ -58,8 +59,7 @@ export default function Services() {
                       open ? "opacity-0" : "opacity-100"
                     }`}
                   >
-                    <span className="font-sans text-xs font-semibold tracking-[0.3em] text-saffron">{num}</span>
-                    <h3 className="mt-2 font-display text-2xl leading-tight text-ivory">{s.title}</h3>
+                    <h3 className="font-display text-2xl leading-tight text-ivory md:text-3xl">{s.title}</h3>
                     <span className="mt-2 inline-flex items-center gap-1 font-sans text-xs text-ivory/75 lg:hidden">
                       {copy.services.tapHint}
                     </span>
@@ -70,8 +70,7 @@ export default function Services() {
                       open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                     }`}
                   >
-                    <span className="font-display text-xl text-saffron">{num}</span>
-                    <h3 className="mt-1 font-display text-2xl text-saffron">{s.title}</h3>
+                    <h3 className="font-display text-2xl text-saffron">{s.title}</h3>
                     <p className="mt-3 font-sans text-sm font-light leading-relaxed text-[#ecd4a3]">{s.blurb}</p>
                     <ul className="mt-4 space-y-2">
                       {s.bullets.map((b) => (

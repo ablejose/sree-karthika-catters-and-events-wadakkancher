@@ -23,6 +23,8 @@ export const copy = {
   process: { ...templateCopy.process, ...vc.process },
   about: { ...templateCopy.about, ...vc.about },
   menu: { ...templateCopy.menu, ...vc.menu },
+  visit: { ...templateCopy.visit, ...vc.visit },
+  footer: { ...templateCopy.footer, ...vc.footer },
 };
 
 export const site = {
@@ -76,13 +78,24 @@ const slide = (e: GalleryEntry, i: number) =>
 export const heroSlides = (event.media.heroSlides ?? TEMPLATE_HERO_SLIDES).map(slide);
 
 /** Optional transparent brand mark for the loader + header. */
+type MiddleKey = "services" | "gallery" | "process" | "about";
+/** Middle-of-page section order per variant. Sadya sites drop About; its story moves into Contact. */
+const MIDDLE_ORDER: Record<string, readonly MiddleKey[]> = {
+  catering: ["services", "gallery", "process", "about"],
+  events: ["services", "gallery", "process", "about"],
+  wedding: ["process", "about", "services", "gallery"],
+  sadya: ["services", "gallery", "process"],
+};
+export const middleOrder = MIDDLE_ORDER[variant] ?? MIDDLE_ORDER.catering;
+export const aboutInContact = !middleOrder.includes("about");
+
 /** White, logo-led hero instead of the photo slideshow. */
 export const heroLight = event.heroTone === "light";
 
 /** Story chapters with media resolved against the event's media folder. */
 export const stories = (event.stories ?? []).map((s) => ({
   ...s,
-  video: { ...s.video, src: asset(s.video.src), poster: asset(s.video.poster) },
+  video: s.video ? { ...s.video, src: asset(s.video.src), poster: asset(s.video.poster) } : undefined,
   photo: s.photo ? { ...s.photo, src: asset(s.photo.src) } : undefined,
 }));
 

@@ -10,7 +10,7 @@ import About from "@/sections/About";
 import Testimonials from "@/sections/Testimonials";
 import Menu from "@/sections/Menu";
 import Footer from "@/sections/Footer";
-import { heroLight, variant } from "@/config/site";
+import { heroLight, middleOrder } from "@/config/site";
 
 /**
  * Page order follows the AIDA conversion journey — hero, proof, offer, reviews,
@@ -22,12 +22,6 @@ import { heroLight, variant } from "@/config/site";
  *   events             -> services (decor/stages), gallery, then process + about.
  *   wedding            -> planning process + venues (about) first, then services + gallery.
  */
-const MIDDLE_ORDER: Record<string, readonly ["services" | "gallery" | "process" | "about", ...("services" | "gallery" | "process" | "about")[]]> = {
-  catering: ["services", "gallery", "process", "about"],
-  events: ["services", "gallery", "process", "about"],
-  wedding: ["process", "about", "services", "gallery"],
-  sadya: ["services", "gallery", "process", "about"],
-};
 
 const SECTION_BY_KEY = {
   services: Services,
@@ -37,7 +31,7 @@ const SECTION_BY_KEY = {
 } as const;
 
 export default function HomePage() {
-  const order = MIDDLE_ORDER[variant] ?? MIDDLE_ORDER.catering;
+  const order = middleOrder;
 
   return (
     <main>

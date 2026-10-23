@@ -1,8 +1,8 @@
 import { Phone, MapPin, Clock, Instagram, Facebook, Mail, Navigation } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
-import { copy, event, logoMark, site, telLink, waLink } from "@/config/site";
-import { t } from "@/lib/copy";
+import { aboutInContact, copy, event, logoMark, site, telLink, waLink } from "@/config/site";
+import { langOf, t } from "@/lib/copy";
 
 const tel = (p: string) => `tel:${p.replace(/[^\d+]/g, "")}`;
 
@@ -16,12 +16,16 @@ export default function Footer() {
       <div className="mx-auto max-w-shell px-6 pb-14 pt-16 md:pt-24">
         <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-2 lg:gap-14">
           <Reveal>
-            <p className="eyebrow" style={{ color: "var(--saffron)" }}>
+            <p lang={langOf(v.eyebrow)} className="eyebrow" style={{ color: "var(--saffron)" }}>
               {v.eyebrow}
             </p>
-            <h2 className="display mt-4" style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)", color: "#fff" }}>
+            <h2 lang={langOf(v.heading)} className="display mt-4" style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)", color: "#fff" }}>
               {v.heading}
             </h2>
+            {/* With no About section on the page, its story is told here. */}
+            {aboutInContact && event.overrides?.aboutBody && (
+              <p className="mt-5 max-w-md font-sans text-[0.95rem] font-light leading-relaxed text-ivory/80">{t(event.overrides.aboutBody)}</p>
+            )}
             <p className="mt-4 max-w-md font-sans text-[0.95rem] font-light leading-relaxed text-ivory/70">{t(v.body)}</p>
 
             <ul className="mt-8 space-y-4 font-sans text-sm text-ivory/85">
@@ -108,7 +112,7 @@ export default function Footer() {
               </p>
             ) : (
               <>
-                <p className="eyebrow" style={{ color: "var(--saffron)" }}>
+                <p lang={langOf(copy.footer.areasLabel)} className="eyebrow" style={{ color: "var(--saffron)" }}>
                   {copy.footer.areasLabel}
                 </p>
                 <p className="mt-3">{site.serviceAreas.join(" · ")}</p>

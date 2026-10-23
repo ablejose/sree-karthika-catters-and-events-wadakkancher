@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 import { processSteps as steps } from "@/config/process";
 import { copy } from "@/config/site";
-import { t } from "@/lib/copy";
+import { langOf, t } from "@/lib/copy";
 
 /**
  * PROCESS TRUST — "How we work". Template-level content (config/template.ts):
@@ -75,11 +75,11 @@ export default function Process() {
     <section id="process" aria-labelledby="process-heading" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-shell px-6">
         <Reveal>
-          <p className="eyebrow">{copy.process.eyebrow}</p>
-          <h2 id="process-heading" className="display mt-4 max-w-3xl text-saffron-2" style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)" }}>
+          <p lang={langOf(copy.process.eyebrow)} className="eyebrow">{copy.process.eyebrow}</p>
+          <h2 id="process-heading" lang={langOf(copy.process.heading)} className="display mt-4 max-w-3xl text-saffron-2" style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)" }}>
             {copy.process.heading}
           </h2>
-          <p className="body-copy mt-4 max-w-xl">{t(copy.process.body)}</p>
+          {copy.process.body && <p className="body-copy mt-4 max-w-xl">{t(copy.process.body)}</p>}
         </Reveal>
 
         <ol ref={olRef} className="relative mt-10 grid grid-cols-1 gap-7 sm:grid-cols-2 sm:gap-10 lg:mt-14 lg:grid-cols-5 lg:gap-6">
@@ -110,8 +110,8 @@ export default function Process() {
                   {s.n}
                 </span>
                 <div className="min-w-0 pt-1.5 sm:pt-0">
-                  <h3 className="font-display text-lg text-saffron-2 sm:mt-5 sm:text-xl">{s.title}</h3>
-                  <p className="body-copy mt-1 sm:mt-2">{t(s.text)}</p>
+                  <h3 lang={langOf(s.title)} className="font-display text-lg text-saffron-2 sm:mt-5 sm:text-xl">{s.title}</h3>
+                  {s.text && <p className="body-copy mt-1 sm:mt-2">{t(s.text)}</p>}
                 </div>
               </div>
             </li>

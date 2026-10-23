@@ -424,6 +424,8 @@ export const variantCopy: Record<
     process?: Partial<Widen<(typeof templateCopy)["process"]>>;
     about?: Partial<Widen<(typeof templateCopy)["about"]>>;
     menu?: Partial<Widen<(typeof templateCopy)["menu"]>>;
+    visit?: Partial<Widen<(typeof templateCopy)["visit"]>>;
+    footer?: Partial<Widen<(typeof templateCopy)["footer"]>>;
   }
 > = {
   /** Catering — menu/services and food gallery lead. This is the original copy, so no overrides. */
@@ -466,23 +468,31 @@ export const variantCopy: Record<
       body: "Traditional vegetarian sadhya on banana leaf across {district} — cooked fresh and served the Kerala way.",
     },
     services: {
-      eyebrow: "What we do",
-      heading: "Sadhya, served the way it should be",
+      eyebrow: "ഞങ്ങൾ ഒരുക്കുന്നത്",
+      heading: "സദ്യ, അതിന്റെ തനിമയോടെ",
     },
     gallery: {
-      eyebrow: "Celebrations",
-      heading: "Where our sadhya is served",
-      body: "Weddings, engagements and festivals across {district} — the setting changes, the sadhya stays the same: fresh, traditional and served on leaf.",
+      eyebrow: "ആഘോഷങ്ങൾ",
+      heading: "നിങ്ങളുടെ സദ്യ വിളമ്പുന്നിടം",
+      body: "Weddings, engagements and festivals — the setting changes, the sadhya stays the same: fresh, traditional and served on leaf.",
       photoQuote: "Whatever the occasion, the leaf is always full.",
     },
     process: {
-      eyebrow: "How we work",
-      heading: "From the first call to the last payasam.",
-      body: "One team plans the menu, cooks on the day, serves in rows and sets the traditional stage — so the whole function feels like home.",
+      eyebrow: "ഞങ്ങളുടെ രീതി",
+      heading: "ആദ്യ വിളി മുതൽ അവസാന പായസം വരെ",
+      body: "",
     },
     about: {
       headingLead: "Pure vegetarian sadhya, served with",
       headingAccent: "tradition.",
+    },
+    visit: {
+      eyebrow: "ബന്ധപ്പെടാം",
+      heading: "നിങ്ങളുടെ സദ്യ, ഞങ്ങൾ ഒരുക്കാം",
+      body: "Call, WhatsApp or drop by — we will walk you through the menu, the payasams and your date.",
+    },
+    footer: {
+      areasLabel: "സേവന മേഖലകൾ",
     },
     // Malayalam only: every word in the menu section, including buttons and the WhatsApp message.
     menu: {
