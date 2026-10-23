@@ -4,18 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, Phone } from "lucide-react";
-import { site, navLinks, telLink, waLink, copy, logoMark } from "@/config/site";
+import { site, navLinks, telLink, waLink, copy, logoMark, heroLight } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
-  const [solid, setSolid] = useState(false);
+  const [solid, setSolid] = useState(heroLight);
   const [open, setOpen] = useState(false);
   // Target to scroll to AFTER the mobile drawer has finished closing.
   const pendingHash = useRef<string | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 60);
+    const onScroll = () => setSolid(heroLight || window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
