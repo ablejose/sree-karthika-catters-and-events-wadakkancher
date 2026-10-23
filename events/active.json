@@ -1,8 +1,8 @@
 {
   "slug": "sree-karthika-catters-and-events-wadakkancher",
-  "name": "Sreekarthika Caterers and Events",
+  "name": "Sreekarthika Catering",
   "shortName": "Sreekarthika",
-  "descriptor": "Sadhya & Traditional Events",
+  "descriptor": "Kerala Sadhya Catering",
   "address": "School, Varavoor - Pilakkad Rd, Waddakanjeri, Chittanda, Varavoor, Keralam 680585",
   "area": "Varavoor",
   "city": "Wadakkanchery",
@@ -44,17 +44,13 @@
   "url": "https://sree-karthika-catters-and-events-wa.vercel.app",
   "variant": "sadya",
   "headline": "",
-  "tagline": "Kerala sadhya and traditional events, done the old way.",
+  "tagline": "Kerala sadhya, cooked fresh for every celebration.",
   "taglineMl": "മനസ്സിന്റെ നിറവ്, ഇലയുടെ നിറവ്",
   "media": {
     "about": [
       {
         "src": "about/stage.webp",
-        "alt": "A traditional wedding stage in marigold drapes with a flower-decked seat"
-      },
-      {
-        "src": "about/leaf.webp",
-        "alt": "A full Kerala sadhya on banana leaf"
+        "alt": "A traditional wedding stage in marigold drapes"
       }
     ],
     "logoMark": "brand/logo-mark.webp",
@@ -85,14 +81,14 @@
       ]
     },
     {
-      "id": "stage",
-      "title": "Wedding Stage & Décor",
+      "id": "wedding-sadhya",
+      "title": "Wedding Sadhya",
       "image": "services/stage.webp",
-      "blurb": "A traditional wedding stage — flower walls, brass pillars, lit nilavilakku and nirapara, with the deity at the centre — set up before the muhurtham.",
+      "blurb": "From the muhurtham to the last row of guests — a full wedding sadhya, cooked fresh and served on leaf for every guest.",
       "bullets": [
-        "Mandapam & flower décor",
-        "Nilavilakku & nirapara",
-        "Ready before the muhurtham"
+        "Two or three payasams",
+        "Served in rows by our crew",
+        "Any guest count"
       ]
     }
   ],
@@ -109,8 +105,8 @@
     },
     {
       "n": "03",
-      "title": "Set the stage",
-      "text": "Nilavilakku, uruli, nirapara and flowers, arranged before the guests arrive."
+      "title": "Pack & deliver",
+      "text": "Curries and payasam are packed hot in sealed containers and brought to your venue on time."
     },
     {
       "n": "04",
@@ -123,7 +119,7 @@
       "text": "Our crew serves on banana leaf, row by row, and keeps the payasam coming."
     }
   ],
-  "aboutBody": "{fullName} is based in {place}. We cook pure-vegetarian Kerala sadhya — from a simple Mini Sadhya to the full banana-leaf feast with two or three payasams — for weddings, choroonu, housewarmings, Onam and temple functions. Alongside the food we set the traditional stage: lit nilavilakku, flower-filled uruli and nirapara, so the whole day feels like home.",
+  "aboutBody": "{fullName} is a sadhya caterer based in {place}. We cook pure-vegetarian Kerala sadhya — from a simple Mini Sadhya to the full banana-leaf feast with two or three payasams — for weddings, choroonu, housewarmings, Onam and temple functions. Everything is cooked fresh on the day in our own kitchen and served on leaf by our own crew.",
   "menu": [
     {
       "id": "leaf",
@@ -470,5 +466,110 @@
       "href": "https://www.pexels.com/license/"
     }
   ],
-  "loaderTone": "light"
+  "loaderTone": "light",
+  "heroTone": "light",
+  "heroRotate": {
+    "words": [
+      "കല്യാണ",
+      "ഓണ",
+      "വിഷു",
+      "ചോറൂണ്",
+      "ഗൃഹപ്രവേശ",
+      "പിറന്നാൾ"
+    ],
+    "after": "സദ്യ, ഞങ്ങളുടെ കൈപ്പുണ്യത്തിൽ"
+  },
+  "stories": [
+    {
+      "id": "leaf",
+      "layout": "split",
+      "tone": "white",
+      "kicker": "ഇല",
+      "title": "Every leaf, laid with care.",
+      "titleMl": "ഓരോ ഇലയും, ശ്രദ്ധയോടെ",
+      "body": [
+        "A sadhya begins long before the first guest sits down. Rows of banana leaves are laid end to end, and every one waits for the same promise — upperi and pickles at the tip, each curry in its place, rice served hot.",
+        "For the families who call us, that long row of leaves is the moment the celebration becomes real. We lay every leaf as if it were the only one."
+      ],
+      "video": {
+        "src": "stories/leaf.mp4",
+        "poster": "stories/leaf-poster.webp",
+        "alt": "Rows of sadhya dishes ready in steel vessels",
+        "shape": "portrait"
+      },
+      "photo": {
+        "src": "stories/leaf-hall.webp",
+        "alt": "Banana leaves laid with sadhya along the tables of a dining hall"
+      }
+    },
+    {
+      "id": "curries",
+      "layout": "wide",
+      "tone": "leaf",
+      "kicker": "കറികൾ",
+      "title": "Cooked in big vessels. Packed with care.",
+      "titleMl": "ഓരോ കറിക്കും അതിന്റെ സമയം",
+      "body": [
+        "Avial, olan, kaalan, erissery, thoran — every curry has its own rhythm and its own hour on the fire. Ours are cooked in big vessels, then filled container after container, lined up and ready for the venue.",
+        "What reaches your guests tastes exactly the way it did when it left our stove."
+      ],
+      "video": {
+        "src": "stories/curries.mp4",
+        "poster": "stories/curries-poster.webp",
+        "alt": "Containers of sadhya curries lined up and packed for a function",
+        "shape": "landscape"
+      },
+      "chips": [
+        "അവിയൽ",
+        "ഓലൻ",
+        "കാളൻ",
+        "എരിശ്ശേരി",
+        "തോരൻ",
+        "കൂട്ടുകറി",
+        "പച്ചടി",
+        "കിച്ചടി",
+        "സാമ്പാർ",
+        "പുളിശ്ശേരി",
+        "രസം",
+        "ഇഞ്ചിപ്പുളി"
+      ]
+    },
+    {
+      "id": "kitchen",
+      "layout": "split-reverse",
+      "tone": "cream",
+      "kicker": "അടുക്കള",
+      "title": "Close enough to smell it.",
+      "titleMl": "അടുക്കളയിൽ നിന്ന് നേരെ ഇലയിലേക്ക്",
+      "body": [
+        "Grated coconut roasted till it turns gold. Curd folded into ash gourd. A ladle of ghee over the parippu.",
+        "Nothing is made days ahead and warmed up — the spread you see is cooked the same day, by the same hands, for your day."
+      ],
+      "video": {
+        "src": "stories/kitchen.mp4",
+        "poster": "stories/kitchen-poster.webp",
+        "alt": "Close-ups of curries and payasam fresh from the kitchen",
+        "shape": "portrait"
+      }
+    },
+    {
+      "id": "payasam",
+      "layout": "split",
+      "tone": "gold",
+      "kicker": "പായസം",
+      "title": "The sweetness they remember.",
+      "titleMl": "മധുരത്തിന്റെ ഓർമ്മ",
+      "body": [
+        "Every sadhya ends the same way — with a second ladle of payasam nobody says no to. Ada pradhaman stirred for hours in a big uruli until the jaggery deepens and the coconut milk turns to silk; palada slow-cooked until it blushes pink.",
+        "Long after the day, guests forget the speeches and the seating. They remember the payasam — and the family who served it. That is the sweetness we cook for."
+      ],
+      "quoteMl": "“അവസാനത്തെ ഒരു തവി പായസം — അതാണ് അതിഥികൾ ഓർത്തുവയ്ക്കുന്നത്.”",
+      "video": {
+        "src": "stories/payasam.mp4",
+        "poster": "stories/payasam-poster.webp",
+        "alt": "Payasam being stirred in a big uruli for a Vishu sadhya",
+        "shape": "portrait"
+      }
+    }
+  ]
 }
