@@ -55,7 +55,13 @@
     ],
     "logoMark": "brand/logo-mark.webp",
     "brandDir": "brand",
-    "ogImage": "brand/og-image.jpg"
+    "ogImage": "brand/og-image.jpg",
+    "heroSlides": [
+      {
+        "src": "services/sadhya.webp",
+        "alt": "A full sadhya on banana leaf"
+      }
+    ]
   },
   "services": [
     {
