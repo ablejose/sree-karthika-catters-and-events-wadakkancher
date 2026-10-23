@@ -1,4 +1,4 @@
-import type { EventConfig, EventImage, EventVariant, GalleryEntry, MenuCategory, MenuPreset } from "@/config/event-schema";
+import type { EventConfig, EventImage, EventVariant, GalleryEntry, MenuCategory, MenuPreset, Story } from "@/config/event-schema";
 import { templateMenu, templateMenuPresets, templateServices } from "@/config/template";
 
 /**
@@ -81,6 +81,11 @@ export interface BusinessInput {
   process?: { n: string; title: string; text: string }[];
   /** Their own About paragraph ({tokens} work). */
   aboutBody?: string;
+  /** "light" for a white, logo-led hero with no photos. */
+  heroTone?: "image" | "light";
+  heroRotate?: { words: string[]; after: string };
+  /** Food story chapters after the hero; media paths relative to /events/<slug>/. */
+  stories?: Story[];
   /** Loading screen background; "light" for a white loader. */
   loaderTone?: "dark" | "light";
   /** Credits for openly licensed photos (CC BY / BY-SA), listed in the footer. */
@@ -179,6 +184,9 @@ export function fromBusiness(b: BusinessInput): EventConfig {
     seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
     photoCredits: b.photoCredits,
     loaderTone: b.loaderTone,
+    heroTone: b.heroTone,
+    heroRotate: b.heroRotate,
+    stories: b.stories,
     overrides: {
       menu: b.menu ?? neutralMenu,
       menuPresets: b.menu ? (b.menuPresets ?? []) : neutralPresets,

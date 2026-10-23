@@ -53,6 +53,27 @@ export interface MenuCategory {
   items: MenuItem[];
 }
 
+/** One chapter of the food story told after the hero, each with its own short muted clip. */
+export interface Story {
+  id: string;
+  /** "split": clip beside the text; "split-reverse": text first; "wide": text above a full-width clip. */
+  layout: "split" | "split-reverse" | "wide";
+  /** Section background. */
+  tone?: "white" | "cream" | "leaf" | "gold";
+  /** Short Malayalam word shown with the chapter number. */
+  kicker: string;
+  title: string;
+  titleMl?: string;
+  body: string[];
+  /** Pull quote, Malayalam. */
+  quoteMl?: string;
+  video: { src: MediaPath; poster: MediaPath; alt: string; shape: "portrait" | "landscape" };
+  /** An extra still beside the clip (split layouts). */
+  photo?: { src: MediaPath; alt: string };
+  /** Words that scroll under a wide clip (dish names). */
+  chips?: string[];
+}
+
 export interface MenuPreset {
   title: string;
   note: string;
@@ -203,6 +224,13 @@ export interface EventConfig {
 
   /** Real reviews only. Leave empty to hide the Reviews section. */
   reviews: EventReview[];
+
+  /** Hero look: the photo slideshow (default) or "light" — white, logo-led, no photos. */
+  heroTone?: "image" | "light";
+  /** Light hero: a line whose first word cycles, e.g. ["കല്യാണ", "ഓണ"] + " സദ്യ…". */
+  heroRotate?: { words: string[]; after: string };
+  /** Food story chapters shown right after the hero. */
+  stories?: Story[];
 
   /** Loading screen background: "dark" (default, black) or "light" (white). */
   loaderTone?: "dark" | "light";

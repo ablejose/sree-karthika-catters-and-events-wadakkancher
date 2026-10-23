@@ -76,6 +76,16 @@ const slide = (e: GalleryEntry, i: number) =>
 export const heroSlides = (event.media.heroSlides ?? TEMPLATE_HERO_SLIDES).map(slide);
 
 /** Optional transparent brand mark for the loader + header. */
+/** White, logo-led hero instead of the photo slideshow. */
+export const heroLight = event.heroTone === "light";
+
+/** Story chapters with media resolved against the event's media folder. */
+export const stories = (event.stories ?? []).map((s) => ({
+  ...s,
+  video: { ...s.video, src: asset(s.video.src), poster: asset(s.video.poster) },
+  photo: s.photo ? { ...s.photo, src: asset(s.photo.src) } : undefined,
+}));
+
 export const logoMark = event.media.logoMark ? asset(event.media.logoMark) : undefined;
 
 export const DEFAULT_WA_MESSAGE = t(templateCopy.cta.waMessage);
@@ -87,7 +97,10 @@ export const telLink = `tel:${site.phone.replace(/[^\d+]/g, "")}`;
 
 /** Nav, minus links to sections this event doesn't render (no photos / no reviews). */
 export const navLinks = templateCopy.nav.filter(
-  (l) => !(l.href === "#gallery" && event.media.gallery.length === 0) && !(l.href === "#testimonials" && event.reviews.length === 0)
+  (l) =>
+    !(l.href === "#gallery" && event.media.gallery.length === 0) &&
+    !(l.href === "#testimonials" && event.reviews.length === 0) &&
+    !(l.href === "#stories" && !(event.stories?.length ?? 0))
 );
 
 /** Brand icon + share image paths for this event. */

@@ -1,4 +1,6 @@
 import Hero from "@/sections/Hero";
+import HeroLight from "@/sections/HeroLight";
+import Stories from "@/sections/Stories";
 import TrustBar from "@/sections/TrustBar";
 import QuickServices from "@/sections/QuickServices";
 import Services from "@/sections/Services";
@@ -8,7 +10,7 @@ import About from "@/sections/About";
 import Testimonials from "@/sections/Testimonials";
 import Menu from "@/sections/Menu";
 import Footer from "@/sections/Footer";
-import { variant } from "@/config/site";
+import { heroLight, variant } from "@/config/site";
 
 /**
  * Page order follows the AIDA conversion journey — hero, proof, offer, reviews,
@@ -39,7 +41,8 @@ export default function HomePage() {
 
   return (
     <main>
-      <Hero />
+      {heroLight ? <HeroLight /> : <Hero />}
+      <Stories />
       <TrustBar />
       <QuickServices />
       {order.map((key) => {
