@@ -213,6 +213,7 @@ export const templateMenuPresets: MenuPreset[] = [
 /** Every string the sections render. Tokens are filled from the event config. */
 export const templateCopy = {
   nav: [
+    { label: "Our story", href: "#stories" },
     { label: "Services", href: "#services" },
     { label: "Our work", href: "#gallery" },
     { label: "Reviews", href: "#testimonials" },
@@ -462,17 +463,17 @@ export const variantCopy: Record<
   /** Sadya — pure-vegetarian sadhya on banana leaf, with a traditional (nilavilakku, uruli) stage. */
   sadya: {
     hero: {
-      body: "Traditional vegetarian sadhya on banana leaf across {district} — with the lamp, the flowers and the stage set the Kerala way.",
+      body: "Traditional vegetarian sadhya on banana leaf across {district} — cooked fresh and served the Kerala way.",
     },
     services: {
       eyebrow: "What we do",
       heading: "Sadhya, served the way it should be",
     },
     gallery: {
-      eyebrow: "Stage & décor",
-      heading: "Wedding stages, dressed the traditional way",
-      body: "Flower walls, brass pillars, the lit nilavilakku and the deity at the centre — the stage set and ready before the muhurtham.",
-      photoQuote: "Every lamp lit, every garland in place — before the first guest arrives.",
+      eyebrow: "Celebrations",
+      heading: "Where our sadhya is served",
+      body: "Weddings, engagements and festivals across {district} — the setting changes, the sadhya stays the same: fresh, traditional and served on leaf.",
+      photoQuote: "Whatever the occasion, the leaf is always full.",
     },
     process: {
       eyebrow: "How we work",
