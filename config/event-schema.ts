@@ -71,6 +71,8 @@ export interface Story {
   video?: { src: MediaPath; poster: MediaPath; alt: string; shape: "portrait" | "landscape" };
   /** An extra still beside the clip (split layouts). */
   photo?: { src: MediaPath; alt: string };
+  /** Several photos shown one at a time with back / next arrows (split layouts, instead of a clip). */
+  photos?: { src: MediaPath; alt: string; fit?: "cover" | "contain" }[];
   /** Words that scroll under a wide clip (dish names). */
   chips?: string[];
 }

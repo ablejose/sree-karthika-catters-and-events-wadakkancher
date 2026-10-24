@@ -97,6 +97,7 @@ export const stories = (event.stories ?? []).map((s) => ({
   ...s,
   video: s.video ? { ...s.video, src: asset(s.video.src), poster: asset(s.video.poster) } : undefined,
   photo: s.photo ? { ...s.photo, src: asset(s.photo.src) } : undefined,
+  photos: s.photos?.map((p) => ({ ...p, src: asset(p.src) })),
 }));
 
 export const logoMark = event.media.logoMark ? asset(event.media.logoMark) : undefined;

@@ -2,6 +2,7 @@ import Reveal from "@/components/Reveal";
 import { StoryVideo } from "@/components/StoryVideo";
 import { BananaLeaf } from "@/components/BananaLeaf";
 import { Img } from "@/components/ui/Img";
+import { PhotoSlider } from "@/components/PhotoSlider";
 import { stories } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { langOf } from "@/lib/copy";
@@ -49,6 +50,15 @@ function Text({ s, n, center = false }: { s: S; n: number; center?: boolean }) {
           </p>
         ))}
       </div>
+      {s.layout !== "wide" && s.chips && s.chips.length > 0 && (
+        <ul lang="ml" className="mt-6 flex flex-wrap gap-2" aria-label="Dishes">
+          {s.chips.map((c) => (
+            <li key={c} className="ml rounded-full border border-[#2F6B3A]/20 bg-white/80 px-4 py-1.5 text-[0.9rem] text-[#2F6B3A]">
+              {c}
+            </li>
+          ))}
+        </ul>
+      )}
       {s.quoteMl && (
         <blockquote lang="ml" className={cn("ml mt-8 text-[1.25rem] leading-relaxed text-espresso md:text-[1.4rem]", center ? "mx-auto max-w-xl" : "border-l-2 border-saffron pl-5")}>
           {s.quoteMl}
@@ -59,6 +69,13 @@ function Text({ s, n, center = false }: { s: S; n: number; center?: boolean }) {
 }
 
 function SplitMedia({ s }: { s: S }) {
+  if (!s.video && s.photos && s.photos.length > 0) {
+    return (
+      <Reveal className="mx-auto w-full max-w-[28rem]">
+        <PhotoSlider photos={s.photos} label={s.title} />
+      </Reveal>
+    );
+  }
   if (!s.video && s.photo) {
     return (
       <Reveal delay={0.06} className="relative mx-auto w-full max-w-[26rem]">
@@ -84,9 +101,16 @@ function SplitMedia({ s }: { s: S }) {
       </Reveal>
     );
   }
+  // Landscape clips fill the column at 16:9; portrait clips stand at 9:16.
+  if (s.video.shape === "landscape") {
+    return (
+      <Reveal delay={0.06} className="w-full">
+        <StoryVideo src={s.video.src} poster={s.video.poster} alt={s.video.alt} className="aspect-video w-full rounded-[28px] shadow-[0_12px_28px_-16px_rgba(36,28,21,0.55)]" />
+      </Reveal>
+    );
+  }
   return (
     <Reveal delay={0.06} className="relative mx-auto w-full max-w-[22rem]">
-      <BananaLeaf className="pointer-events-none absolute -left-24 top-1/3 w-[26rem] -rotate-[28deg]" style={{ opacity: 0.08 }} />
       <StoryVideo src={s.video.src} poster={s.video.poster} alt={s.video.alt} className="relative aspect-[9/16] rounded-[30px] shadow-[0_12px_28px_-16px_rgba(36,28,21,0.55)]" />
     </Reveal>
   );
