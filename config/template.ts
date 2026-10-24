@@ -473,13 +473,13 @@ export const variantCopy: Record<
     },
     gallery: {
       eyebrow: "ആഘോഷങ്ങൾ",
-      heading: "നിങ്ങളുടെ സദ്യ വിളമ്പുന്നിടം",
-      body: "Weddings, engagements and festivals — the setting changes, the sadhya stays the same: fresh, traditional and served on leaf.",
+      heading: "Stages we decorated",
+      body: "Flower walls, brass pillars and the lit nilavilakku — traditional stages dressed for the muhurtham, with the sadhya to follow.",
       photoQuote: "Whatever the occasion, the leaf is always full.",
     },
     process: {
       eyebrow: "ഞങ്ങളുടെ രീതി",
-      heading: "ആദ്യ വിളി മുതൽ അവസാന പായസം വരെ",
+      heading: "ബുക്കിംഗ് ഉറപ്പിക്കുന്നതു മുതൽ അവസാന പായസം വരെ",
       body: "",
     },
     about: {
