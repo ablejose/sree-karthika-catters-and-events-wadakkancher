@@ -530,21 +530,7 @@
         "poster": "stories/serving-poster.webp",
         "alt": "Our crew serving sadhya onto banana leaves, row after row",
         "shape": "portrait"
-      },
-      "chips": [
-        "അവിയൽ",
-        "ഓലൻ",
-        "കാളൻ",
-        "എരിശ്ശേരി",
-        "തോരൻ",
-        "കൂട്ടുകറി",
-        "പച്ചടി",
-        "കിച്ചടി",
-        "സാമ്പാർ",
-        "പുളിശ്ശേരി",
-        "രസം",
-        "ഇഞ്ചിപ്പുളി"
-      ]
+      }
     },
     {
       "id": "kitchen",
