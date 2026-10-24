@@ -30,7 +30,8 @@ export interface EventImage {
  * or an object with an optional `alt` and an optional `caption` shown under
  * the photo in the Gallery section.
  */
-export type GalleryEntry = MediaPath | { src: MediaPath; alt?: string; caption?: string };
+/** w/h: the photo's pixel size — lets the page reserve its space before it loads (no layout jump). */
+export type GalleryEntry = MediaPath | { src: MediaPath; alt?: string; caption?: string; w?: number; h?: number };
 
 /** One dish on the quote-builder menu. */
 export interface MenuItem {

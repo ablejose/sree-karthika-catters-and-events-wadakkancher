@@ -70,12 +70,15 @@ export default function Gallery() {
                   onClick={() => setActive(i)}
                   aria-label={`Open photo: ${item.alt}`}
                   className="group relative block w-full overflow-hidden rounded-brand bg-sand"
+                  // The box has its final size before the lazy photo arrives, so nothing below
+                  // it moves while scrolling (unknown sizes get a 4:3 box, cropped to fit).
+                  style={{ aspectRatio: item.w && item.h ? `${item.w} / ${item.h}` : "4 / 3" }}
                 >
                   <Img
                     src={item.src}
                     alt={item.alt}
                     fallbackSeed={item.src}
-                    className="h-auto w-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
                   />
                   <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/0 to-ink/0 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
                   {item.caption && (

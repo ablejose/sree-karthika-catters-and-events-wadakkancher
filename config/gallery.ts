@@ -10,6 +10,9 @@ export interface GalleryItem {
   /** Shown under the photo in the Gallery section when set. */
   caption?: string;
   wide?: boolean;
+  /** Pixel size, when known; the gallery reserves this aspect ratio before the photo loads. */
+  w?: number;
+  h?: number;
 }
 
 const normalize = (entry: GalleryEntry, fallbackAlt: string): GalleryItem => {
@@ -20,6 +23,8 @@ const normalize = (entry: GalleryEntry, fallbackAlt: string): GalleryItem => {
     src: asset(entry.src),
     alt: entry.alt ?? entry.caption ?? fallbackAlt,
     caption: entry.caption,
+    w: entry.w,
+    h: entry.h,
   };
 };
 
