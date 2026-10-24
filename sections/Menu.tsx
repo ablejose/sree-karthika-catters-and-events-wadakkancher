@@ -34,7 +34,7 @@ import { copy, variant, waLink } from "@/config/site";
 import { menu, menuPresets } from "@/config/menu";
 import { asset, t } from "@/lib/copy";
 import { cn } from "@/lib/utils";
-import { BananaLeaf, LEAF_GREEN } from "@/components/BananaLeaf";
+import { LEAF_GREEN } from "@/components/BananaLeaf";
 
 /**
  * THE MENU — a quote builder. Visitors walk the menu course by course (or start
@@ -118,7 +118,6 @@ export default function Menu() {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const [inSection, setInSection] = useState(false);
   const [panelVisible, setPanelVisible] = useState(false);
-  const [panelUp, setPanelUp] = useState(false);
 
   const pickedSet = useMemo(() => new Set(picked), [picked]);
   const active = menu[catIdx] ?? menu[0];
@@ -195,14 +194,7 @@ export default function Menu() {
     );
     io.observe(s);
     io.observe(p);
-    // Quote panel in the top half of the screen: the sticky course rail steps aside on
-    // phones so it doesn't sit over the panel and its send button.
-    const up = new IntersectionObserver(([e]) => setPanelUp(e.isIntersecting), { rootMargin: "0px 0px -50% 0px" });
-    up.observe(p);
-    return () => {
-      io.disconnect();
-      up.disconnect();
-    };
+    return () => io.disconnect();
   }, []);
 
   const pct = ((guests - GUESTS.min) / (GUESTS.max - GUESTS.min)) * 100;
@@ -237,19 +229,12 @@ export default function Menu() {
       data-leaf={LEAF || undefined}
       data-hide-fab
       aria-labelledby="menu-heading"
-      className={cn("relative py-16 md:py-24", LEAF ? "bg-[linear-gradient(180deg,#FFF5DF_0%,#EEF7E6_50%,#FFF5DF_100%)]" : "bg-cream")}
+      className={cn("relative py-16 md:py-24", LEAF ? "bg-[#FBF5E6]" : "bg-cream")}
     >
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(196,137,46,0.45), transparent)" }} />
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -right-40 top-10 h-[34rem] w-[34rem] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,137,46,0.12) 0%, rgba(196,137,46,0) 70%)" }} />
         <div className="absolute -left-40 bottom-20 h-[30rem] w-[30rem] rounded-full" style={{ background: "radial-gradient(circle, rgba(196,137,46,0.08) 0%, rgba(196,137,46,0) 70%)" }} />
-        {LEAF && (
-          <>
-            <BananaLeaf className="absolute -left-24 top-16 w-[30rem] -rotate-[18deg] md:-left-16 md:w-[40rem]" style={{ opacity: 0.12 }} />
-            <BananaLeaf className="absolute -right-28 top-[42%] w-[26rem] rotate-[200deg] md:w-[34rem]" style={{ opacity: 0.09 }} />
-            <BananaLeaf className="absolute -left-32 bottom-10 w-[28rem] rotate-[150deg] md:w-[36rem]" style={{ opacity: 0.1 }} />
-          </>
-        )}
       </div>
 
       <div className="relative mx-auto max-w-shell px-6">
@@ -297,7 +282,7 @@ export default function Menu() {
                     aria-pressed={on}
                     className={cn(
                       "group flex w-[15.5rem] shrink-0 snap-start items-center justify-between gap-4 rounded-brand border px-4 py-3 text-left transition-all duration-300 sm:w-auto sm:px-5 sm:py-4",
-                      on ? "border-espresso bg-espresso text-ivory shadow-[0_18px_40px_-24px_rgba(36,28,21,0.8)]" : "border-sand bg-white"
+                      on ? "border-espresso bg-espresso text-ivory shadow-[0_6px_14px_-8px_rgba(36,28,21,0.5)]" : "border-sand bg-white"
                     )}
                   >
                     <span>
@@ -314,13 +299,12 @@ export default function Menu() {
           </Reveal>
         )}
 
+        <div className="mt-8 grid grid-cols-1 items-start gap-8 lg:mt-10 lg:grid-cols-[minmax(0,1fr)_390px] lg:gap-10">
+          {/* Dish column: course rail + dish card. On phones the rail sticks only inside this
+              column, so it scrolls away on its own before the quote panel (no scroll watcher). */}
+          <div>
         {/* COURSE RAIL — sticky on phones so switching course is always one tap away */}
-        <div
-          className={cn(
-            "sticky top-[74px] z-20 -mx-6 mt-8 bg-cream/90 px-6 py-2.5 backdrop-blur-md lg:mt-10 transition-[opacity,transform] duration-300 lg:static lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-0",
-            panelUp && "max-lg:pointer-events-none max-lg:-translate-y-3 max-lg:opacity-0"
-          )}
-        >
+        <div className={cn("sticky top-[74px] z-20 -mx-6 px-6 py-2.5 lg:static lg:mx-0 lg:bg-transparent lg:p-0", LEAF ? "bg-[#FBF5E6]" : "bg-cream")}>
           <div
             ref={railRef}
             role="tablist"
@@ -347,7 +331,7 @@ export default function Menu() {
                     "group relative flex shrink-0 snap-start items-center gap-2 rounded-full border py-1.5 pl-1.5 pr-3.5 text-left transition-all duration-300",
                     "lg:w-auto lg:flex-col lg:gap-2 lg:rounded-2xl lg:px-2 lg:pb-3 lg:pt-3.5 lg:text-center",
                     on
-                      ? "border-espresso bg-espresso text-ivory shadow-[0_18px_36px_-20px_rgba(36,28,21,0.9)] lg:-translate-y-1"
+                      ? "border-espresso bg-espresso text-ivory shadow-[0_6px_14px_-8px_rgba(36,28,21,0.5)]"
                       : "border-sand bg-white text-espresso"
                   )}
                 >
@@ -377,12 +361,11 @@ export default function Menu() {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:gap-10">
           {/* MENU CARD — one course in focus */}
-          <div ref={cardRef} className="scroll-mt-48 lg:scroll-mt-24">
+          <div ref={cardRef} className="mt-6 scroll-mt-48 lg:scroll-mt-24">
             <div
               className={cn(
-                "relative rounded-[24px] border bg-white p-2 shadow-[0_40px_80px_-50px_rgba(36,28,21,0.5)]",
+                "relative rounded-[24px] border bg-white p-2 shadow-[0_8px_20px_-14px_rgba(36,28,21,0.35)]",
                 LEAF ? "border-[#CFE0C3]" : "border-sand"
               )}
             >
@@ -395,14 +378,7 @@ export default function Menu() {
               )}
               <div
                 className={cn("rounded-[18px] border px-5 pb-5 pt-6 md:px-9 md:pb-7 md:pt-8", LEAF ? "border-[#2F6B3A]/20" : "border-saffron/25")}
-                style={
-                  LEAF
-                    ? {
-                        backgroundColor: "#F8FBF4",
-                        backgroundImage: "repeating-linear-gradient(112deg, rgba(47,107,58,0.035) 0 1px, transparent 1px 26px)",
-                      }
-                    : undefined
-                }
+                style={LEAF ? { backgroundColor: "#F8FBF4" } : undefined}
               >
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
@@ -424,7 +400,7 @@ export default function Menu() {
                             src={asset(active.image)}
                             alt=""
                             aria-hidden
-                            className="h-14 w-14 shrink-0 rounded-2xl object-cover shadow-[0_10px_24px_-12px_rgba(36,28,21,0.6)] sm:h-16 sm:w-16"
+                            className="h-14 w-14 shrink-0 rounded-2xl object-cover shadow-[0_4px_10px_-6px_rgba(36,28,21,0.5)] sm:h-16 sm:w-16"
                           />
                         ) : (
                           <span className="hidden h-14 w-14 shrink-0 place-items-center rounded-2xl bg-espresso text-saffron sm:grid">
@@ -538,10 +514,11 @@ export default function Menu() {
               </div>
             </div>
           </div>
+          </div>
 
           {/* QUOTE PANEL — the visitor's own menu card. On desktop it sticks, scrolls inside, and keeps the button in view. */}
           <div ref={panelRef} className="scroll-mt-24 lg:sticky lg:top-24">
-            <div className="flex flex-col overflow-hidden rounded-[24px] bg-espresso text-ivory shadow-[0_40px_80px_-40px_rgba(36,28,21,0.9)] lg:max-h-[calc(100svh-7.5rem)]">
+            <div className="flex flex-col overflow-hidden rounded-[24px] bg-espresso text-ivory shadow-[0_10px_24px_-14px_rgba(36,28,21,0.6)] lg:max-h-[calc(100svh-7.5rem)]">
               <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-color:rgba(196,137,46,0.5)_transparent] [scrollbar-width:thin]">
                 {/* Card header */}
                 <div className="relative px-6 pb-4 pt-6 text-center">
