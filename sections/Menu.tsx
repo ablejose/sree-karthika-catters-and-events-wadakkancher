@@ -285,7 +285,6 @@ export default function Menu() {
             <p className="text-center font-sans text-[0.7rem] font-medium uppercase tracking-[0.24em] text-muted">{c.presetsLabel}</p>
             {/* Phones: one swipeable row instead of three stacked cards. */}
             <div
-              data-lenis-prevent
               className="-mx-6 mt-4 flex snap-x gap-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden"
             >
               {menuPresets.map((p) => {
@@ -326,7 +325,6 @@ export default function Menu() {
             ref={railRef}
             role="tablist"
             aria-label={c.coursesLabel}
-            data-lenis-prevent
             // Desktop grid: one row for up to 8 courses, two balanced rows beyond that (ignored by the phone flex row).
             style={{ gridTemplateColumns: `repeat(${menu.length > 8 ? Math.ceil(menu.length / 2) : menu.length}, minmax(0, 1fr))` }}
             className="flex snap-x gap-2 overflow-x-auto [scrollbar-width:none] lg:grid lg:gap-3 lg:overflow-visible lg:pt-1 [&::-webkit-scrollbar]:hidden"
@@ -544,7 +542,7 @@ export default function Menu() {
           {/* QUOTE PANEL — the visitor's own menu card. On desktop it sticks, scrolls inside, and keeps the button in view. */}
           <div ref={panelRef} className="scroll-mt-24 lg:sticky lg:top-24">
             <div className="flex flex-col overflow-hidden rounded-[24px] bg-espresso text-ivory shadow-[0_40px_80px_-40px_rgba(36,28,21,0.9)] lg:max-h-[calc(100svh-7.5rem)]">
-              <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-color:rgba(196,137,46,0.5)_transparent] [scrollbar-width:thin]" data-lenis-prevent>
+              <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-color:rgba(196,137,46,0.5)_transparent] [scrollbar-width:thin]">
                 {/* Card header */}
                 <div className="relative px-6 pb-4 pt-6 text-center">
                   <span aria-hidden className="mx-auto block h-px w-16 bg-saffron/60" />

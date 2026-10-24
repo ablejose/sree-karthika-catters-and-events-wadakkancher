@@ -60,7 +60,6 @@ export default function Testimonials() {
 
         {/* Phones/tablets: one swipeable row of cards. Desktop: lead review large + grid. */}
         <div
-          data-lenis-prevent
           className="-mx-6 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 [scrollbar-width:none] lg:mx-0 lg:mt-12 lg:grid lg:grid-cols-3 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
         >
           {/* Lead review, set large */}

@@ -51,7 +51,6 @@ export default function Lightbox({
           role="dialog"
           aria-modal="true"
           aria-label={item.alt}
-          data-lenis-prevent
           className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

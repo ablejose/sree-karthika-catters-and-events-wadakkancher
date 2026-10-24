@@ -4,7 +4,6 @@ import "./globals.css";
 import { brandAssets, copy, icon, site } from "@/config/site";
 import { event } from "@/event.config";
 import { jsonLd, seo } from "@/config/seo";
-import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import Loader from "@/components/Loader";
@@ -103,11 +102,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body style={themeStyle}>
         <Loader />
-        <SmoothScroll>
-          <Header />
-          {children}
-          <WhatsAppFab />
-        </SmoothScroll>
+        <Header />
+        {children}
+        <WhatsAppFab />
       </body>
     </html>
   );

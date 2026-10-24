@@ -65,18 +65,6 @@ body {
   background-color: #fbfdf8;
 }
 
-/* Lenis */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
 /* Type helpers */
 .display-xl {
   font-family: var(--font-fraunces), var(--font-ml-serif), Georgia, serif;
@@ -124,6 +112,7 @@ html.lenis body {
 
 html {
   scroll-padding-top: 72px;
+  scroll-behavior: smooth;
 }
 .body-copy {
   font-family: var(--font-manrope), var(--font-ml-sans), sans-serif;
