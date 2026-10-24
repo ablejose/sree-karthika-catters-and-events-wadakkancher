@@ -107,7 +107,7 @@ export default function HeroLight() {
             animate={go ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: reduce ? 0 : lineDone + 0.3 }}
           >
-            <span className="relative inline-grid h-[2.1em] min-w-[6.5em] place-items-center overflow-hidden rounded-full bg-[var(--saffron-soft)] px-4 text-saffron-2">
+            <span className="relative inline-grid h-[2.1em] min-w-[6.5em] place-items-center overflow-hidden text-saffron-2">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                   key={word}
