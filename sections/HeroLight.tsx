@@ -102,12 +102,12 @@ export default function HeroLight() {
         {rotate && rotate.words.length > 0 && (
           <motion.p
             lang="ml"
-            className="ml mt-6 flex items-center justify-center gap-2 text-[1.05rem] text-espresso/80 md:text-[1.2rem]"
+            className="ml mt-6 flex items-center justify-center gap-[0.3em] text-[1.05rem] text-espresso/80 md:text-[1.2rem]"
             initial={{ opacity: 0 }}
             animate={go ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: reduce ? 0 : lineDone + 0.3 }}
           >
-            <span className="relative inline-grid h-[2.1em] min-w-[6.5em] place-items-center overflow-hidden text-saffron-2">
+            <span className="relative inline-grid h-[2.1em] min-w-[6.5em] items-center justify-items-end overflow-hidden text-saffron-2">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                   key={word}
