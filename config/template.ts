@@ -354,6 +354,7 @@ export const templateCopy = {
     heading: "Let's make it unforgettable.",
     body: "Call, WhatsApp or drop by — we'll walk you through menus, décor and dates.",
     directions: "Get directions",
+    showMap: "Show map",
   },
 
   footer: {

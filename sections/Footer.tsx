@@ -1,6 +1,7 @@
 import { Phone, MapPin, Clock, Instagram, Facebook, Mail, Navigation } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { MapEmbed } from "@/components/MapEmbed";
 import { aboutInContact, copy, event, logoMark, site, telLink, waLink } from "@/config/site";
 import { langOf, t } from "@/lib/copy";
 
@@ -72,19 +73,7 @@ export default function Footer() {
             </div>
           </Reveal>
 
-          {site.mapEmbed && (
-            // Not wrapped in <Reveal>: a lazy iframe that starts hidden never loads in Chrome.
-            <div className="relative h-full min-h-[20rem] overflow-hidden rounded-brand border border-ivory/10">
-                <iframe
-                  title={`${site.fullName} on Google Maps`}
-                  src={site.mapEmbed}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 h-full w-full"
-                  style={{ border: 0, filter: "grayscale(0.35) sepia(0.25) contrast(1.05)" }}
-                />
-            </div>
-          )}
+          {site.mapEmbed && <MapEmbed src={site.mapEmbed} title={`${site.fullName} on Google Maps`} address={site.address} label={v.showMap} />}
         </div>
       </div>
 
