@@ -22,23 +22,33 @@
   "gallery": [
     {
       "src": "gallery/s1.webp",
-      "alt": "Wedding stage with a lotus backdrop, the deity at the centre and brass lamps"
+      "alt": "Wedding stage with a lotus backdrop, the deity at the centre and brass lamps",
+      "w": 1000,
+      "h": 753
     },
     {
       "src": "gallery/s2.webp",
-      "alt": "Traditional wedding stage dressed in marigold and jasmine with golden pillars"
+      "alt": "Traditional wedding stage dressed in marigold and jasmine with golden pillars",
+      "w": 1000,
+      "h": 666
     },
     {
       "src": "gallery/s3.webp",
-      "alt": "A grand wedding stage in gold and orange under chandeliers"
+      "alt": "A grand wedding stage in gold and orange under chandeliers",
+      "w": 1000,
+      "h": 581
     },
     {
       "src": "gallery/s4.webp",
-      "alt": "Wedding stage with a floral arch and flower panels"
+      "alt": "Wedding stage with a floral arch and flower panels",
+      "w": 1000,
+      "h": 753
     },
     {
       "src": "gallery/s5.webp",
-      "alt": "Wedding stage with lit floral arches and gold seating"
+      "alt": "Wedding stage with lit floral arches and gold seating",
+      "w": 1000,
+      "h": 666
     }
   ],
   "url": "https://sree-karthika-catters-and-events-wa.vercel.app",
