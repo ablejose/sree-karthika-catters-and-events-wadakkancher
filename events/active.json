@@ -495,26 +495,41 @@
         "A sadhya begins long before the first guest sits down. Rows of banana leaves are laid end to end, and every one waits for the same promise — upperi and pickles at the tip, each curry in its place, rice served hot.",
         "For the families who call us, that long row of leaves is the moment the celebration becomes real. We lay every leaf as if it were the only one."
       ],
-      "photo": {
-        "src": "stories/leaf-hall.webp",
-        "alt": "Banana leaves laid with sadhya along the tables of a dining hall"
-      }
+      "photos": [
+        {
+          "src": "stories/leaf/leaf-row.webp",
+          "alt": "A full sadhya leaf laid by Sreekarthika, curries in their places"
+        },
+        {
+          "src": "stories/leaf/leaf-full.webp",
+          "alt": "A complete sadhya on banana leaf with pappadam and payasam",
+          "fit": "contain"
+        },
+        {
+          "src": "stories/leaf/vessels.webp",
+          "alt": "Every sadhya dish lined up in steel vessels before serving"
+        },
+        {
+          "src": "stories/leaf-hall.webp",
+          "alt": "Banana leaves laid with sadhya along the tables of a dining hall"
+        }
+      ]
     },
     {
       "id": "curries",
-      "layout": "wide",
+      "layout": "split-reverse",
       "tone": "leaf",
       "kicker": "കറികൾ",
       "title": "ഓരോ കറിക്കും അതിന്റെ സമയം",
       "body": [
-        "Avial, olan, kaalan, erissery, thoran — every curry has its own rhythm and its own hour on the fire. Ours are cooked in big vessels, then filled container after container, lined up and ready for the venue.",
-        "What reaches your guests tastes exactly the way it did when it left our stove."
+        "Avial, olan, kaalan, erissery, thoran — every curry has its own rhythm and its own hour on the fire, and every one is cooked in big vessels on the day.",
+        "Then our crew carries them down the rows and serves each leaf hot, in its place — what reaches your guests tastes exactly the way it did when it left our stove."
       ],
       "video": {
-        "src": "stories/curries.mp4",
-        "poster": "stories/curries-poster.webp",
-        "alt": "Containers of sadhya curries lined up and packed for a function",
-        "shape": "landscape"
+        "src": "stories/serving.mp4",
+        "poster": "stories/serving-poster.webp",
+        "alt": "Our crew serving sadhya onto banana leaves, row after row",
+        "shape": "portrait"
       },
       "chips": [
         "അവിയൽ",
@@ -533,24 +548,24 @@
     },
     {
       "id": "kitchen",
-      "layout": "split-reverse",
+      "layout": "split",
       "tone": "cream",
       "kicker": "അടുക്കള",
       "title": "അടുക്കളയിൽ നിന്ന് നേരെ ഇലയിലേക്ക്",
       "body": [
-        "Before a single leaf is laid, every dish is ready and lined up in our kitchen — parippu, pulissery, pachadi, pickles, payasam — each in its own vessel, checked and tasted.",
+        "Before a single leaf is laid, every dish is ready in our kitchen — parippu, pulissery, pachadi, pickles, payasam — each in its own vessel, checked, tasted and packed container after container for the venue.",
         "Nothing is made days ahead and warmed up: the spread is cooked the same day, by the same hands, for your day."
       ],
       "video": {
-        "src": "stories/leaf.mp4",
-        "poster": "stories/leaf-poster.webp",
-        "alt": "Every sadhya dish lined up in steel vessels, ready for the leaf",
-        "shape": "portrait"
+        "src": "stories/curries.mp4",
+        "poster": "stories/curries-poster.webp",
+        "alt": "Containers of sadhya curries lined up and packed for a function",
+        "shape": "landscape"
       }
     },
     {
       "id": "payasam",
-      "layout": "split",
+      "layout": "split-reverse",
       "tone": "gold",
       "kicker": "പായസം",
       "title": "മധുരത്തിന്റെ ഓർമ്മ",
