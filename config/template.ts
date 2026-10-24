@@ -470,7 +470,7 @@ export const variantCopy: Record<
     },
     services: {
       eyebrow: "ഞങ്ങൾ ഒരുക്കുന്നത്",
-      heading: "സദ്യ, അതിന്റെ തനിമയോടെ",
+      heading: "സദ്യയും വേദിയും, തനിമയോടെ",
     },
     gallery: {
       eyebrow: "ആഘോഷങ്ങൾ",
