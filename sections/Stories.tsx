@@ -63,7 +63,7 @@ function SplitMedia({ s }: { s: S }) {
     return (
       <Reveal delay={0.06} className="relative mx-auto w-full max-w-[26rem]">
         <BananaLeaf className="pointer-events-none absolute -left-24 top-1/3 w-[26rem] -rotate-[28deg]" style={{ opacity: 0.08 }} />
-        <figure className="relative overflow-hidden rounded-[30px] shadow-[0_40px_80px_-40px_rgba(36,28,21,0.6)]">
+        <figure className="relative overflow-hidden rounded-[30px] shadow-[0_12px_28px_-16px_rgba(36,28,21,0.55)]">
           <div className="aspect-[4/5]">
             <Img src={s.photo.src} alt={s.photo.alt} />
           </div>
@@ -75,8 +75,8 @@ function SplitMedia({ s }: { s: S }) {
   if (s.photo) {
     return (
       <Reveal delay={0.06} className="grid grid-cols-[1fr_0.92fr] items-end gap-3 md:gap-4">
-        <StoryVideo src={s.video.src} poster={s.video.poster} alt={s.video.alt} className="aspect-[9/16] rounded-[26px] shadow-[0_40px_80px_-40px_rgba(36,28,21,0.6)]" />
-        <figure className="mb-10 overflow-hidden rounded-[22px] shadow-[0_30px_60px_-36px_rgba(36,28,21,0.55)] md:mb-16">
+        <StoryVideo src={s.video.src} poster={s.video.poster} alt={s.video.alt} className="aspect-[9/16] rounded-[26px] shadow-[0_12px_28px_-16px_rgba(36,28,21,0.55)]" />
+        <figure className="mb-10 overflow-hidden rounded-[22px] shadow-[0_10px_24px_-14px_rgba(36,28,21,0.5)] md:mb-16">
           <div className="aspect-[4/5]">
             <Img src={s.photo.src} alt={s.photo.alt} />
           </div>
@@ -87,7 +87,7 @@ function SplitMedia({ s }: { s: S }) {
   return (
     <Reveal delay={0.06} className="relative mx-auto w-full max-w-[22rem]">
       <BananaLeaf className="pointer-events-none absolute -left-24 top-1/3 w-[26rem] -rotate-[28deg]" style={{ opacity: 0.08 }} />
-      <StoryVideo src={s.video.src} poster={s.video.poster} alt={s.video.alt} className="relative aspect-[9/16] rounded-[30px] shadow-[0_40px_80px_-40px_rgba(36,28,21,0.6)]" />
+      <StoryVideo src={s.video.src} poster={s.video.poster} alt={s.video.alt} className="relative aspect-[9/16] rounded-[30px] shadow-[0_12px_28px_-16px_rgba(36,28,21,0.55)]" />
     </Reveal>
   );
 }
@@ -102,17 +102,18 @@ export default function Stories() {
         if (s.layout === "wide") {
           return (
             <section key={s.id} id={`story-${s.id}`} className={cn("relative overflow-hidden py-16 md:py-24", tone)}>
-              <div className="mx-auto max-w-shell px-6">
-                <Text s={s} n={n} center />
+              {/* Desktop: text beside the landscape clip; phones: text, then the clip. */}
+              <div className="mx-auto grid max-w-shell grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-14">
+                <Text s={s} n={n} />
                 {s.video && (
-                <Reveal delay={0.06} className="mt-10 md:mt-14">
-                  <StoryVideo
-                    src={s.video.src}
-                    poster={s.video.poster}
-                    alt={s.video.alt}
-                    className="aspect-[4/3] w-full rounded-[28px] shadow-[0_50px_100px_-50px_rgba(36,28,21,0.6)] sm:aspect-video"
-                  />
-                </Reveal>
+                  <Reveal delay={0.06}>
+                    <StoryVideo
+                      src={s.video.src}
+                      poster={s.video.poster}
+                      alt={s.video.alt}
+                      className="aspect-[4/3] w-full rounded-[28px] shadow-[0_12px_28px_-16px_rgba(36,28,21,0.55)] sm:aspect-video"
+                    />
+                  </Reveal>
                 )}
               </div>
               {s.chips && s.chips.length > 0 && (
