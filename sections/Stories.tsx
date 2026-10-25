@@ -76,6 +76,17 @@ function SplitMedia({ s }: { s: S }) {
       </Reveal>
     );
   }
+  if (!s.video && s.photo && s.photo.shape === "landscape") {
+    return (
+      <Reveal className="w-full">
+        <figure className="overflow-hidden rounded-[28px] shadow-[0_12px_28px_-16px_rgba(36,28,21,0.55)]">
+          <div className="aspect-[3/2]">
+            <Img src={s.photo.src} alt={s.photo.alt} />
+          </div>
+        </figure>
+      </Reveal>
+    );
+  }
   if (!s.video && s.photo) {
     return (
       <Reveal delay={0.06} className="relative mx-auto w-full max-w-[26rem]">

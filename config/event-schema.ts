@@ -70,7 +70,7 @@ export interface Story {
   quoteMl?: string;
   video?: { src: MediaPath; poster: MediaPath; alt: string; shape: "portrait" | "landscape" };
   /** An extra still beside the clip (split layouts). */
-  photo?: { src: MediaPath; alt: string };
+  photo?: { src: MediaPath; alt: string; /** "landscape" shows it 3:2 across the column (default portrait 4:5). */ shape?: "portrait" | "landscape" };
   /** Several photos shown one at a time with back / next arrows (split layouts, instead of a clip). */
   photos?: { src: MediaPath; alt: string; fit?: "cover" | "contain" }[];
   /** Words that scroll under a wide clip (dish names). */
