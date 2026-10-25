@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   creator: site.fullName,
   publisher: site.fullName,
   category: seo.category,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "en-IN": "/", "x-default": "/" } },
   formatDetection: { telephone: true, address: true, email: false },
   openGraph: {
     type: "website",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: site.fullName,
     title: seo.title,
     description: seo.ogDescription,
-    images: [{ url: brandAssets.ogImage, width: 1200, height: 630, alt: seo.title }],
+    images: [{ url: brandAssets.ogImage, width: 1200, height: 630, alt: `${site.fullName} logo` }],
   },
   twitter: {
     card: "summary_large_image",
@@ -54,6 +54,8 @@ export const metadata: Metadata = {
       { url: icon("favicon.ico"), sizes: "any" },
       { url: icon("favicon-16x16.png"), type: "image/png", sizes: "16x16" },
       { url: icon("favicon-32x32.png"), type: "image/png", sizes: "32x32" },
+      { url: icon("favicon-48x48.png"), type: "image/png", sizes: "48x48" },
+      { url: icon("favicon-96x96.png"), type: "image/png", sizes: "96x96" },
       { url: icon("icon.svg"), type: "image/svg+xml" },
       { url: icon("android-chrome-192x192.png"), type: "image/png", sizes: "192x192" },
       { url: icon("android-chrome-512x512.png"), type: "image/png", sizes: "512x512" },
@@ -78,9 +80,18 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
-    : undefined,
+  verification: {
+    ...(seo.googleVerification ? { google: seo.googleVerification } : {}),
+    ...(seo.bingVerification ? { other: { "msvalidate.01": seo.bingVerification } } : {}),
+  },
+  // Local-search hints: the business's region, town and map position.
+  other: {
+    "geo.region": `IN-${event.location.region === "Kerala" ? "KL" : ""}`.replace(/-$/, ""),
+    "geo.placename": `${event.location.city}, ${event.location.district}`,
+    ...(event.location.geo
+      ? { "geo.position": `${event.location.geo.lat};${event.location.geo.lng}`, ICBM: `${event.location.geo.lat}, ${event.location.geo.lng}` }
+      : {}),
+  },
 };
 
 export const viewport: Viewport = {

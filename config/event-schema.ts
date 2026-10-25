@@ -246,6 +246,21 @@ export interface EventConfig {
     keywords?: string[];
     /** Overrides the generated meta description. */
     description?: string;
+    /** Overrides the generated <title> (and the share title). */
+    title?: string;
+    /** Overrides the share-card (Open Graph / WhatsApp / X) description. */
+    ogDescription?: string;
+    /** Site category meta (default: the template's). */
+    category?: string;
+    /** Cuisines for schema.org servesCuisine (default: the template's). */
+    cuisines?: string[];
+    /** Pure-vegetarian business: marks the menu and business as vegetarian in structured data. */
+    vegetarian?: boolean;
+    /** Things the business is known for (schema.org knowsAbout), e.g. "Onam sadhya". */
+    knowsAbout?: string[];
+    /** Google / Bing site-verification codes. */
+    googleVerification?: string;
+    bingVerification?: string;
   };
 
   /**

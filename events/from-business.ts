@@ -88,6 +88,8 @@ export interface BusinessInput {
   stories?: Story[];
   /** Loading screen background; "light" for a white loader. */
   loaderTone?: "dark" | "light";
+  /** SEO overrides (title, description, keywords, cuisines, vegetarian…); see EventConfig.seo. */
+  seo?: EventConfig["seo"];
   /** Credits for openly licensed photos (CC BY / BY-SA), listed in the footer. */
   photoCredits?: { text: string; href: string }[];
 
@@ -181,7 +183,7 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       reel: b.media?.reel,
     },
     reviews: (b.reviews ?? []).map((r) => ({ ...r, source: "Google review" })),
-    seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
+    seo: { ...b.seo, keywords: uniq([...(b.seo?.keywords ?? []), b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
     photoCredits: b.photoCredits,
     loaderTone: b.loaderTone,
     heroTone: b.heroTone,
