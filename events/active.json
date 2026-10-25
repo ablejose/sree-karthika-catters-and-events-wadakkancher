@@ -495,25 +495,11 @@
         "A sadhya begins long before the first guest sits down. Rows of banana leaves are laid end to end, and every one waits for the same promise — upperi and pickles at the tip, each curry in its place, rice served hot.",
         "For the families who call us, that long row of leaves is the moment the celebration becomes real. We lay every leaf as if it were the only one."
       ],
-      "photos": [
-        {
-          "src": "stories/leaf/leaf-row.webp",
-          "alt": "A full sadhya leaf laid by Sreekarthika, curries in their places"
-        },
-        {
-          "src": "stories/leaf/leaf-full.webp",
-          "alt": "A complete sadhya on banana leaf with pappadam and payasam",
-          "fit": "contain"
-        },
-        {
-          "src": "stories/leaf/vessels.webp",
-          "alt": "Every sadhya dish lined up in steel vessels before serving"
-        },
-        {
-          "src": "stories/leaf-hall.webp",
-          "alt": "Banana leaves laid with sadhya along the tables of a dining hall"
-        }
-      ]
+      "photo": {
+        "src": "stories/leaf-sadhya.webp",
+        "alt": "A full Sreekarthika sadhya on banana leaf — curries, pickles, pappadam and payasam in their places",
+        "shape": "landscape"
+      }
     },
     {
       "id": "curries",
