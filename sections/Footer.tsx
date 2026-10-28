@@ -87,7 +87,7 @@ export default function Footer() {
                 <img src={logoMark} alt="" aria-hidden className="h-10 w-10 object-contain" />
               )}
               <div>
-                <p className="font-display text-2xl leading-none">{site.name}</p>
+                <p className="font-display text-2xl leading-none brand-gold-light">{site.name}</p>
                 <p className="mt-1 font-sans text-[0.62rem] uppercase tracking-[0.26em] text-saffron">{site.kicker}</p>
               </div>
             </div>

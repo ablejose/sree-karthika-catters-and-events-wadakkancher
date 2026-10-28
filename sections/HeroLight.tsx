@@ -65,7 +65,7 @@ export default function HeroLight() {
         <p className="eyebrow eyebrow-center mt-6 whitespace-nowrap text-[0.62rem] sm:text-[0.72rem]">{t(copy.hero.eyebrow)}</p>
 
         <h1 className="mt-4 flex flex-col items-center">
-          <span className="display-xl text-espresso" style={{ fontSize: "clamp(3rem, 8.5vw, 6.2rem)" }}>
+          <span className="display-xl brand-gold-gradient pb-1" style={{ fontSize: "clamp(3rem, 8.5vw, 6.2rem)" }}>
             {site.name}
           </span>
           <span className="mt-2 font-sans text-[0.75rem] font-semibold uppercase text-saffron-2 md:text-sm" style={{ letterSpacing: "0.42em", paddingLeft: "0.42em" }}>

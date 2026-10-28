@@ -78,7 +78,7 @@ export default function Header() {
             <img src={logoMark} alt="" aria-hidden className="h-9 w-9 object-contain" />
           )}
           <span className="flex flex-col">
-          <span className={cn("font-display text-2xl tracking-wide transition-colors", solid ? "text-espresso" : "text-ivory")}>
+          <span className={cn("font-display text-2xl tracking-wide transition-colors", solid ? "brand-gold" : "brand-gold-light")}>
             {site.name}
           </span>
           <span className={cn("mt-0.5 font-sans text-[0.6rem] uppercase tracking-[0.24em] transition-colors", solid ? "text-saffron-2" : "text-ivory/70")}>
@@ -154,7 +154,7 @@ export default function Header() {
               transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.5 }}
             >
               <div className="flex items-center justify-between">
-                <span className="font-display text-2xl">{site.name}</span>
+                <span className="font-display text-2xl brand-gold-light">{site.name}</span>
                 <button aria-label="Close menu" onClick={() => setOpen(false)} className="grid h-10 w-10 place-items-center rounded-full text-ivory">
                   <X size={22} />
                 </button>

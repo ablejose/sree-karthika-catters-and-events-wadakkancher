@@ -65,6 +65,20 @@ body {
   background-color: #fbfdf8;
 }
 
+/* The brand name, written in the logo's gold. */
+.brand-gold {
+  color: #a87a26;
+}
+.brand-gold-gradient {
+  background: linear-gradient(100deg, #8e6420 0%, #c99a3e 30%, #e8c77a 50%, #c99a3e 70%, #8e6420 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand-gold-light {
+  color: #e2bf72;
+}
+
 /* Type helpers */
 .display-xl {
   font-family: var(--font-fraunces), var(--font-ml-serif), Georgia, serif;
