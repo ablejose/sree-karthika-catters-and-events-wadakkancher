@@ -250,6 +250,8 @@ export interface EventConfig {
     title?: string;
     /** Overrides the share-card (Open Graph / WhatsApp / X) description. */
     ogDescription?: string;
+    /** Other names the business is known by (its Google Maps listing, spelling variants) — ties the site to the listing. */
+    alternateNames?: string[];
     /** Site category meta (default: the template's). */
     category?: string;
     /** Cuisines for schema.org servesCuisine (default: the template's). */

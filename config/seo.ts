@@ -36,7 +36,7 @@ const business = {
   "@type": "FoodEstablishment",
   "@id": `${site.url}/#business`,
   name: site.fullName,
-  alternateName: site.name,
+  alternateName: e.alternateNames ?? site.name,
   description: seo.description,
   slogan: site.tagline,
   url: site.url,
