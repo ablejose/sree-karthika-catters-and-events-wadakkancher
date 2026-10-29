@@ -466,6 +466,8 @@ export const variantCopy: Record<
   /** Sadya — pure-vegetarian sadhya on banana leaf, with a traditional (nilavilakku, uruli) stage. */
   sadya: {
     hero: {
+      // The village first: visitors (and local search) look for the place they know.
+      eyebrow: "{area} · {city} · {district}",
       body: "Traditional vegetarian sadhya on banana leaf across {district} — cooked fresh and served the Kerala way.",
     },
     services: {

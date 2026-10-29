@@ -62,7 +62,7 @@ export default function HeroLight() {
           />
         )}
 
-        <p className="eyebrow eyebrow-center mt-6 whitespace-nowrap text-[0.62rem] sm:text-[0.72rem]">{t(copy.hero.eyebrow)}</p>
+        <p className="eyebrow eyebrow-center mt-6 whitespace-nowrap text-[0.6rem] tracking-[0.16em] before:hidden after:hidden sm:text-[0.72rem] sm:tracking-[0.26em] sm:before:block sm:after:block">{t(copy.hero.eyebrow)}</p>
 
         <h1 className="mt-4 flex flex-col items-center">
           <span className="display-xl brand-gold-gradient pb-1" style={{ fontSize: "clamp(3rem, 8.5vw, 6.2rem)" }}>
@@ -102,11 +102,13 @@ export default function HeroLight() {
         {rotate && rotate.words.length > 0 && (
           <motion.p
             lang="ml"
-            className="ml mt-6 flex items-center justify-center gap-[0.3em] text-[1.05rem] text-espresso/80 md:text-[1.2rem]"
+            className="ml mt-6 flex flex-wrap items-center justify-center gap-x-[0.3em] text-[1.05rem] text-espresso/80 md:text-[1.2rem]"
             initial={{ opacity: 0 }}
             animate={go ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: reduce ? 0 : lineDone + 0.3 }}
           >
+            {/* The cycling word and the word after it never part, even when the line wraps on phones. */}
+            <span className="inline-flex items-center gap-[0.3em] whitespace-nowrap">
             <span className="relative inline-grid h-[2.1em] min-w-[6.5em] items-center justify-items-end overflow-hidden text-saffron-2">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
@@ -121,7 +123,9 @@ export default function HeroLight() {
                 </motion.span>
               </AnimatePresence>
             </span>
-            <span>{rotate.after}</span>
+            <span>{rotate.after.split(" ")[0]}</span>
+            </span>
+            {rotate.after.split(" ").length > 1 && <span>{rotate.after.split(" ").slice(1).join(" ")}</span>}
           </motion.p>
         )}
 
