@@ -37,6 +37,8 @@ export interface BusinessInput {
   mapsLink: string;
 
   phone: string;
+  /** More display phones, after the main one. */
+  phonesAlt?: string[];
   /** wa.me digits, e.g. "919847348699". */
   whatsapp: string;
   email?: string;
@@ -145,7 +147,7 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       headline: b.headline ?? "Unforgettable feasts. Flawless celebrations.",
       taglineMl: b.taglineMl,
     },
-    contact: { phone: b.phone, whatsapp: b.whatsapp, email: b.email || undefined },
+    contact: { phone: b.phone, phonesAlt: b.phonesAlt, whatsapp: b.whatsapp, email: b.email || undefined },
     location: {
       city: b.city,
       district,

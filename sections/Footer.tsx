@@ -38,7 +38,9 @@ export default function Footer() {
                 <Phone size={17} className="mt-0.5 shrink-0 text-saffron" />
                 <span className="flex flex-wrap gap-x-4 gap-y-1">
                   <a href={telLink} className="link-underline">{site.phone}</a>
-                  {site.phoneAlt && <a href={tel(site.phoneAlt)} className="link-underline">{site.phoneAlt}</a>}
+                  {site.phonesAlt.map((p) => (
+                    <a key={p} href={tel(p)} className="link-underline">{p}</a>
+                  ))}
                 </span>
               </li>
               {site.email && (

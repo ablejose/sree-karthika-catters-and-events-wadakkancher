@@ -17,7 +17,7 @@ export function GET() {
     "",
     `- Website: ${site.url}/`,
     `- Address: ${site.address}`,
-    `- Phone: ${site.phone}`,
+    `- Phone: ${[site.phone, ...site.phonesAlt].join(", ")}`,
     `- WhatsApp: https://wa.me/${site.whatsapp}`,
     ...(site.email ? [`- Email: ${site.email}`] : []),
     `- Service area: ${site.serviceNote ?? site.serviceAreas.join(", ")}`,

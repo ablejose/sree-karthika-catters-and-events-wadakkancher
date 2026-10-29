@@ -129,8 +129,8 @@ export interface EventConfig {
     phone: string;
     /** wa.me digits only, e.g. "919495163651". */
     whatsapp: string;
-    /** Optional second display phone, shown in the footer. */
-    phoneAlt?: string;
+    /** More display phones, shown after the main one in the footer. */
+    phonesAlt?: string[];
     email?: string;
   };
 

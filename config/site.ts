@@ -42,7 +42,7 @@ export const site = {
   region: event.location.region,
   area: event.location.area,
   phone: event.contact.phone,
-  phoneAlt: event.contact.phoneAlt,
+  phonesAlt: event.contact.phonesAlt ?? [],
   email: event.contact.email,
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || event.contact.whatsapp,
   address: event.location.address,

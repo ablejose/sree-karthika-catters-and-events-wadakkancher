@@ -15,6 +15,7 @@
   },
   "mapsLink": "https://maps.google.com/?cid=9682984791298099058",
   "phone": "+91 98468 35217",
+  "phonesAlt": ["+91 96059 02983", "+91 90615 64895"],
   "whatsapp": "919846835217",
   "rating": 0,
   "reviewCount": 0,
@@ -463,12 +464,6 @@
         "boli",
         "pal-payasam"
       ]
-    }
-  ],
-  "photoCredits": [
-    {
-      "text": "Pexels photographers",
-      "href": "https://www.pexels.com/license/"
     }
   ],
   "loaderTone": "light",
